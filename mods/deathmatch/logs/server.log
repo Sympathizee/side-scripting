@@ -1,0 +1,1978 @@
+==================================================================
+= Multi Theft Auto: San Andreas v1.6
+==================================================================
+= Server name      : Default MTA Server
+= Server IP address: auto
+= Server port      : 22003
+= 
+= Log file         : .. 1.6/server/mods/deathmatch/logs/server.log
+= Maximum players  : 32
+= HTTP port        : 22005
+= Voice Chat       : Disabled
+= Bandwidth saving : Medium
+==================================================================
+[2026-03-12 23:29:02] File 'settings.xml' not present, creating new node.
+[2026-03-12 23:29:15] Resource 'runcode' requests some acl rights. Use the command 'aclrequest list runcode'
+==================================================================
+= Multi Theft Auto: San Andreas v1.6
+==================================================================
+= Server name      : OwlGaming Roleplay ♦ Your World. Your Imagination. ♦ owlgaming.net
+= Server IP address: auto
+= Server port      : 22003
+= 
+= Log file         : .. 1.6/server/mods/deathmatch/logs/server.log
+= Maximum players  : 1024
+= HTTP port        : 22005
+= Voice Chat       : Disabled
+= Bandwidth saving : None
+==================================================================
+[2026-03-12 23:31:04] Compacting accounts database 'internal.db' ...
+[2026-03-12 23:31:08] Resource 'mapmanager' requests some acl rights. Use the command 'aclrequest list mapmanager'
+[2026-03-12 23:31:11] ERROR: Problem with resource: assault; Failed to link to scoreboard
+[2026-03-12 23:31:11] ERROR: Problem with resource: briefcaserace; Failed to link to scoreboard
+[2026-03-12 23:31:11] ERROR: Problem with resource: ctf; Failed to link to scoreboard
+[2026-03-12 23:31:11] ERROR: Problem with resource: ctf-bombsite; Failed to link to scoreboard
+[2026-03-12 23:31:11] ERROR: Problem with resource: ctf-canals; Failed to link to scoreboard
+[2026-03-12 23:31:11] ERROR: Problem with resource: ctf-hydrastrike; 
+[2026-03-12 23:31:11] ERROR: Problem with resource: ctf-tbd; Failed to link to scoreboard
+[2026-03-12 23:31:11] ERROR: Problem with resource: ctv; Failed to link to scoreboard
+[2026-03-12 23:31:11] ERROR: Problem with resource: deathmatch; Failed to link to scoreboard
+[2026-03-12 23:31:11] ERROR: Problem with resource: editor; 
+[2026-03-12 23:31:11] ERROR: Problem with resource: editor_main; Failed to link to freecam
+[2026-03-12 23:31:11] ERROR: Problem with resource: fallout; Failed to link to freecam
+[2026-03-12 23:31:11] ERROR: Not processing resource 'freecam' as it has duplicates on different paths:
+                  Path #1: "resources\freecam"
+                  Path #2: "resources\[editor]\freecam"
+[2026-03-12 23:31:11] ERROR: Not processing resource 'gps' as it has duplicates on different paths:
+                  Path #1: "resources\gps"
+                  Path #2: "resources\[gameplay]\gps"
+[2026-03-12 23:31:11] ERROR: Problem with resource: hay; Failed to link to scoreboard
+[2026-03-12 23:31:11] ERROR: Not processing resource 'ipb' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\ipb"
+                  Path #2: "resources\[dev]\ipb"
+[2026-03-12 23:31:11] ERROR: Not processing resource 'parachute' as it has duplicates on different paths:
+                  Path #1: "resources\parachute"
+                  Path #2: "resources\[gameplay]\parachute"
+[2026-03-12 23:31:11] ERROR: Problem with resource: play; Failed to link to superman
+[2026-03-12 23:31:11] ERROR: Problem with resource: race; Failed to link to scoreboard
+[2026-03-12 23:31:11] ERROR: Not processing resource 'runcode' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\runcode"
+                  Path #2: "resources\[dev]\runcode"
+[2026-03-12 23:31:11] ERROR: Not processing resource 'scoreboard' as it has duplicates on different paths:
+                  Path #1: "resources\scoreboard"
+                  Path #2: "resources\[gameplay]\scoreboard"
+[2026-03-12 23:31:11] ERROR: Problem with resource: scores; Failed to link to scoreboard
+[2026-03-12 23:31:11] ERROR: Not processing resource 'sfxbrowser' as it has duplicates on different paths:
+                  Path #1: "resources\[dev]\sfxbrowser"
+                  Path #2: "resources\[gameplay]\sfxbrowser"
+[2026-03-12 23:31:11] ERROR: Problem with resource: stealth; Failed to link to scoreboard
+[2026-03-12 23:31:11] ERROR: Not processing resource 'superman' as it has duplicates on different paths:
+                  Path #1: "resources\superman"
+                  Path #2: "resources\[gameplay]\superman"
+[2026-03-12 23:31:11] ERROR: Problem with resource: tdm; Failed to link to scoreboard
+[2026-03-12 23:31:11] ERROR: Problem with resource: tdma; Failed to link to scoreboard
+[2026-03-12 23:31:11] Resources: 311 loaded, 19 failed
+[2026-03-12 23:31:11] Compacting database 'registry.db' ...
+[2026-03-12 23:31:11] MODULE: Loaded "MySQL 5.0 database module" (0.50) by "Alberto Alonso <rydencillo@gmail.com>"
+[2026-03-12 23:31:11] MODULE: Loaded "bcrypt Module" (1.00) by "mabako"
+[2026-03-12 23:31:11] Starting resources...
+[2026-03-12 23:31:11] INFO: [MYSQL] createConnection / mta / OK
+[2026-03-12 23:31:11] INFO: -- MySQL Module Connection: 
+[2026-03-12 23:31:11] ERROR: Unable to connect to mysql: (2026) SSL connection error: Unable to get certificate
+[2026-03-12 23:31:11] INFO: -- Cannot connect to the MTA database.
+[2026-03-12 23:31:11] Start up of resource mysql cancelled by script
+[2026-03-12 23:31:11] ERROR: Unable to start resource mysql; Start up of resource cancelled by script
+[2026-03-12 23:31:11] WARNING: data/json.lua(Line 3) [Server] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:31:11] WARNING: data/json.lua(Line 8) [Server] base64Decode no longer works. Please manually change this to decodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:31:11] WARNING: data/json.lua(Line 3) [Client] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:31:11] WARNING: data/json.lua(Line 8) [Client] base64Decode no longer works. Please manually change this to decodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:31:11] ERROR: data\report_s.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: global\s_money_globals.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] Server minclientversion is now 1.5.7-9.20324.0
+[2026-03-12 23:31:11] ERROR: datetime\datetime_s.lua:5: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: datetime\datetime_s.lua:5: attempt to index a nil value
+[2026-03-12 23:31:11] ERROR: integration\g_configs.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: cache\usernames_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: cache\characternames_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: cache\businessnames_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: cache\factions_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: cache\s_playernames.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: cache\usernames_s.lua:187: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] WARNING: cache\usernames_s.lua:181: Bad argument @ 'dbQuery' [Expected db-connection at argument 2, got nil]
+[2026-03-12 23:31:11] ERROR: bans\ban_s.lua:3: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: bans\whois_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] WARNING: bans\ban_s.lua:654: Bad argument @ 'dbExec' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:31:11] ERROR: account\login-panel\server.lua:11: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: account\s_main.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: account\s_characters.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: account\s_login.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: account\s_email_request.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: account\s_create_character.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: account\f10-settings\s_f10_settings.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] WARNING: account\s_main.lua:41: Attempt to restart a stopped resource
+[2026-03-12 23:31:11] ERROR: serialwhitelist\script.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: admin-system\Player\s_player_commands.lua:12: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: admin-system\feedback\feedback_s.lua:15: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: admin-system\s_other_commands.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: admin-system\staff_manager\staff_manager_s.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: admin-system\Player\s_teleport.lua:24: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:11] ERROR: admin-system\Player\s_teleport.lua:26: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: Couldn't find resource superman. Check it exists.
+[2026-03-12 23:31:12] ERROR: report\s_reports.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] INFO: Loaded 0 reports.
+[2026-03-12 23:31:12] ERROR: Couldn't find resource scoreboard. Check it exists.
+[2026-03-12 23:31:12] ERROR: saveplayer-system\s_saveplayer_system.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: chat-system\s_chat_system.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: apps\app_manager_s.lua:50: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: apps\app_manager_s.lua:51: attempt to index local 'mQuery' (a nil value)
+[2026-03-12 23:31:12] ERROR: selfck-system\s_selfck.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: camera-system\s_camera_management.lua:7: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] WARNING: camera-system\s_camera_management.lua:2: Bad argument @ 'dbQuery' [Expected db-connection at argument 2, got nil]
+[2026-03-12 23:31:12] ERROR: computers-system\s_mail.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: elevator-system\s_elevator_system.lua:3: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: elevator-system\s_elevator_lift.lua:8: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] INFO: elevator-system/s_elevator_lift.lua: loadAllLifts failed
+[2026-03-12 23:31:12] ERROR: factions\s_faction_system.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] WARNING: factions\s_faction_system.lua:53: Bad argument @ 'dbQuery' [Expected db-connection at argument 2, got nil]
+[2026-03-12 23:31:12] WARNING: factions\s_faction_system.lua:61: Bad argument @ 'dbQuery' [Expected db-connection at argument 2, got nil]
+[2026-03-12 23:31:12] WARNING: factions\s_faction_system.lua:78: Bad argument @ 'dbQuery' [Expected db-connection at argument 2, got nil]
+[2026-03-12 23:31:12] ERROR: factions\s_faction_admin.lua:243: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] INFO: [Factions] ERROR: Duty allow permissions failed.
+[2026-03-12 23:31:12] ERROR: factions\ranks\s_ranks.lua:262: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] WARNING: factions\ranks\s_ranks.lua:262: Bad argument @ 'dbQuery' [Expected db-connection at argument 3, got nil]
+[2026-03-12 23:31:12] ERROR: Couldn't find resource freecam. Check it exists.
+[2026-03-12 23:31:12] ERROR: Couldn't find resource gps. Check it exists.
+[2026-03-12 23:31:12] ERROR: object-system\s_objects.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] WARNING: object-system\s_objects.lua:4: Bad argument @ 'dbQuery' [Expected db-connection at argument 2, got nil]
+[2026-03-12 23:31:12] ERROR: [interior]\interior_system\s_interior_system.lua:14: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: [interior]\interior_system\s_settings.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: [interior]\interior_load\load_s.lua:41: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] WARNING: [interior]\interior_load\load_s.lua:41: Bad argument @ 'dbQuery' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:31:12] WARNING: [interior]\interior_load\load_s.lua:42: Bad argument @ 'dbPoll' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:31:12] ERROR: language-system\s_language_system.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: bank\s_bank_system.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: item-system\s_item_management.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: item-system\anticheat\s_anti-weapon-duplicate.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: item-world\g_permissions.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: item-world\s_load_items.lua:118: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] INFO: Deleting all unprotected 30+ days old exterior items (mode 2)
+[2026-03-12 23:31:12] WARNING: item-world\s_load_items.lua:140: Bad argument @ 'dbExec' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:31:12] WARNING: item-world\s_load_items.lua:144: Bad argument @ 'dbExec' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:31:12] WARNING: item-world\s_load_items.lua:145: Bad argument @ 'dbQuery' [Expected db-connection at argument 2, got nil]
+[2026-03-12 23:31:12] INFO: item-texture: Loading textures for 0 world items
+[2026-03-12 23:31:12] INFO: item-texture: 0 clients waiting on initial sync.
+[2026-03-12 23:31:12] INFO: item-texture: 0 textured elements were added for initial sync.
+[2026-03-12 23:31:12] ERROR: job-system\s_job_system.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: job-system-trucker\s_trucker_job.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: job-system-trucker\s_truckroutes_manager.lua:54: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] WARNING: job-system-trucker\s_truckroutes_manager.lua:44: Bad argument @ 'dbQuery' [Expected db-connection at argument 2, got nil]
+[2026-03-12 23:31:12] ERROR: license-system\s_license_system.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: license-system\s_drivers_license.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: license-system\s_bikers_license.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: license-system\s_fishing_license.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: es-system\s_es_system.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: pd-system\s_radiocodes.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: pd-system\s_policecommands.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: pd-system\k9dog\server.lua:27: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] WARNING: pd-system\k9dog\server.lua:20: Bad argument @ 'dbQuery' [Expected db-connection at argument 2, got nil]
+[2026-03-12 23:31:12] ERROR: mdc\permissions_s.lua:47: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] WARNING: mdc\permissions_s.lua:12: Bad argument @ 'dbQuery' [Expected db-connection at argument 3, got nil]
+[2026-03-12 23:31:12] ERROR: mdc\migrations.lua:6: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: mdc\mdc.lua:39: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] WARNING: mdc\mdc.lua:55: mdc-system/mdc.lua: Failed to load pilot licenses!
+[2026-03-12 23:31:12] ERROR: mdc\mdc.lua:58: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] WARNING: mdc\mdc.lua:58: Bad argument @ 'dbQuery' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:31:12] WARNING: mdc\mdc.lua:59: Bad argument @ 'dbPoll' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:31:12] WARNING: mdc\mdc.lua:72: Bad argument @ 'dbFree' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:31:12] ERROR: mdc\mdc.lua:75: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] WARNING: mdc\mdc.lua:75: Bad argument @ 'dbQuery' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:31:12] WARNING: mdc\mdc.lua:76: Bad argument @ 'dbPoll' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:31:12] WARNING: mdc\mdc.lua:89: Bad argument @ 'dbFree' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:31:12] ERROR: Couldn't find resource parachute. Check it exists.
+[2026-03-12 23:31:12] ERROR: paynspray-system\s_paynspray_system.lua:64: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] WARNING: paynspray-system\s_paynspray_system.lua:41: Bad argument @ 'dbQuery' [Expected db-connection at argument 2, got nil]
+[2026-03-12 23:31:12] ERROR: phone\phone_core_s.lua:3: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] WARNING: realism/head_sync/head_sync_c.lua(Line 32) [Client] isPedOnFire is deprecated and may not work in future versions. Please replace with isElementOnFire.
+[2026-03-12 23:31:12] WARNING: realism/c_heli_rotors.lua(Line 5) [Client] getHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with getVehicleRotorSpeed.
+[2026-03-12 23:31:12] WARNING: realism/c_heli_rotors.lua(Line 6) [Client] getHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with getVehicleRotorSpeed.
+[2026-03-12 23:31:12] WARNING: realism/c_heli_rotors.lua(Line 7) [Client] setHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with setVehicleRotorSpeed.
+[2026-03-12 23:31:12] Some files in 'realism' use deprecated functions.
+[2026-03-12 23:31:12] Use the 'upgrade' command to perform a basic upgrade of resources.
+[2026-03-12 23:31:12] ERROR: realism\s_ck_corpses.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: social\s_player_rightclick.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: npc\s_generalshop_system.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: npc\s_custom_shop.lua:3: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: npc\s_migrations.lua:6: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: tag-system\s_tag_system.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: tow-system\s_tow.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: insurance\s_main.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: gate-manager\s_gates.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:12] ERROR: [vehicle]\vehicle\s_vehicle_system.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: [vehicle]\vehicleplate\s_plate_system.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: [vehicle]\vehicle_fuel\s_fuel_peds.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: [vehicle]\vehicle_fuel\s_fuel_bank.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: [vehicle]\vehicle_manager\s_vehicle_manager.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: [vehicle]\vehicle_manager\s_vehicle_commands.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: [vehicle]\vehicle_manager\vehicle-library\s_vehicle_library.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: [vehicle]\vehicle_manager\vehicle-handling-editor\s_handling_system.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: [vehicle]\vehicle_manager\s_vehicle_manager.lua:17: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: [vehicle]\vehicle_load\load_s.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: [vehicle]\vehicle_load\load_s.lua:34: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] WARNING: [vehicle]\vehicle_load\load_s.lua:34: Bad argument @ 'dbQuery' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:31:13] WARNING: [vehicle]\vehicle_load\load_s.lua:35: Bad argument @ 'dbPoll' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:31:13] ERROR: [vehicle]\carshop-system\s_shop.lua:43: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: global\s_mysql.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: [vehicle]\carshop-system\s_shop.lua:473: attempt to concatenate a nil value
+[2026-03-12 23:31:13] ERROR: [vehicle]\carradio\stations_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] INFO: Server: Fetched 0 stations from db.
+[2026-03-12 23:31:13] ERROR: weather-system\s_weather_system.lua:32: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: dancer-system\s_dancers.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: payday\s_payday.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: lottery-system\s_lottery.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: sfia\s_pilotmission.lua:12: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: sfia\faadevice\server.lua:17: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: sfia\s_pilotmission.lua:16: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: sfia\s_pilotmission.lua:19: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: sfia\s_pilotmission.lua:25: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: [interior]\interior-manager\s_interior_manager.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: business-system\s_business_system.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] WARNING: advertisements/utils/browser_manager_c.lua(Line 46) [Client] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:31:13] ERROR: advertisements\auction\keymaster.lua:108: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: advertisements\auction\keymaster.lua:108: attempt to index a nil value
+[2026-03-12 23:31:13] ERROR: advertisements\auction\auction_floor.lua:70: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: advertisements\auction\auction_floor.lua:70: attempt to index a nil value
+[2026-03-12 23:31:13] ERROR: texture-system\frames_server.lua:3: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: texture-system\s_stream.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: announcement\server.lua:6: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: announcement\motd_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: announcement\motd_frontend_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: announcement\opm_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: announcement\notification_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: ramp-system\s_ramp.lua:4: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: achievement\achievement_s.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: clothes\s_clothing.lua:35: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] WARNING: clothes\s_clothing.lua:14: Bad argument @ 'dbQuery' [Expected db-connection at argument 3, got nil]
+[2026-03-12 23:31:13] INFO: LeFire Script loaded ...
+[2026-03-12 23:31:13] ERROR: death\graveyard\graveyard_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: [interior]\interior_keypad\interior_keypad_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: prison-system\s_prison.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] INFO: PRISON-SYSTEM: Loaded 24 cell gates from s_gates.lua
+[2026-03-12 23:31:13] ERROR: ped-system\s_peds.lua:34: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] INFO: loadAllPeds failed
+[2026-03-12 23:31:13] ERROR: sapt-system\s_sapt_system.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: health-addon\server.lua:26: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] ERROR: fakevideo\s_fakevideo.lua:16: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:13] Authorized serial account protection is DISABLED. See http://multitheftauto.com/authserial
+[2026-03-12 23:31:13] Server started and is ready to accept connections!
+[2026-03-12 23:31:13] To stop the server, type 'shutdown' or press Ctrl-C
+[2026-03-12 23:31:13] Type 'help' for a list of commands.
+[2026-03-12 23:31:17] ERROR: [map]\map_load\map_load_s.lua:92: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:31:17] WARNING: [map]\map_load\map_load_s.lua:92: Bad argument @ 'dbQuery' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:31:17] WARNING: [map]\map_load\map_load_s.lua:93: Bad argument @ 'dbPoll' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:31:17] WARNING: [map]\map_load\map_load_s.lua:104: Bad argument @ 'dbFree' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:31:18] INFO: [WEATHER] / Line 60 / SQL Settings for weather was not changed.
+[2026-03-12 23:32:13] ERROR: advertisements\auction\vehicle_auctions.lua:101: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:32:13] ERROR: advertisements\auction\vehicle_auctions.lua:101: attempt to index a nil value
+[2026-03-12 23:32:48] Server minclientversion is now 1.6.0-9.23324.0
+[2026-03-12 23:32:48] WARNING: bans\ban_s.lua:431: Bad argument @ 'dbQuery' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:32:48] WARNING: bans\ban_s.lua:432: Bad argument @ 'dbPoll' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:32:48] WARNING: bans\ban_s.lua:457: Bad argument @ 'dbFree' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:32:48] WARNING: bans\ban_s.lua:460: Bad argument @ 'dbQuery' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:32:48] WARNING: bans\ban_s.lua:461: Bad argument @ 'dbPoll' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:32:48] WARNING: bans\ban_s.lua:479: Bad argument @ 'dbFree' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:32:48] CONNECT: UncoveredRivulet87 connected (IP: 192.168.1.9  Serial: ADE8A256AA3967C4FB1E4ADA49976D12  Version: 1.6.0-9.23952.0)
+[2026-03-12 23:32:49] JOIN: UncoveredRivulet87 joined the game (IP: 192.168.1.9)
+[2026-03-12 23:32:49] NICK: UncoveredRivulet87 is now known as Owl.Player.5742
+[2026-03-12 23:33:05] ERROR: datetime\datetime_g.lua:5: attempt to perform arithmetic on global 'serverCurrentTimeSec' (a nil value)
+[2026-03-12 23:33:10] ERROR: help\commands\help_s.lua:13: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:33:10] WARNING: help\commands\help_s.lua:13: Bad argument @ 'dbQuery' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:33:10] WARNING: help\commands\help_s.lua:14: Bad argument @ 'dbPoll' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:33:10] WARNING: help\commands\help_s.lua:19: Bad argument @ 'dbFree' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:33:13] ERROR: advertisements\auction\vehicle_auctions.lua:101: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:33:13] ERROR: advertisements\auction\vehicle_auctions.lua:101: attempt to index a nil value
+[2026-03-12 23:33:29] INFO: [Phone] Owl.Player.5742 triggered cancelPhoneCall / Quit / 0
+[2026-03-12 23:33:29] ERROR: datetime\datetime_g.lua:5: attempt to perform arithmetic on global 'serverCurrentTimeSec' (a nil value)
+[2026-03-12 23:33:29] ERROR: social\s_friends.lua:229: call: failed to call 'datetime:now' [string "?"]
+[2026-03-12 23:33:29] Server stopped!
+[2026-03-12 23:33:30] Stopping resources...............................................
+[2026-03-12 23:33:30] ERROR: event-system\paintball\s_paintball.lua:445: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:33:30] ERROR: event-system\paintball\s_paintball.lua:446: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:33:30] INFO: [Factions] Saving duty allow changes...
+[2026-03-12 23:33:30] INFO: [Factions] Completed in 0 seconds.
+[2026-03-12 23:33:30] INFO: Saving insurance data.
+[2026-03-12 23:33:30] ERROR: [interior]\interior_system\safe_s.lua:75: exports: Call to non-running server resource (global) [string "?"]
+[2026-03-12 23:33:30] ERROR: mdc\apbbox\s_apb_box.lua:72: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:33:30] INFO: [SHOP] Saved 0 shops configs to SQL successfully.
+[2026-03-12 23:33:30] INFO: [SHOP] Faction Drop - Failed to Restock products
+[2026-03-12 23:33:30] ERROR: npc\faction_drop_s.lua:284: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:33:30] ERROR: pool\pool_s.lua:84: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:33:30] ERROR: pool\pool_s.lua:85: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:33:30] ERROR: prison-system\s_prison.lua:40: exports: Call to non-running server resource (pool) [string "?"]
+[2026-03-12 23:33:30] ERROR: prison-system\s_prison.lua:41: bad argument #1 to 'ipairs' (table expected, got nil)
+[2026-03-12 23:33:30] ERROR: report\s_reports.lua:87: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:33:30] MODULE: Unloaded "MySQL 5.0 database module" (0.50) by "Alberto Alonso <rydencillo@gmail.com>"
+[2026-03-12 23:33:30] MODULE: Unloaded "bcrypt Module" (1.00) by "mabako"
+[2026-03-12 23:33:30] Closing SQLite3 database
+==================================================================
+= Multi Theft Auto: San Andreas v1.6
+==================================================================
+= Server name      : OwlGaming Roleplay ♦ Your World. Your Imagination. ♦ owlgaming.net
+= Server IP address: auto
+= Server port      : 22003
+= 
+= Log file         : .. 1.6/server/mods/deathmatch/logs/server.log
+= Maximum players  : 1024
+= HTTP port        : 22005
+= Voice Chat       : Disabled
+= Bandwidth saving : None
+==================================================================
+[2026-03-12 23:34:54] Compacting accounts database 'internal.db' ...
+[2026-03-12 23:34:57] Resource 'mapmanager' requests some acl rights. Use the command 'aclrequest list mapmanager'
+[2026-03-12 23:34:58] ERROR: Problem with resource: assault; Failed to link to scoreboard
+[2026-03-12 23:34:58] ERROR: Problem with resource: briefcaserace; Failed to link to scoreboard
+[2026-03-12 23:34:58] ERROR: Problem with resource: ctf; Failed to link to scoreboard
+[2026-03-12 23:34:58] ERROR: Problem with resource: ctf-bombsite; Failed to link to scoreboard
+[2026-03-12 23:34:58] ERROR: Problem with resource: ctf-canals; Failed to link to scoreboard
+[2026-03-12 23:34:58] ERROR: Problem with resource: ctf-hydrastrike; 
+[2026-03-12 23:34:58] ERROR: Problem with resource: ctf-tbd; Failed to link to scoreboard
+[2026-03-12 23:34:58] ERROR: Problem with resource: ctv; Failed to link to scoreboard
+[2026-03-12 23:34:58] ERROR: Problem with resource: deathmatch; Failed to link to scoreboard
+[2026-03-12 23:34:58] ERROR: Problem with resource: editor; 
+[2026-03-12 23:34:58] ERROR: Problem with resource: editor_main; Failed to link to freecam
+[2026-03-12 23:34:58] ERROR: Problem with resource: fallout; Failed to link to freecam
+[2026-03-12 23:34:58] ERROR: Not processing resource 'freecam' as it has duplicates on different paths:
+                  Path #1: "resources\freecam"
+                  Path #2: "resources\[editor]\freecam"
+[2026-03-12 23:34:58] ERROR: Not processing resource 'gps' as it has duplicates on different paths:
+                  Path #1: "resources\gps"
+                  Path #2: "resources\[gameplay]\gps"
+[2026-03-12 23:34:58] ERROR: Problem with resource: hay; Failed to link to scoreboard
+[2026-03-12 23:34:58] ERROR: Not processing resource 'ipb' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\ipb"
+                  Path #2: "resources\[dev]\ipb"
+[2026-03-12 23:34:58] ERROR: Not processing resource 'parachute' as it has duplicates on different paths:
+                  Path #1: "resources\parachute"
+                  Path #2: "resources\[gameplay]\parachute"
+[2026-03-12 23:34:58] ERROR: Problem with resource: play; Failed to link to superman
+[2026-03-12 23:34:58] ERROR: Problem with resource: race; Failed to link to scoreboard
+[2026-03-12 23:34:58] ERROR: Not processing resource 'runcode' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\runcode"
+                  Path #2: "resources\[dev]\runcode"
+[2026-03-12 23:34:58] ERROR: Not processing resource 'scoreboard' as it has duplicates on different paths:
+                  Path #1: "resources\scoreboard"
+                  Path #2: "resources\[gameplay]\scoreboard"
+[2026-03-12 23:34:58] ERROR: Problem with resource: scores; Failed to link to scoreboard
+[2026-03-12 23:34:58] ERROR: Not processing resource 'sfxbrowser' as it has duplicates on different paths:
+                  Path #1: "resources\[dev]\sfxbrowser"
+                  Path #2: "resources\[gameplay]\sfxbrowser"
+[2026-03-12 23:34:58] ERROR: Problem with resource: stealth; Failed to link to scoreboard
+[2026-03-12 23:34:58] ERROR: Not processing resource 'superman' as it has duplicates on different paths:
+                  Path #1: "resources\superman"
+                  Path #2: "resources\[gameplay]\superman"
+[2026-03-12 23:34:58] ERROR: Problem with resource: tdm; Failed to link to scoreboard
+[2026-03-12 23:34:58] ERROR: Problem with resource: tdma; Failed to link to scoreboard
+[2026-03-12 23:34:58] Resources: 311 loaded, 19 failed
+[2026-03-12 23:34:58] Compacting database 'registry.db' ...
+[2026-03-12 23:34:58] MODULE: Loaded "MySQL 5.0 database module" (0.50) by "Alberto Alonso <rydencillo@gmail.com>"
+[2026-03-12 23:34:58] MODULE: Loaded "bcrypt Module" (1.00) by "mabako"
+[2026-03-12 23:34:58] Starting resources...
+[2026-03-12 23:34:59] INFO: [MYSQL] createConnection / mta / OK
+[2026-03-12 23:34:59] INFO: -- MySQL Module Connection: 
+[2026-03-12 23:34:59] ERROR: Unable to connect to mysql: (2026) SSL connection error: Unable to get certificate
+[2026-03-12 23:34:59] INFO: -- Cannot connect to the MTA database.
+[2026-03-12 23:34:59] Start up of resource mysql cancelled by script
+[2026-03-12 23:34:59] ERROR: Unable to start resource mysql; Start up of resource cancelled by script
+[2026-03-12 23:34:59] WARNING: data/json.lua(Line 3) [Server] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:34:59] WARNING: data/json.lua(Line 8) [Server] base64Decode no longer works. Please manually change this to decodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:34:59] WARNING: data/json.lua(Line 3) [Client] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:34:59] WARNING: data/json.lua(Line 8) [Client] base64Decode no longer works. Please manually change this to decodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:34:59] ERROR: data\report_s.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: global\s_money_globals.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] Server minclientversion is now 1.6.0-9.23324.0
+[2026-03-12 23:34:59] ERROR: datetime\datetime_s.lua:5: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: datetime\datetime_s.lua:5: attempt to index a nil value
+[2026-03-12 23:34:59] ERROR: integration\g_configs.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: cache\usernames_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: cache\characternames_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: cache\businessnames_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: cache\factions_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: cache\s_playernames.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: cache\usernames_s.lua:187: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] WARNING: cache\usernames_s.lua:181: Bad argument @ 'dbQuery' [Expected db-connection at argument 2, got nil]
+[2026-03-12 23:34:59] ERROR: bans\ban_s.lua:3: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: bans\whois_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] WARNING: bans\ban_s.lua:654: Bad argument @ 'dbExec' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:34:59] ERROR: account\login-panel\server.lua:11: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: account\s_main.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: account\s_characters.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: account\s_login.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: account\s_email_request.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: account\s_create_character.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: account\f10-settings\s_f10_settings.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] WARNING: account\s_main.lua:41: Attempt to restart a stopped resource
+[2026-03-12 23:34:59] ERROR: serialwhitelist\script.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: admin-system\Player\s_player_commands.lua:12: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: admin-system\feedback\feedback_s.lua:15: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: admin-system\s_other_commands.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: admin-system\staff_manager\staff_manager_s.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: admin-system\Player\s_teleport.lua:24: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: admin-system\Player\s_teleport.lua:26: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: Couldn't find resource superman. Check it exists.
+[2026-03-12 23:34:59] ERROR: report\s_reports.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] INFO: Loaded 0 reports.
+[2026-03-12 23:34:59] ERROR: Couldn't find resource scoreboard. Check it exists.
+[2026-03-12 23:34:59] ERROR: saveplayer-system\s_saveplayer_system.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: chat-system\s_chat_system.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: apps\app_manager_s.lua:50: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: apps\app_manager_s.lua:51: attempt to index local 'mQuery' (a nil value)
+[2026-03-12 23:34:59] ERROR: selfck-system\s_selfck.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: camera-system\s_camera_management.lua:7: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] WARNING: camera-system\s_camera_management.lua:2: Bad argument @ 'dbQuery' [Expected db-connection at argument 2, got nil]
+[2026-03-12 23:34:59] ERROR: computers-system\s_mail.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: elevator-system\s_elevator_system.lua:3: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] ERROR: elevator-system\s_elevator_lift.lua:8: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:34:59] INFO: elevator-system/s_elevator_lift.lua: loadAllLifts failed
+[2026-03-12 23:35:00] ERROR: factions\s_faction_system.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] WARNING: factions\s_faction_system.lua:53: Bad argument @ 'dbQuery' [Expected db-connection at argument 2, got nil]
+[2026-03-12 23:35:00] WARNING: factions\s_faction_system.lua:61: Bad argument @ 'dbQuery' [Expected db-connection at argument 2, got nil]
+[2026-03-12 23:35:00] WARNING: factions\s_faction_system.lua:78: Bad argument @ 'dbQuery' [Expected db-connection at argument 2, got nil]
+[2026-03-12 23:35:00] ERROR: factions\s_faction_admin.lua:243: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] INFO: [Factions] ERROR: Duty allow permissions failed.
+[2026-03-12 23:35:00] ERROR: factions\ranks\s_ranks.lua:262: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] WARNING: factions\ranks\s_ranks.lua:262: Bad argument @ 'dbQuery' [Expected db-connection at argument 3, got nil]
+[2026-03-12 23:35:00] ERROR: Couldn't find resource freecam. Check it exists.
+[2026-03-12 23:35:00] ERROR: Couldn't find resource gps. Check it exists.
+[2026-03-12 23:35:00] ERROR: object-system\s_objects.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] WARNING: object-system\s_objects.lua:4: Bad argument @ 'dbQuery' [Expected db-connection at argument 2, got nil]
+[2026-03-12 23:35:00] ERROR: [interior]\interior_system\s_interior_system.lua:14: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] ERROR: [interior]\interior_system\s_settings.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] ERROR: [interior]\interior_load\load_s.lua:41: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] WARNING: [interior]\interior_load\load_s.lua:41: Bad argument @ 'dbQuery' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:35:00] WARNING: [interior]\interior_load\load_s.lua:42: Bad argument @ 'dbPoll' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:35:00] ERROR: language-system\s_language_system.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] ERROR: bank\s_bank_system.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] ERROR: item-system\s_item_management.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] ERROR: item-system\anticheat\s_anti-weapon-duplicate.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] ERROR: item-world\g_permissions.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] ERROR: item-world\s_load_items.lua:118: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] INFO: Deleting all unprotected 30+ days old exterior items (mode 2)
+[2026-03-12 23:35:00] WARNING: item-world\s_load_items.lua:140: Bad argument @ 'dbExec' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:35:00] WARNING: item-world\s_load_items.lua:144: Bad argument @ 'dbExec' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:35:00] WARNING: item-world\s_load_items.lua:145: Bad argument @ 'dbQuery' [Expected db-connection at argument 2, got nil]
+[2026-03-12 23:35:00] INFO: item-texture: Loading textures for 0 world items
+[2026-03-12 23:35:00] INFO: item-texture: 0 clients waiting on initial sync.
+[2026-03-12 23:35:00] INFO: item-texture: 0 textured elements were added for initial sync.
+[2026-03-12 23:35:00] ERROR: job-system\s_job_system.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] ERROR: job-system-trucker\s_trucker_job.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] ERROR: job-system-trucker\s_truckroutes_manager.lua:54: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] WARNING: job-system-trucker\s_truckroutes_manager.lua:44: Bad argument @ 'dbQuery' [Expected db-connection at argument 2, got nil]
+[2026-03-12 23:35:00] ERROR: license-system\s_license_system.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] ERROR: license-system\s_drivers_license.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] ERROR: license-system\s_bikers_license.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] ERROR: license-system\s_fishing_license.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] ERROR: es-system\s_es_system.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] ERROR: pd-system\s_radiocodes.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] ERROR: pd-system\s_policecommands.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] ERROR: pd-system\k9dog\server.lua:27: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] WARNING: pd-system\k9dog\server.lua:20: Bad argument @ 'dbQuery' [Expected db-connection at argument 2, got nil]
+[2026-03-12 23:35:00] ERROR: mdc\permissions_s.lua:47: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] WARNING: mdc\permissions_s.lua:12: Bad argument @ 'dbQuery' [Expected db-connection at argument 3, got nil]
+[2026-03-12 23:35:00] ERROR: mdc\migrations.lua:6: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] ERROR: mdc\mdc.lua:39: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] WARNING: mdc\mdc.lua:55: mdc-system/mdc.lua: Failed to load pilot licenses!
+[2026-03-12 23:35:00] ERROR: mdc\mdc.lua:58: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] WARNING: mdc\mdc.lua:58: Bad argument @ 'dbQuery' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:35:00] WARNING: mdc\mdc.lua:59: Bad argument @ 'dbPoll' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:35:00] WARNING: mdc\mdc.lua:72: Bad argument @ 'dbFree' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:35:00] ERROR: mdc\mdc.lua:75: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] WARNING: mdc\mdc.lua:75: Bad argument @ 'dbQuery' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:35:00] WARNING: mdc\mdc.lua:76: Bad argument @ 'dbPoll' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:35:00] WARNING: mdc\mdc.lua:89: Bad argument @ 'dbFree' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:35:00] ERROR: Couldn't find resource parachute. Check it exists.
+[2026-03-12 23:35:00] ERROR: paynspray-system\s_paynspray_system.lua:64: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] WARNING: paynspray-system\s_paynspray_system.lua:41: Bad argument @ 'dbQuery' [Expected db-connection at argument 2, got nil]
+[2026-03-12 23:35:00] ERROR: phone\phone_core_s.lua:3: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:00] WARNING: realism/head_sync/head_sync_c.lua(Line 32) [Client] isPedOnFire is deprecated and may not work in future versions. Please replace with isElementOnFire.
+[2026-03-12 23:35:01] WARNING: realism/c_heli_rotors.lua(Line 5) [Client] getHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with getVehicleRotorSpeed.
+[2026-03-12 23:35:01] WARNING: realism/c_heli_rotors.lua(Line 6) [Client] getHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with getVehicleRotorSpeed.
+[2026-03-12 23:35:01] WARNING: realism/c_heli_rotors.lua(Line 7) [Client] setHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with setVehicleRotorSpeed.
+[2026-03-12 23:35:01] Some files in 'realism' use deprecated functions.
+[2026-03-12 23:35:01] Use the 'upgrade' command to perform a basic upgrade of resources.
+[2026-03-12 23:35:01] ERROR: realism\s_ck_corpses.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: social\s_player_rightclick.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: npc\s_generalshop_system.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: npc\s_custom_shop.lua:3: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: npc\s_migrations.lua:6: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: tag-system\s_tag_system.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: tow-system\s_tow.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: insurance\s_main.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: gate-manager\s_gates.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: [vehicle]\vehicle\s_vehicle_system.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: [vehicle]\vehicleplate\s_plate_system.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: [vehicle]\vehicle_fuel\s_fuel_peds.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: [vehicle]\vehicle_fuel\s_fuel_bank.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: [vehicle]\vehicle_manager\s_vehicle_manager.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: [vehicle]\vehicle_manager\s_vehicle_commands.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: [vehicle]\vehicle_manager\vehicle-library\s_vehicle_library.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: [vehicle]\vehicle_manager\vehicle-handling-editor\s_handling_system.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: [vehicle]\vehicle_manager\s_vehicle_manager.lua:17: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: [vehicle]\vehicle_load\load_s.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: [vehicle]\vehicle_load\load_s.lua:34: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] WARNING: [vehicle]\vehicle_load\load_s.lua:34: Bad argument @ 'dbQuery' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:35:01] WARNING: [vehicle]\vehicle_load\load_s.lua:35: Bad argument @ 'dbPoll' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:35:01] ERROR: [vehicle]\carshop-system\s_shop.lua:43: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: global\s_mysql.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: [vehicle]\carshop-system\s_shop.lua:473: attempt to concatenate a nil value
+[2026-03-12 23:35:01] ERROR: [vehicle]\carradio\stations_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] INFO: Server: Fetched 0 stations from db.
+[2026-03-12 23:35:01] ERROR: weather-system\s_weather_system.lua:32: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: dancer-system\s_dancers.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: payday\s_payday.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: lottery-system\s_lottery.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: sfia\s_pilotmission.lua:12: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: sfia\faadevice\server.lua:17: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: sfia\s_pilotmission.lua:16: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: sfia\s_pilotmission.lua:19: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: sfia\s_pilotmission.lua:25: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: [interior]\interior-manager\s_interior_manager.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: business-system\s_business_system.lua:10: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] WARNING: advertisements/utils/browser_manager_c.lua(Line 46) [Client] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:35:01] ERROR: advertisements\auction\keymaster.lua:108: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: advertisements\auction\keymaster.lua:108: attempt to index a nil value
+[2026-03-12 23:35:01] ERROR: advertisements\auction\auction_floor.lua:70: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: advertisements\auction\auction_floor.lua:70: attempt to index a nil value
+[2026-03-12 23:35:01] ERROR: texture-system\frames_server.lua:3: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: texture-system\s_stream.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: announcement\server.lua:6: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: announcement\motd_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: announcement\motd_frontend_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: announcement\opm_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: announcement\notification_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:01] ERROR: ramp-system\s_ramp.lua:4: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:02] ERROR: achievement\achievement_s.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:02] ERROR: clothes\s_clothing.lua:35: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:02] WARNING: clothes\s_clothing.lua:14: Bad argument @ 'dbQuery' [Expected db-connection at argument 3, got nil]
+[2026-03-12 23:35:02] INFO: LeFire Script loaded ...
+[2026-03-12 23:35:02] ERROR: death\graveyard\graveyard_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:02] ERROR: [interior]\interior_keypad\interior_keypad_s.lua:2: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:02] ERROR: prison-system\s_prison.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:02] INFO: PRISON-SYSTEM: Loaded 24 cell gates from s_gates.lua
+[2026-03-12 23:35:02] ERROR: ped-system\s_peds.lua:34: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:02] INFO: loadAllPeds failed
+[2026-03-12 23:35:02] ERROR: sapt-system\s_sapt_system.lua:1: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:02] ERROR: health-addon\server.lua:26: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:02] ERROR: fakevideo\s_fakevideo.lua:16: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:02] Authorized serial account protection is DISABLED. See http://multitheftauto.com/authserial
+[2026-03-12 23:35:02] Server started and is ready to accept connections!
+[2026-03-12 23:35:02] To stop the server, type 'shutdown' or press Ctrl-C
+[2026-03-12 23:35:02] Type 'help' for a list of commands.
+[2026-03-12 23:35:04] ERROR: [map]\map_load\map_load_s.lua:92: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:35:04] WARNING: [map]\map_load\map_load_s.lua:92: Bad argument @ 'dbQuery' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:35:04] WARNING: [map]\map_load\map_load_s.lua:93: Bad argument @ 'dbPoll' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:35:04] WARNING: [map]\map_load\map_load_s.lua:104: Bad argument @ 'dbFree' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:35:06] INFO: [WEATHER] / Line 60 / SQL Settings for weather was not changed.
+[2026-03-12 23:36:01] ERROR: advertisements\auction\vehicle_auctions.lua:101: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:36:01] ERROR: advertisements\auction\vehicle_auctions.lua:101: attempt to index a nil value
+[2026-03-12 23:36:22] WARNING: bans\ban_s.lua:431: Bad argument @ 'dbQuery' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:36:22] WARNING: bans\ban_s.lua:432: Bad argument @ 'dbPoll' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:36:22] WARNING: bans\ban_s.lua:457: Bad argument @ 'dbFree' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:36:22] WARNING: bans\ban_s.lua:460: Bad argument @ 'dbQuery' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:36:22] WARNING: bans\ban_s.lua:461: Bad argument @ 'dbPoll' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:36:22] WARNING: bans\ban_s.lua:479: Bad argument @ 'dbFree' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:36:22] CONNECT: UncoveredRivulet87 connected (IP: 192.168.1.9  Serial: ADE8A256AA3967C4FB1E4ADA49976D12  Version: 1.6.0-9.23952.0)
+[2026-03-12 23:36:22] JOIN: UncoveredRivulet87 joined the game (IP: 192.168.1.9)
+[2026-03-12 23:36:22] NICK: UncoveredRivulet87 is now known as Owl.Player.5742
+[2026-03-12 23:36:24] ERROR: datetime\datetime_g.lua:5: attempt to perform arithmetic on global 'serverCurrentTimeSec' (a nil value)
+[2026-03-12 23:36:34] ERROR: help\commands\help_s.lua:13: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:36:34] WARNING: help\commands\help_s.lua:13: Bad argument @ 'dbQuery' [Expected db-connection at argument 1, got nil]
+[2026-03-12 23:36:34] WARNING: help\commands\help_s.lua:14: Bad argument @ 'dbPoll' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:36:34] WARNING: help\commands\help_s.lua:19: Bad argument @ 'dbFree' [Expected db-query at argument 1, got boolean]
+[2026-03-12 23:37:01] ERROR: advertisements\auction\vehicle_auctions.lua:101: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:37:01] ERROR: advertisements\auction\vehicle_auctions.lua:101: attempt to index a nil value
+[2026-03-12 23:38:02] ERROR: advertisements\auction\vehicle_auctions.lua:101: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:38:02] ERROR: advertisements\auction\vehicle_auctions.lua:101: attempt to index a nil value
+[2026-03-12 23:39:02] ERROR: advertisements\auction\vehicle_auctions.lua:101: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:39:08] ERROR: advertisements\auction\vehicle_auctions.lua:101: attempt to index a nil value
+[2026-03-12 23:40:02] ERROR: advertisements\auction\vehicle_auctions.lua:101: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:40:02] ERROR: advertisements\auction\vehicle_auctions.lua:101: attempt to index a nil value
+[2026-03-12 23:41:02] ERROR: advertisements\auction\vehicle_auctions.lua:101: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:41:02] ERROR: advertisements\auction\vehicle_auctions.lua:101: attempt to index a nil value
+[2026-03-12 23:42:02] ERROR: advertisements\auction\vehicle_auctions.lua:101: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:42:08] ERROR: advertisements\auction\vehicle_auctions.lua:101: attempt to index a nil value
+[2026-03-12 23:43:02] ERROR: advertisements\auction\vehicle_auctions.lua:101: exports: Call to non-running server resource (mysql) [string "?"]
+[2026-03-12 23:43:02] ERROR: advertisements\auction\vehicle_auctions.lua:101: attempt to index a nil value
+[2026-03-12 23:43:06] INFO: [Phone] Owl.Player.5742 triggered cancelPhoneCall / Quit / 0
+[2026-03-12 23:43:06] ERROR: datetime\datetime_g.lua:5: attempt to perform arithmetic on global 'serverCurrentTimeSec' (a nil value)
+[2026-03-12 23:43:06] ERROR: social\s_friends.lua:229: call: failed to call 'datetime:now' [string "?"]
+[2026-03-12 23:43:07] Server stopped!
+[2026-03-12 23:43:07] Stopping resources...............................................
+[2026-03-12 23:43:07] ERROR: event-system\paintball\s_paintball.lua:445: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:43:07] ERROR: event-system\paintball\s_paintball.lua:446: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:43:07] INFO: [Factions] Saving duty allow changes...
+[2026-03-12 23:43:07] INFO: [Factions] Completed in 0 seconds.
+[2026-03-12 23:43:07] INFO: Saving insurance data.
+[2026-03-12 23:43:07] ERROR: [interior]\interior_system\safe_s.lua:75: exports: Call to non-running server resource (global) [string "?"]
+[2026-03-12 23:43:07] ERROR: mdc\apbbox\s_apb_box.lua:72: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:43:07] INFO: [SHOP] Saved 0 shops configs to SQL successfully.
+[2026-03-12 23:43:07] INFO: [SHOP] Faction Drop - Failed to Restock products
+[2026-03-12 23:43:07] ERROR: npc\faction_drop_s.lua:284: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:43:07] ERROR: pool\pool_s.lua:84: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:43:07] ERROR: pool\pool_s.lua:85: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:43:07] ERROR: prison-system\s_prison.lua:40: exports: Call to non-running server resource (pool) [string "?"]
+[2026-03-12 23:43:07] ERROR: prison-system\s_prison.lua:41: bad argument #1 to 'ipairs' (table expected, got nil)
+[2026-03-12 23:43:07] ERROR: report\s_reports.lua:87: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:43:07] MODULE: Unloaded "MySQL 5.0 database module" (0.50) by "Alberto Alonso <rydencillo@gmail.com>"
+[2026-03-12 23:43:07] MODULE: Unloaded "bcrypt Module" (1.00) by "mabako"
+[2026-03-12 23:43:07] Closing SQLite3 database
+==================================================================
+= Multi Theft Auto: San Andreas v1.6
+==================================================================
+= Server name      : OwlGaming Roleplay ♦ Your World. Your Imagination. ♦ owlgaming.net
+= Server IP address: auto
+= Server port      : 22003
+= 
+= Log file         : .. 1.6/server/mods/deathmatch/logs/server.log
+= Maximum players  : 1024
+= HTTP port        : 22005
+= Voice Chat       : Disabled
+= Bandwidth saving : None
+==================================================================
+[2026-03-12 23:49:33] Compacting accounts database 'internal.db' ...
+[2026-03-12 23:49:35] Resource 'mapmanager' requests some acl rights. Use the command 'aclrequest list mapmanager'
+[2026-03-12 23:49:36] ERROR: Problem with resource: assault; Failed to link to scoreboard
+[2026-03-12 23:49:36] ERROR: Problem with resource: briefcaserace; Failed to link to scoreboard
+[2026-03-12 23:49:36] ERROR: Problem with resource: ctf; Failed to link to scoreboard
+[2026-03-12 23:49:36] ERROR: Problem with resource: ctf-bombsite; Failed to link to scoreboard
+[2026-03-12 23:49:36] ERROR: Problem with resource: ctf-canals; Failed to link to scoreboard
+[2026-03-12 23:49:36] ERROR: Problem with resource: ctf-hydrastrike; 
+[2026-03-12 23:49:36] ERROR: Problem with resource: ctf-tbd; Failed to link to scoreboard
+[2026-03-12 23:49:36] ERROR: Problem with resource: ctv; Failed to link to scoreboard
+[2026-03-12 23:49:36] ERROR: Problem with resource: deathmatch; Failed to link to scoreboard
+[2026-03-12 23:49:36] ERROR: Problem with resource: editor; 
+[2026-03-12 23:49:36] ERROR: Problem with resource: editor_main; Failed to link to freecam
+[2026-03-12 23:49:36] ERROR: Problem with resource: fallout; Failed to link to freecam
+[2026-03-12 23:49:36] ERROR: Not processing resource 'freecam' as it has duplicates on different paths:
+                  Path #1: "resources\freecam"
+                  Path #2: "resources\[editor]\freecam"
+[2026-03-12 23:49:36] ERROR: Not processing resource 'gps' as it has duplicates on different paths:
+                  Path #1: "resources\gps"
+                  Path #2: "resources\[gameplay]\gps"
+[2026-03-12 23:49:36] ERROR: Problem with resource: hay; Failed to link to scoreboard
+[2026-03-12 23:49:36] ERROR: Not processing resource 'ipb' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\ipb"
+                  Path #2: "resources\[dev]\ipb"
+[2026-03-12 23:49:36] ERROR: Not processing resource 'parachute' as it has duplicates on different paths:
+                  Path #1: "resources\parachute"
+                  Path #2: "resources\[gameplay]\parachute"
+[2026-03-12 23:49:36] ERROR: Problem with resource: play; Failed to link to superman
+[2026-03-12 23:49:36] ERROR: Problem with resource: race; Failed to link to scoreboard
+[2026-03-12 23:49:36] ERROR: Not processing resource 'runcode' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\runcode"
+                  Path #2: "resources\[dev]\runcode"
+[2026-03-12 23:49:36] ERROR: Not processing resource 'scoreboard' as it has duplicates on different paths:
+                  Path #1: "resources\scoreboard"
+                  Path #2: "resources\[gameplay]\scoreboard"
+[2026-03-12 23:49:36] ERROR: Problem with resource: scores; Failed to link to scoreboard
+[2026-03-12 23:49:36] ERROR: Not processing resource 'sfxbrowser' as it has duplicates on different paths:
+                  Path #1: "resources\[dev]\sfxbrowser"
+                  Path #2: "resources\[gameplay]\sfxbrowser"
+[2026-03-12 23:49:36] ERROR: Problem with resource: stealth; Failed to link to scoreboard
+[2026-03-12 23:49:36] ERROR: Not processing resource 'superman' as it has duplicates on different paths:
+                  Path #1: "resources\superman"
+                  Path #2: "resources\[gameplay]\superman"
+[2026-03-12 23:49:36] ERROR: Problem with resource: tdm; Failed to link to scoreboard
+[2026-03-12 23:49:36] ERROR: Problem with resource: tdma; Failed to link to scoreboard
+[2026-03-12 23:49:36] Resources: 311 loaded, 19 failed
+[2026-03-12 23:49:36] Compacting database 'registry.db' ...
+[2026-03-12 23:49:36] MODULE: Loaded "MySQL 5.0 database module" (0.50) by "Alberto Alonso <rydencillo@gmail.com>"
+[2026-03-12 23:49:36] MODULE: Loaded "bcrypt Module" (1.00) by "mabako"
+[2026-03-12 23:49:36] Starting resources...
+[2026-03-12 23:49:36] INFO: [MYSQL] createConnection / mta / OK
+[2026-03-12 23:49:36] WARNING: data/json.lua(Line 3) [Server] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:49:36] WARNING: data/json.lua(Line 8) [Server] base64Decode no longer works. Please manually change this to decodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:49:36] WARNING: data/json.lua(Line 3) [Client] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:49:36] WARNING: data/json.lua(Line 8) [Client] base64Decode no longer works. Please manually change this to decodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:49:36] Server minclientversion is now 1.6.0-9.23324.0
+[2026-03-12 23:49:36] INFO: [MYSQL] reconnectConnection / core / OK
+[2026-03-12 23:49:37] WARNING: account\s_main.lua:41: Attempt to restart a stopped resource
+[2026-03-12 23:49:37] ERROR: Couldn't find resource superman. Check it exists.
+[2026-03-12 23:49:37] INFO: Loaded 0 reports.
+[2026-03-12 23:49:37] ERROR: Couldn't find resource scoreboard. Check it exists.
+[2026-03-12 23:49:37] ERROR: Couldn't find resource freecam. Check it exists.
+[2026-03-12 23:49:37] ERROR: Couldn't find resource gps. Check it exists.
+[2026-03-12 23:49:37] INFO: Deleting all unprotected 30+ days old exterior items (mode 2)
+[2026-03-12 23:49:37] INFO: item-texture: Loading textures for 0 world items
+[2026-03-12 23:49:37] INFO: item-texture: 0 clients waiting on initial sync.
+[2026-03-12 23:49:37] INFO: item-texture: 0 textured elements were added for initial sync.
+[2026-03-12 23:49:38] INFO: Loaded 0 pilot licenses in 7ms.
+[2026-03-12 23:49:38] WARNING: mdc\mdc.lua:59: dbPoll failed; Table 'mta.mdc_anpr' doesn't exist
+[2026-03-12 23:49:38] ERROR: Couldn't find resource parachute. Check it exists.
+[2026-03-12 23:49:38] WARNING: realism/head_sync/head_sync_c.lua(Line 32) [Client] isPedOnFire is deprecated and may not work in future versions. Please replace with isElementOnFire.
+[2026-03-12 23:49:38] WARNING: realism/c_heli_rotors.lua(Line 5) [Client] getHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with getVehicleRotorSpeed.
+[2026-03-12 23:49:38] WARNING: realism/c_heli_rotors.lua(Line 6) [Client] getHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with getVehicleRotorSpeed.
+[2026-03-12 23:49:38] WARNING: realism/c_heli_rotors.lua(Line 7) [Client] setHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with setVehicleRotorSpeed.
+[2026-03-12 23:49:38] Some files in 'realism' use deprecated functions.
+[2026-03-12 23:49:38] Use the 'upgrade' command to perform a basic upgrade of resources.
+[2026-03-12 23:49:38] ERROR: mysql\mysql_external_module.lua:64: malformed pattern (missing ']')
+[2026-03-12 23:49:38] ERROR: mysql\mysql_external_module.lua:64: malformed pattern (missing ']')
+[2026-03-12 23:49:38] ERROR: call: failed to call 'mysql:escape_string' [(tail call)]
+[2026-03-12 23:49:38] ERROR: [vehicle]\carshop-system\s_shop.lua:473: attempt to concatenate a boolean value
+[2026-03-12 23:49:38] INFO: Server: Fetched 0 stations from db.
+[2026-03-12 23:49:38] WARNING: advertisements/utils/browser_manager_c.lua(Line 46) [Client] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:49:38] INFO: Loaded 0 texture records for all interiors in 0ms
+[2026-03-12 23:49:38] INFO: LeFire Script loaded ...
+[2026-03-12 23:49:38] INFO: PRISON-SYSTEM: Loaded 24 cell gates from s_gates.lua
+[2026-03-12 23:49:39] INFO: Loaded 0 animated texture records in 0ms
+[2026-03-12 23:49:39] Authorized serial account protection is DISABLED. See http://multitheftauto.com/authserial
+[2026-03-12 23:49:39] Server started and is ready to accept connections!
+[2026-03-12 23:49:39] To stop the server, type 'shutdown' or press Ctrl-C
+[2026-03-12 23:49:39] Type 'help' for a list of commands.
+[2026-03-12 23:49:39] INFO: [ELEVATOR] Spawning 1 elevators will be finished in approx. 1 seconds.
+[2026-03-12 23:49:39] [ Migration ] interior_system: 1
+[2026-03-12 23:49:39] [ Migration ] interior_system: 2
+[2026-03-12 23:49:39] [ Migration ] interior_system: 3
+[2026-03-12 23:49:39] INFO: [TRUCKER] Refreshed 0 orders.
+[2026-03-12 23:49:39] [ Migration ] mdc: 1
+[2026-03-12 23:49:39] [ Migration ] npc: 1
+[2026-03-12 23:49:39] [ Migration ] vehicle_manager: 1
+[2026-03-12 23:49:39] INFO: [CLOTHES] Server / Loaded 0 clothing items
+[2026-03-12 23:49:39] WARNING: mysql\migrations.lua:24: dbExec failed; (1060) Duplicate column name 'settings'
+[2026-03-12 23:49:39] WARNING: mysql\migrations.lua:24: dbExec failed; (1060) Duplicate column name 'settings'
+[2026-03-12 23:49:39] WARNING: mysql\migrations.lua:24: dbExec failed; (1060) Duplicate column name 'deletedDate'
+[2026-03-12 23:49:39] WARNING: mysql\migrations.lua:24: dbExec failed; (1101) BLOB, TEXT, GEOMETRY or JSON column 'details' can't have a default value
+[2026-03-12 23:49:45] WARNING: mysql\migrations.lua:24: dbExec failed; (1060) Duplicate column name 'deletedDate'
+[2026-03-12 23:49:46] CONNECT: UncoveredRivulet87 connected (IP: 192.168.1.9  Serial: ADE8A256AA3967C4FB1E4ADA49976D12  Version: 1.6.0-9.23952.0)
+[2026-03-12 23:49:46] JOIN: UncoveredRivulet87 joined the game (IP: 192.168.1.9)
+[2026-03-12 23:49:46] NICK: UncoveredRivulet87 is now known as Owl.Player.5742
+[2026-03-12 23:50:20] ERROR: mysql\mysql_external_module.lua:64: malformed pattern (missing ']')
+[2026-03-12 23:50:20] ERROR: mysql\mysql_external_module.lua:64: malformed pattern (missing ']')
+[2026-03-12 23:50:20] ERROR: account\login-panel\server.lua:357: call: failed to call 'mysql:escape_string' [(tail call)]
+[2026-03-12 23:50:20] ERROR: account\login-panel\server.lua:357: attempt to concatenate a boolean value
+[2026-03-12 23:50:30] ERROR: mysql\mysql_external_module.lua:64: malformed pattern (missing ']')
+[2026-03-12 23:50:30] ERROR: mysql\mysql_external_module.lua:64: malformed pattern (missing ']')
+[2026-03-12 23:50:30] ERROR: account\login-panel\server.lua:357: call: failed to call 'mysql:escape_string' [(tail call)]
+[2026-03-12 23:50:30] ERROR: account\login-panel\server.lua:357: attempt to concatenate a boolean value
+[2026-03-12 23:50:31] ERROR: mysql\mysql_external_module.lua:64: malformed pattern (missing ']')
+[2026-03-12 23:50:31] ERROR: mysql\mysql_external_module.lua:64: malformed pattern (missing ']')
+[2026-03-12 23:50:31] ERROR: account\login-panel\server.lua:357: call: failed to call 'mysql:escape_string' [(tail call)]
+[2026-03-12 23:50:31] ERROR: account\login-panel\server.lua:357: attempt to concatenate a boolean value
+[2026-03-12 23:52:19] INFO: [Phone] Owl.Player.5742 triggered cancelPhoneCall / Quit / 0
+[2026-03-12 23:52:19] Server stopped!
+[2026-03-12 23:52:19] Stopping resources...............................................
+[2026-03-12 23:52:19] ERROR: event-system\paintball\s_paintball.lua:445: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:52:19] ERROR: event-system\paintball\s_paintball.lua:446: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:52:19] INFO: [Factions] Saving duty allow changes...
+[2026-03-12 23:52:19] INFO: [Factions] Completed in 0 seconds.
+[2026-03-12 23:52:19] INFO: Saving insurance data.
+[2026-03-12 23:52:19] ERROR: [interior]\interior_system\safe_s.lua:75: exports: Call to non-running server resource (global) [string "?"]
+[2026-03-12 23:52:19] ERROR: mdc\apbbox\s_apb_box.lua:72: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:52:19] INFO: [SHOP] Saved 0 shops configs to SQL successfully.
+[2026-03-12 23:52:19] INFO: [SHOP] Faction Drop - Failed to Restock products
+[2026-03-12 23:52:19] ERROR: npc\faction_drop_s.lua:284: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:52:19] ERROR: pool\pool_s.lua:84: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:52:19] ERROR: pool\pool_s.lua:85: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:52:19] ERROR: prison-system\s_prison.lua:40: exports: Call to non-running server resource (pool) [string "?"]
+[2026-03-12 23:52:19] ERROR: prison-system\s_prison.lua:41: bad argument #1 to 'ipairs' (table expected, got nil)
+[2026-03-12 23:52:19] ERROR: report\s_reports.lua:87: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:52:19] MODULE: Unloaded "MySQL 5.0 database module" (0.50) by "Alberto Alonso <rydencillo@gmail.com>"
+[2026-03-12 23:52:19] MODULE: Unloaded "bcrypt Module" (1.00) by "mabako"
+[2026-03-12 23:52:19] Closing SQLite3 database
+==================================================================
+= Multi Theft Auto: San Andreas v1.6
+==================================================================
+= Server name      : OwlGaming Roleplay ♦ Your World. Your Imagination. ♦ owlgaming.net
+= Server IP address: auto
+= Server port      : 22003
+= 
+= Log file         : .. 1.6/server/mods/deathmatch/logs/server.log
+= Maximum players  : 1024
+= HTTP port        : 22005
+= Voice Chat       : Disabled
+= Bandwidth saving : None
+==================================================================
+[2026-03-12 23:52:26] Compacting accounts database 'internal.db' ...
+[2026-03-12 23:52:28] Resource 'mapmanager' requests some acl rights. Use the command 'aclrequest list mapmanager'
+[2026-03-12 23:52:30] ERROR: Problem with resource: assault; Failed to link to scoreboard
+[2026-03-12 23:52:30] ERROR: Problem with resource: briefcaserace; Failed to link to scoreboard
+[2026-03-12 23:52:30] ERROR: Problem with resource: ctf; Failed to link to scoreboard
+[2026-03-12 23:52:30] ERROR: Problem with resource: ctf-bombsite; Failed to link to scoreboard
+[2026-03-12 23:52:30] ERROR: Problem with resource: ctf-canals; Failed to link to scoreboard
+[2026-03-12 23:52:30] ERROR: Problem with resource: ctf-hydrastrike; 
+[2026-03-12 23:52:30] ERROR: Problem with resource: ctf-tbd; Failed to link to scoreboard
+[2026-03-12 23:52:30] ERROR: Problem with resource: ctv; Failed to link to scoreboard
+[2026-03-12 23:52:30] ERROR: Problem with resource: deathmatch; Failed to link to scoreboard
+[2026-03-12 23:52:30] ERROR: Problem with resource: editor; 
+[2026-03-12 23:52:30] ERROR: Problem with resource: editor_main; Failed to link to freecam
+[2026-03-12 23:52:30] ERROR: Problem with resource: fallout; Failed to link to freecam
+[2026-03-12 23:52:30] ERROR: Not processing resource 'freecam' as it has duplicates on different paths:
+                  Path #1: "resources\freecam"
+                  Path #2: "resources\[editor]\freecam"
+[2026-03-12 23:52:30] ERROR: Not processing resource 'gps' as it has duplicates on different paths:
+                  Path #1: "resources\gps"
+                  Path #2: "resources\[gameplay]\gps"
+[2026-03-12 23:52:30] ERROR: Problem with resource: hay; Failed to link to scoreboard
+[2026-03-12 23:52:30] ERROR: Not processing resource 'ipb' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\ipb"
+                  Path #2: "resources\[dev]\ipb"
+[2026-03-12 23:52:30] ERROR: Not processing resource 'parachute' as it has duplicates on different paths:
+                  Path #1: "resources\parachute"
+                  Path #2: "resources\[gameplay]\parachute"
+[2026-03-12 23:52:30] ERROR: Problem with resource: play; Failed to link to superman
+[2026-03-12 23:52:30] ERROR: Problem with resource: race; Failed to link to scoreboard
+[2026-03-12 23:52:30] ERROR: Not processing resource 'runcode' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\runcode"
+                  Path #2: "resources\[dev]\runcode"
+[2026-03-12 23:52:30] ERROR: Not processing resource 'scoreboard' as it has duplicates on different paths:
+                  Path #1: "resources\scoreboard"
+                  Path #2: "resources\[gameplay]\scoreboard"
+[2026-03-12 23:52:30] ERROR: Problem with resource: scores; Failed to link to scoreboard
+[2026-03-12 23:52:30] ERROR: Not processing resource 'sfxbrowser' as it has duplicates on different paths:
+                  Path #1: "resources\[dev]\sfxbrowser"
+                  Path #2: "resources\[gameplay]\sfxbrowser"
+[2026-03-12 23:52:30] ERROR: Problem with resource: stealth; Failed to link to scoreboard
+[2026-03-12 23:52:30] ERROR: Not processing resource 'superman' as it has duplicates on different paths:
+                  Path #1: "resources\superman"
+                  Path #2: "resources\[gameplay]\superman"
+[2026-03-12 23:52:30] ERROR: Problem with resource: tdm; Failed to link to scoreboard
+[2026-03-12 23:52:30] ERROR: Problem with resource: tdma; Failed to link to scoreboard
+[2026-03-12 23:52:30] Resources: 311 loaded, 19 failed
+[2026-03-12 23:52:30] Compacting database 'registry.db' ...
+[2026-03-12 23:52:30] MODULE: Loaded "MySQL 5.0 database module" (0.50) by "Alberto Alonso <rydencillo@gmail.com>"
+[2026-03-12 23:52:30] MODULE: Loaded "bcrypt Module" (1.00) by "mabako"
+[2026-03-12 23:52:30] Starting resources...
+[2026-03-12 23:52:30] INFO: [MYSQL] createConnection / mta / OK
+[2026-03-12 23:52:30] WARNING: data/json.lua(Line 3) [Server] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:52:30] WARNING: data/json.lua(Line 8) [Server] base64Decode no longer works. Please manually change this to decodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:52:30] WARNING: data/json.lua(Line 3) [Client] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:52:30] WARNING: data/json.lua(Line 8) [Client] base64Decode no longer works. Please manually change this to decodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:52:30] Server minclientversion is now 1.6.0-9.23324.0
+[2026-03-12 23:52:30] INFO: [MYSQL] reconnectConnection / core / OK
+[2026-03-12 23:52:30] WARNING: account\s_main.lua:41: Attempt to restart a stopped resource
+[2026-03-12 23:52:30] ERROR: Couldn't find resource superman. Check it exists.
+[2026-03-12 23:52:30] INFO: Loaded 0 reports.
+[2026-03-12 23:52:30] ERROR: Couldn't find resource scoreboard. Check it exists.
+[2026-03-12 23:52:31] ERROR: Couldn't find resource freecam. Check it exists.
+[2026-03-12 23:52:31] ERROR: Couldn't find resource gps. Check it exists.
+[2026-03-12 23:52:31] INFO: Deleting all unprotected 30+ days old exterior items (mode 2)
+[2026-03-12 23:52:31] INFO: item-texture: Loading textures for 0 world items
+[2026-03-12 23:52:31] INFO: item-texture: 0 clients waiting on initial sync.
+[2026-03-12 23:52:31] INFO: item-texture: 0 textured elements were added for initial sync.
+[2026-03-12 23:52:31] INFO: Loaded 0 pilot licenses in 1ms.
+[2026-03-12 23:52:31] WARNING: mdc\mdc.lua:59: dbPoll failed; Table 'mta.mdc_anpr' doesn't exist
+[2026-03-12 23:52:31] ERROR: Couldn't find resource parachute. Check it exists.
+[2026-03-12 23:52:31] WARNING: realism/head_sync/head_sync_c.lua(Line 32) [Client] isPedOnFire is deprecated and may not work in future versions. Please replace with isElementOnFire.
+[2026-03-12 23:52:31] WARNING: realism/c_heli_rotors.lua(Line 5) [Client] getHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with getVehicleRotorSpeed.
+[2026-03-12 23:52:31] WARNING: realism/c_heli_rotors.lua(Line 6) [Client] getHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with getVehicleRotorSpeed.
+[2026-03-12 23:52:31] WARNING: realism/c_heli_rotors.lua(Line 7) [Client] setHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with setVehicleRotorSpeed.
+[2026-03-12 23:52:31] Some files in 'realism' use deprecated functions.
+[2026-03-12 23:52:31] Use the 'upgrade' command to perform a basic upgrade of resources.
+[2026-03-12 23:52:32] INFO: Server: Fetched 0 stations from db.
+[2026-03-12 23:52:32] WARNING: advertisements/utils/browser_manager_c.lua(Line 46) [Client] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:52:32] INFO: Loaded 0 texture records for all interiors in 0ms
+[2026-03-12 23:52:32] INFO: LeFire Script loaded ...
+[2026-03-12 23:52:32] INFO: PRISON-SYSTEM: Loaded 24 cell gates from s_gates.lua
+[2026-03-12 23:52:32] INFO: Loaded 0 animated texture records in 0ms
+[2026-03-12 23:52:32] Authorized serial account protection is DISABLED. See http://multitheftauto.com/authserial
+[2026-03-12 23:52:32] Server started and is ready to accept connections!
+[2026-03-12 23:52:32] To stop the server, type 'shutdown' or press Ctrl-C
+[2026-03-12 23:52:32] Type 'help' for a list of commands.
+[2026-03-12 23:52:32] INFO: [ELEVATOR] Spawning 1 elevators will be finished in approx. 1 seconds.
+[2026-03-12 23:52:32] INFO: [TRUCKER] Refreshed 0 orders.
+[2026-03-12 23:52:32] INFO: [CLOTHES] Server / Loaded 0 clothing items
+[2026-03-12 23:52:40] CONNECT: UncoveredRivulet87 connected (IP: 192.168.1.9  Serial: ADE8A256AA3967C4FB1E4ADA49976D12  Version: 1.6.0-9.23952.0)
+[2026-03-12 23:52:40] JOIN: UncoveredRivulet87 joined the game (IP: 192.168.1.9)
+[2026-03-12 23:52:40] NICK: UncoveredRivulet87 is now known as Owl.Player.1574
+[2026-03-12 23:53:12] ERROR: account\login-panel\server.lua:385: attempt to concatenate field 'error' (a nil value)
+[2026-03-12 23:55:34] ERROR: apps\app_step1_s.lua:40: bad argument #2 to 'random' (interval is empty)
+[2026-03-12 23:55:43] QUIT: Owl.Player.1574 left the game [Quit] 
+[2026-03-12 23:55:43] INFO: [Phone] Owl.Player.1574 triggered cancelPhoneCall / Quit / 0
+[2026-03-12 23:55:45] CONNECT: UncoveredRivulet87 connected (IP: 192.168.1.9  Serial: ADE8A256AA3967C4FB1E4ADA49976D12  Version: 1.6.0-9.23952.0)
+[2026-03-12 23:55:45] JOIN: UncoveredRivulet87 joined the game (IP: 192.168.1.9)
+[2026-03-12 23:55:45] NICK: UncoveredRivulet87 is now known as Owl.Player.5677
+[2026-03-12 23:56:13] ERROR: apps\app_step1_s.lua:40: bad argument #2 to 'random' (interval is empty)
+[2026-03-12 23:58:04] INFO: [Phone] Owl.Player.5677 triggered cancelPhoneCall / Quit / 0
+[2026-03-12 23:58:04] Server stopped!
+[2026-03-12 23:58:04] Stopping resources...............................................
+[2026-03-12 23:58:04] ERROR: event-system\paintball\s_paintball.lua:445: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:58:04] ERROR: event-system\paintball\s_paintball.lua:446: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:58:04] INFO: [Factions] Saving duty allow changes...
+[2026-03-12 23:58:04] INFO: [Factions] Completed in 0 seconds.
+[2026-03-12 23:58:04] INFO: Saving insurance data.
+[2026-03-12 23:58:04] ERROR: [interior]\interior_system\safe_s.lua:75: exports: Call to non-running server resource (global) [string "?"]
+[2026-03-12 23:58:04] ERROR: mdc\apbbox\s_apb_box.lua:72: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:58:04] INFO: [SHOP] Saved 0 shops configs to SQL successfully.
+[2026-03-12 23:58:04] INFO: [SHOP] Faction Drop - Failed to Restock products
+[2026-03-12 23:58:04] ERROR: npc\faction_drop_s.lua:284: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:58:04] ERROR: pool\pool_s.lua:84: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:58:04] ERROR: pool\pool_s.lua:85: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:58:04] ERROR: prison-system\s_prison.lua:40: exports: Call to non-running server resource (pool) [string "?"]
+[2026-03-12 23:58:04] ERROR: prison-system\s_prison.lua:41: bad argument #1 to 'ipairs' (table expected, got nil)
+[2026-03-12 23:58:04] ERROR: report\s_reports.lua:87: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-12 23:58:04] MODULE: Unloaded "MySQL 5.0 database module" (0.50) by "Alberto Alonso <rydencillo@gmail.com>"
+[2026-03-12 23:58:04] MODULE: Unloaded "bcrypt Module" (1.00) by "mabako"
+[2026-03-12 23:58:04] Closing SQLite3 database
+==================================================================
+= Multi Theft Auto: San Andreas v1.6
+==================================================================
+= Server name      : OwlGaming Roleplay ♦ Your World. Your Imagination. ♦ owlgaming.net
+= Server IP address: auto
+= Server port      : 22003
+= 
+= Log file         : .. 1.6/server/mods/deathmatch/logs/server.log
+= Maximum players  : 1024
+= HTTP port        : 22005
+= Voice Chat       : Disabled
+= Bandwidth saving : None
+==================================================================
+[2026-03-12 23:58:09] Compacting accounts database 'internal.db' ...
+[2026-03-12 23:58:11] Resource 'mapmanager' requests some acl rights. Use the command 'aclrequest list mapmanager'
+[2026-03-12 23:58:12] ERROR: Problem with resource: assault; Failed to link to scoreboard
+[2026-03-12 23:58:12] ERROR: Problem with resource: briefcaserace; Failed to link to scoreboard
+[2026-03-12 23:58:12] ERROR: Problem with resource: ctf; Failed to link to scoreboard
+[2026-03-12 23:58:12] ERROR: Problem with resource: ctf-bombsite; Failed to link to scoreboard
+[2026-03-12 23:58:12] ERROR: Problem with resource: ctf-canals; Failed to link to scoreboard
+[2026-03-12 23:58:12] ERROR: Problem with resource: ctf-hydrastrike; 
+[2026-03-12 23:58:12] ERROR: Problem with resource: ctf-tbd; Failed to link to scoreboard
+[2026-03-12 23:58:12] ERROR: Problem with resource: ctv; Failed to link to scoreboard
+[2026-03-12 23:58:12] ERROR: Problem with resource: deathmatch; Failed to link to scoreboard
+[2026-03-12 23:58:12] ERROR: Problem with resource: editor; 
+[2026-03-12 23:58:12] ERROR: Problem with resource: editor_main; Failed to link to freecam
+[2026-03-12 23:58:12] ERROR: Problem with resource: fallout; Failed to link to freecam
+[2026-03-12 23:58:12] ERROR: Not processing resource 'freecam' as it has duplicates on different paths:
+                  Path #1: "resources\freecam"
+                  Path #2: "resources\[editor]\freecam"
+[2026-03-12 23:58:12] ERROR: Not processing resource 'gps' as it has duplicates on different paths:
+                  Path #1: "resources\gps"
+                  Path #2: "resources\[gameplay]\gps"
+[2026-03-12 23:58:12] ERROR: Problem with resource: hay; Failed to link to scoreboard
+[2026-03-12 23:58:12] ERROR: Not processing resource 'ipb' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\ipb"
+                  Path #2: "resources\[dev]\ipb"
+[2026-03-12 23:58:12] ERROR: Not processing resource 'parachute' as it has duplicates on different paths:
+                  Path #1: "resources\parachute"
+                  Path #2: "resources\[gameplay]\parachute"
+[2026-03-12 23:58:12] ERROR: Problem with resource: play; Failed to link to superman
+[2026-03-12 23:58:12] ERROR: Problem with resource: race; Failed to link to scoreboard
+[2026-03-12 23:58:12] ERROR: Not processing resource 'runcode' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\runcode"
+                  Path #2: "resources\[dev]\runcode"
+[2026-03-12 23:58:12] ERROR: Not processing resource 'scoreboard' as it has duplicates on different paths:
+                  Path #1: "resources\scoreboard"
+                  Path #2: "resources\[gameplay]\scoreboard"
+[2026-03-12 23:58:12] ERROR: Problem with resource: scores; Failed to link to scoreboard
+[2026-03-12 23:58:12] ERROR: Not processing resource 'sfxbrowser' as it has duplicates on different paths:
+                  Path #1: "resources\[dev]\sfxbrowser"
+                  Path #2: "resources\[gameplay]\sfxbrowser"
+[2026-03-12 23:58:12] ERROR: Problem with resource: stealth; Failed to link to scoreboard
+[2026-03-12 23:58:12] ERROR: Not processing resource 'superman' as it has duplicates on different paths:
+                  Path #1: "resources\superman"
+                  Path #2: "resources\[gameplay]\superman"
+[2026-03-12 23:58:12] ERROR: Problem with resource: tdm; Failed to link to scoreboard
+[2026-03-12 23:58:12] ERROR: Problem with resource: tdma; Failed to link to scoreboard
+[2026-03-12 23:58:12] Resources: 311 loaded, 19 failed
+[2026-03-12 23:58:12] Compacting database 'registry.db' ...
+[2026-03-12 23:58:12] MODULE: Loaded "MySQL 5.0 database module" (0.50) by "Alberto Alonso <rydencillo@gmail.com>"
+[2026-03-12 23:58:12] MODULE: Loaded "bcrypt Module" (1.00) by "mabako"
+[2026-03-12 23:58:12] Starting resources...
+[2026-03-12 23:58:12] INFO: [MYSQL] createConnection / mta / OK
+[2026-03-12 23:58:12] WARNING: data/json.lua(Line 3) [Server] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:58:12] WARNING: data/json.lua(Line 8) [Server] base64Decode no longer works. Please manually change this to decodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:58:12] WARNING: data/json.lua(Line 3) [Client] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:58:12] WARNING: data/json.lua(Line 8) [Client] base64Decode no longer works. Please manually change this to decodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:58:12] Server minclientversion is now 1.6.0-9.23324.0
+[2026-03-12 23:58:13] INFO: [MYSQL] reconnectConnection / core / OK
+[2026-03-12 23:58:13] WARNING: account\s_main.lua:41: Attempt to restart a stopped resource
+[2026-03-12 23:58:13] ERROR: Couldn't find resource superman. Check it exists.
+[2026-03-12 23:58:13] INFO: Loaded 0 reports.
+[2026-03-12 23:58:13] ERROR: Couldn't find resource scoreboard. Check it exists.
+[2026-03-12 23:58:13] ERROR: Couldn't find resource freecam. Check it exists.
+[2026-03-12 23:58:13] ERROR: Couldn't find resource gps. Check it exists.
+[2026-03-12 23:58:14] INFO: Deleting all unprotected 30+ days old exterior items (mode 2)
+[2026-03-12 23:58:14] INFO: item-texture: Loading textures for 0 world items
+[2026-03-12 23:58:14] INFO: item-texture: 0 clients waiting on initial sync.
+[2026-03-12 23:58:14] INFO: item-texture: 0 textured elements were added for initial sync.
+[2026-03-12 23:58:14] INFO: Loaded 0 pilot licenses in 1ms.
+[2026-03-12 23:58:14] WARNING: mdc\mdc.lua:59: dbPoll failed; Table 'mta.mdc_anpr' doesn't exist
+[2026-03-12 23:58:14] ERROR: Couldn't find resource parachute. Check it exists.
+[2026-03-12 23:58:14] WARNING: realism/head_sync/head_sync_c.lua(Line 32) [Client] isPedOnFire is deprecated and may not work in future versions. Please replace with isElementOnFire.
+[2026-03-12 23:58:14] WARNING: realism/c_heli_rotors.lua(Line 5) [Client] getHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with getVehicleRotorSpeed.
+[2026-03-12 23:58:14] WARNING: realism/c_heli_rotors.lua(Line 6) [Client] getHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with getVehicleRotorSpeed.
+[2026-03-12 23:58:14] WARNING: realism/c_heli_rotors.lua(Line 7) [Client] setHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with setVehicleRotorSpeed.
+[2026-03-12 23:58:14] Some files in 'realism' use deprecated functions.
+[2026-03-12 23:58:14] Use the 'upgrade' command to perform a basic upgrade of resources.
+[2026-03-12 23:58:14] INFO: Server: Fetched 0 stations from db.
+[2026-03-12 23:58:14] WARNING: advertisements/utils/browser_manager_c.lua(Line 46) [Client] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-12 23:58:14] INFO: Loaded 0 texture records for all interiors in 0ms
+[2026-03-12 23:58:15] INFO: LeFire Script loaded ...
+[2026-03-12 23:58:15] INFO: PRISON-SYSTEM: Loaded 24 cell gates from s_gates.lua
+[2026-03-12 23:58:15] INFO: Loaded 0 animated texture records in 0ms
+[2026-03-12 23:58:15] Authorized serial account protection is DISABLED. See http://multitheftauto.com/authserial
+[2026-03-12 23:58:15] Server started and is ready to accept connections!
+[2026-03-12 23:58:15] To stop the server, type 'shutdown' or press Ctrl-C
+[2026-03-12 23:58:15] Type 'help' for a list of commands.
+[2026-03-12 23:58:15] INFO: [ELEVATOR] Spawning 1 elevators will be finished in approx. 1 seconds.
+[2026-03-12 23:58:15] INFO: [TRUCKER] Refreshed 0 orders.
+[2026-03-12 23:58:15] INFO: [CLOTHES] Server / Loaded 0 clothing items
+[2026-03-12 23:58:30] CONNECT: UncoveredRivulet87 connected (IP: 192.168.1.9  Serial: ADE8A256AA3967C4FB1E4ADA49976D12  Version: 1.6.0-9.23952.0)
+[2026-03-12 23:58:30] JOIN: UncoveredRivulet87 joined the game (IP: 192.168.1.9)
+[2026-03-12 23:58:30] NICK: UncoveredRivulet87 is now known as Owl.Player.1574
+[2026-03-12 23:58:55] ERROR: apps\app_step2_s.lua:22: bad argument #2 to 'random' (interval is empty)
+[2026-03-13 00:00:14] INFO: [PAYDAY] Server / payAllWages / Ran.
+[2026-03-13 00:00:14] INFO: BIZ-SYSTEM SETTINGS: wageRate=2, limitDebtAmount=6000, warningDebtAmount=5000
+[2026-03-13 00:00:14] INFO: ------------START UPDATING SHOP WAGES------------
+[2026-03-13 00:00:14] INFO: ------------UPDATED 0 SHOP WAGES------------
+[2026-03-13 00:01:15] INFO: [Phone] Owl.Player.1574 triggered cancelPhoneCall / Quit / 0
+[2026-03-13 00:01:15] Server stopped!
+[2026-03-13 00:01:15] Stopping resources...............................................
+[2026-03-13 00:01:15] ERROR: event-system\paintball\s_paintball.lua:445: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:01:15] ERROR: event-system\paintball\s_paintball.lua:446: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:01:15] INFO: [Factions] Saving duty allow changes...
+[2026-03-13 00:01:15] INFO: [Factions] Completed in 0 seconds.
+[2026-03-13 00:01:15] INFO: Saving insurance data.
+[2026-03-13 00:01:15] ERROR: [interior]\interior_system\safe_s.lua:75: exports: Call to non-running server resource (global) [string "?"]
+[2026-03-13 00:01:15] ERROR: mdc\apbbox\s_apb_box.lua:72: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:01:15] INFO: [SHOP] Saved 0 shops configs to SQL successfully.
+[2026-03-13 00:01:15] INFO: [SHOP] Faction Drop - Failed to Restock products
+[2026-03-13 00:01:15] ERROR: npc\faction_drop_s.lua:284: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:01:15] ERROR: pool\pool_s.lua:84: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:01:15] ERROR: pool\pool_s.lua:85: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:01:15] ERROR: prison-system\s_prison.lua:40: exports: Call to non-running server resource (pool) [string "?"]
+[2026-03-13 00:01:15] ERROR: prison-system\s_prison.lua:41: bad argument #1 to 'ipairs' (table expected, got nil)
+[2026-03-13 00:01:15] ERROR: report\s_reports.lua:87: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:01:15] MODULE: Unloaded "MySQL 5.0 database module" (0.50) by "Alberto Alonso <rydencillo@gmail.com>"
+[2026-03-13 00:01:15] MODULE: Unloaded "bcrypt Module" (1.00) by "mabako"
+[2026-03-13 00:01:15] Closing SQLite3 database
+==================================================================
+= Multi Theft Auto: San Andreas v1.6
+==================================================================
+= Server name      : OwlGaming Roleplay ♦ Your World. Your Imagination. ♦ owlgaming.net
+= Server IP address: auto
+= Server port      : 22003
+= 
+= Log file         : .. 1.6/server/mods/deathmatch/logs/server.log
+= Maximum players  : 1024
+= HTTP port        : 22005
+= Voice Chat       : Disabled
+= Bandwidth saving : None
+==================================================================
+[2026-03-13 00:01:19] Compacting accounts database 'internal.db' ...
+[2026-03-13 00:01:21] Resource 'mapmanager' requests some acl rights. Use the command 'aclrequest list mapmanager'
+[2026-03-13 00:01:23] ERROR: Problem with resource: assault; Failed to link to scoreboard
+[2026-03-13 00:01:23] ERROR: Problem with resource: briefcaserace; Failed to link to scoreboard
+[2026-03-13 00:01:23] ERROR: Problem with resource: ctf; Failed to link to scoreboard
+[2026-03-13 00:01:23] ERROR: Problem with resource: ctf-bombsite; Failed to link to scoreboard
+[2026-03-13 00:01:23] ERROR: Problem with resource: ctf-canals; Failed to link to scoreboard
+[2026-03-13 00:01:23] ERROR: Problem with resource: ctf-hydrastrike; 
+[2026-03-13 00:01:23] ERROR: Problem with resource: ctf-tbd; Failed to link to scoreboard
+[2026-03-13 00:01:23] ERROR: Problem with resource: ctv; Failed to link to scoreboard
+[2026-03-13 00:01:23] ERROR: Problem with resource: deathmatch; Failed to link to scoreboard
+[2026-03-13 00:01:23] ERROR: Problem with resource: editor; 
+[2026-03-13 00:01:23] ERROR: Problem with resource: editor_main; Failed to link to freecam
+[2026-03-13 00:01:23] ERROR: Problem with resource: fallout; Failed to link to freecam
+[2026-03-13 00:01:23] ERROR: Not processing resource 'freecam' as it has duplicates on different paths:
+                  Path #1: "resources\freecam"
+                  Path #2: "resources\[editor]\freecam"
+[2026-03-13 00:01:23] ERROR: Not processing resource 'gps' as it has duplicates on different paths:
+                  Path #1: "resources\gps"
+                  Path #2: "resources\[gameplay]\gps"
+[2026-03-13 00:01:23] ERROR: Problem with resource: hay; Failed to link to scoreboard
+[2026-03-13 00:01:23] ERROR: Not processing resource 'ipb' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\ipb"
+                  Path #2: "resources\[dev]\ipb"
+[2026-03-13 00:01:23] ERROR: Not processing resource 'parachute' as it has duplicates on different paths:
+                  Path #1: "resources\parachute"
+                  Path #2: "resources\[gameplay]\parachute"
+[2026-03-13 00:01:23] ERROR: Problem with resource: play; Failed to link to superman
+[2026-03-13 00:01:23] ERROR: Problem with resource: race; Failed to link to scoreboard
+[2026-03-13 00:01:23] ERROR: Not processing resource 'runcode' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\runcode"
+                  Path #2: "resources\[dev]\runcode"
+[2026-03-13 00:01:23] ERROR: Not processing resource 'scoreboard' as it has duplicates on different paths:
+                  Path #1: "resources\scoreboard"
+                  Path #2: "resources\[gameplay]\scoreboard"
+[2026-03-13 00:01:23] ERROR: Problem with resource: scores; Failed to link to scoreboard
+[2026-03-13 00:01:23] ERROR: Not processing resource 'sfxbrowser' as it has duplicates on different paths:
+                  Path #1: "resources\[dev]\sfxbrowser"
+                  Path #2: "resources\[gameplay]\sfxbrowser"
+[2026-03-13 00:01:23] ERROR: Problem with resource: stealth; Failed to link to scoreboard
+[2026-03-13 00:01:23] ERROR: Not processing resource 'superman' as it has duplicates on different paths:
+                  Path #1: "resources\superman"
+                  Path #2: "resources\[gameplay]\superman"
+[2026-03-13 00:01:23] ERROR: Problem with resource: tdm; Failed to link to scoreboard
+[2026-03-13 00:01:23] ERROR: Problem with resource: tdma; Failed to link to scoreboard
+[2026-03-13 00:01:23] Resources: 311 loaded, 19 failed
+[2026-03-13 00:01:23] Compacting database 'registry.db' ...
+[2026-03-13 00:01:23] MODULE: Loaded "MySQL 5.0 database module" (0.50) by "Alberto Alonso <rydencillo@gmail.com>"
+[2026-03-13 00:01:23] MODULE: Loaded "bcrypt Module" (1.00) by "mabako"
+[2026-03-13 00:01:23] Starting resources...
+[2026-03-13 00:01:23] INFO: [MYSQL] createConnection / mta / OK
+[2026-03-13 00:01:23] WARNING: data/json.lua(Line 3) [Server] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-13 00:01:23] WARNING: data/json.lua(Line 8) [Server] base64Decode no longer works. Please manually change this to decodeString (different syntax). Refer to the wiki for details
+[2026-03-13 00:01:23] WARNING: data/json.lua(Line 3) [Client] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-13 00:01:23] WARNING: data/json.lua(Line 8) [Client] base64Decode no longer works. Please manually change this to decodeString (different syntax). Refer to the wiki for details
+[2026-03-13 00:01:23] Server minclientversion is now 1.6.0-9.23324.0
+[2026-03-13 00:01:23] INFO: [MYSQL] reconnectConnection / core / OK
+[2026-03-13 00:01:23] WARNING: account\s_main.lua:41: Attempt to restart a stopped resource
+[2026-03-13 00:01:23] ERROR: Couldn't find resource superman. Check it exists.
+[2026-03-13 00:01:23] INFO: Loaded 0 reports.
+[2026-03-13 00:01:23] ERROR: Couldn't find resource scoreboard. Check it exists.
+[2026-03-13 00:01:24] ERROR: Couldn't find resource freecam. Check it exists.
+[2026-03-13 00:01:24] ERROR: Couldn't find resource gps. Check it exists.
+[2026-03-13 00:01:24] INFO: Deleting all unprotected 30+ days old exterior items (mode 2)
+[2026-03-13 00:01:24] INFO: item-texture: Loading textures for 0 world items
+[2026-03-13 00:01:24] INFO: item-texture: 0 clients waiting on initial sync.
+[2026-03-13 00:01:24] INFO: item-texture: 0 textured elements were added for initial sync.
+[2026-03-13 00:01:24] INFO: Loaded 0 pilot licenses in 1ms.
+[2026-03-13 00:01:24] WARNING: mdc\mdc.lua:59: dbPoll failed; Table 'mta.mdc_anpr' doesn't exist
+[2026-03-13 00:01:24] ERROR: Couldn't find resource parachute. Check it exists.
+[2026-03-13 00:01:24] WARNING: realism/head_sync/head_sync_c.lua(Line 32) [Client] isPedOnFire is deprecated and may not work in future versions. Please replace with isElementOnFire.
+[2026-03-13 00:01:24] WARNING: realism/c_heli_rotors.lua(Line 5) [Client] getHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with getVehicleRotorSpeed.
+[2026-03-13 00:01:24] WARNING: realism/c_heli_rotors.lua(Line 6) [Client] getHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with getVehicleRotorSpeed.
+[2026-03-13 00:01:24] WARNING: realism/c_heli_rotors.lua(Line 7) [Client] setHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with setVehicleRotorSpeed.
+[2026-03-13 00:01:24] Some files in 'realism' use deprecated functions.
+[2026-03-13 00:01:24] Use the 'upgrade' command to perform a basic upgrade of resources.
+[2026-03-13 00:01:25] INFO: Server: Fetched 0 stations from db.
+[2026-03-13 00:01:25] WARNING: advertisements/utils/browser_manager_c.lua(Line 46) [Client] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-13 00:01:25] INFO: Loaded 0 texture records for all interiors in 0ms
+[2026-03-13 00:01:25] INFO: LeFire Script loaded ...
+[2026-03-13 00:01:25] INFO: PRISON-SYSTEM: Loaded 24 cell gates from s_gates.lua
+[2026-03-13 00:01:25] INFO: Loaded 0 animated texture records in 0ms
+[2026-03-13 00:01:25] Authorized serial account protection is DISABLED. See http://multitheftauto.com/authserial
+[2026-03-13 00:01:25] Server started and is ready to accept connections!
+[2026-03-13 00:01:25] To stop the server, type 'shutdown' or press Ctrl-C
+[2026-03-13 00:01:25] Type 'help' for a list of commands.
+[2026-03-13 00:01:25] INFO: [ELEVATOR] Spawning 1 elevators will be finished in approx. 1 seconds.
+[2026-03-13 00:01:25] INFO: [TRUCKER] Refreshed 0 orders.
+[2026-03-13 00:01:25] INFO: [CLOTHES] Server / Loaded 0 clothing items
+[2026-03-13 00:01:27] CONNECT: UncoveredRivulet87 connected (IP: 192.168.1.9  Serial: ADE8A256AA3967C4FB1E4ADA49976D12  Version: 1.6.0-9.23952.0)
+[2026-03-13 00:01:27] JOIN: UncoveredRivulet87 joined the game (IP: 192.168.1.9)
+[2026-03-13 00:01:27] NICK: UncoveredRivulet87 is now known as Owl.Player.9196
+[2026-03-13 00:03:10] NICK: Owl.Player.9196 is now known as Scripter_Sympathizee
+[2026-03-13 00:03:32] QUIT: Scripter_Sympathizee left the game [Quit] [Redirected to port 22003]
+[2026-03-13 00:03:32] INFO: [Phone] Scripter_Sympathizee triggered cancelPhoneCall / Quit / 0
+[2026-03-13 00:03:35] CONNECT: UncoveredRivulet87 connected (IP: 192.168.1.9  Serial: ADE8A256AA3967C4FB1E4ADA49976D12  Version: 1.6.0-9.23952.0)
+[2026-03-13 00:03:35] JOIN: UncoveredRivulet87 joined the game (IP: 192.168.1.9)
+[2026-03-13 00:03:35] NICK: UncoveredRivulet87 is now known as Owl.Player.5677
+[2026-03-13 00:06:42] INFO: [Phone] Owl.Player.5677 triggered cancelPhoneCall / Quit / 0
+[2026-03-13 00:06:42] Server stopped!
+[2026-03-13 00:06:43] Stopping resources...............................................
+[2026-03-13 00:06:43] ERROR: event-system\paintball\s_paintball.lua:445: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:06:43] ERROR: event-system\paintball\s_paintball.lua:446: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:06:43] INFO: [Factions] Saving duty allow changes...
+[2026-03-13 00:06:43] INFO: [Factions] Completed in 0 seconds.
+[2026-03-13 00:06:43] INFO: Saving insurance data.
+[2026-03-13 00:06:43] ERROR: [interior]\interior_system\safe_s.lua:75: exports: Call to non-running server resource (global) [string "?"]
+[2026-03-13 00:06:43] ERROR: mdc\apbbox\s_apb_box.lua:72: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:06:43] INFO: [SHOP] Saved 0 shops configs to SQL successfully.
+[2026-03-13 00:06:43] INFO: [SHOP] Faction Drop - Failed to Restock products
+[2026-03-13 00:06:43] ERROR: npc\faction_drop_s.lua:284: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:06:43] ERROR: pool\pool_s.lua:84: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:06:43] ERROR: pool\pool_s.lua:85: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:06:43] ERROR: prison-system\s_prison.lua:40: exports: Call to non-running server resource (pool) [string "?"]
+[2026-03-13 00:06:43] ERROR: prison-system\s_prison.lua:41: bad argument #1 to 'ipairs' (table expected, got nil)
+[2026-03-13 00:06:43] ERROR: report\s_reports.lua:87: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:06:43] MODULE: Unloaded "MySQL 5.0 database module" (0.50) by "Alberto Alonso <rydencillo@gmail.com>"
+[2026-03-13 00:06:43] MODULE: Unloaded "bcrypt Module" (1.00) by "mabako"
+[2026-03-13 00:06:43] Closing SQLite3 database
+==================================================================
+= Multi Theft Auto: San Andreas v1.6
+==================================================================
+= Server name      : OwlGaming Roleplay ♦ Your World. Your Imagination. ♦ owlgaming.net
+= Server IP address: auto
+= Server port      : 22003
+= 
+= Log file         : .. 1.6/server/mods/deathmatch/logs/server.log
+= Maximum players  : 1024
+= HTTP port        : 22005
+= Voice Chat       : Disabled
+= Bandwidth saving : None
+==================================================================
+[2026-03-13 00:06:46] Compacting accounts database 'internal.db' ...
+[2026-03-13 00:06:48] Resource 'mapmanager' requests some acl rights. Use the command 'aclrequest list mapmanager'
+[2026-03-13 00:06:50] ERROR: Problem with resource: assault; Failed to link to scoreboard
+[2026-03-13 00:06:50] ERROR: Problem with resource: briefcaserace; Failed to link to scoreboard
+[2026-03-13 00:06:50] ERROR: Problem with resource: ctf; Failed to link to scoreboard
+[2026-03-13 00:06:50] ERROR: Problem with resource: ctf-bombsite; Failed to link to scoreboard
+[2026-03-13 00:06:50] ERROR: Problem with resource: ctf-canals; Failed to link to scoreboard
+[2026-03-13 00:06:50] ERROR: Problem with resource: ctf-hydrastrike; 
+[2026-03-13 00:06:50] ERROR: Problem with resource: ctf-tbd; Failed to link to scoreboard
+[2026-03-13 00:06:50] ERROR: Problem with resource: ctv; Failed to link to scoreboard
+[2026-03-13 00:06:50] ERROR: Problem with resource: deathmatch; Failed to link to scoreboard
+[2026-03-13 00:06:50] ERROR: Problem with resource: editor; 
+[2026-03-13 00:06:50] ERROR: Problem with resource: editor_main; Failed to link to freecam
+[2026-03-13 00:06:50] ERROR: Problem with resource: fallout; Failed to link to freecam
+[2026-03-13 00:06:50] ERROR: Not processing resource 'freecam' as it has duplicates on different paths:
+                  Path #1: "resources\freecam"
+                  Path #2: "resources\[editor]\freecam"
+[2026-03-13 00:06:50] ERROR: Not processing resource 'gps' as it has duplicates on different paths:
+                  Path #1: "resources\gps"
+                  Path #2: "resources\[gameplay]\gps"
+[2026-03-13 00:06:50] ERROR: Problem with resource: hay; Failed to link to scoreboard
+[2026-03-13 00:06:50] ERROR: Not processing resource 'ipb' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\ipb"
+                  Path #2: "resources\[dev]\ipb"
+[2026-03-13 00:06:50] ERROR: Not processing resource 'parachute' as it has duplicates on different paths:
+                  Path #1: "resources\parachute"
+                  Path #2: "resources\[gameplay]\parachute"
+[2026-03-13 00:06:50] ERROR: Problem with resource: play; Failed to link to superman
+[2026-03-13 00:06:50] ERROR: Problem with resource: race; Failed to link to scoreboard
+[2026-03-13 00:06:50] ERROR: Not processing resource 'runcode' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\runcode"
+                  Path #2: "resources\[dev]\runcode"
+[2026-03-13 00:06:50] ERROR: Not processing resource 'scoreboard' as it has duplicates on different paths:
+                  Path #1: "resources\scoreboard"
+                  Path #2: "resources\[gameplay]\scoreboard"
+[2026-03-13 00:06:50] ERROR: Problem with resource: scores; Failed to link to scoreboard
+[2026-03-13 00:06:50] ERROR: Not processing resource 'sfxbrowser' as it has duplicates on different paths:
+                  Path #1: "resources\[dev]\sfxbrowser"
+                  Path #2: "resources\[gameplay]\sfxbrowser"
+[2026-03-13 00:06:50] ERROR: Problem with resource: stealth; Failed to link to scoreboard
+[2026-03-13 00:06:50] ERROR: Not processing resource 'superman' as it has duplicates on different paths:
+                  Path #1: "resources\superman"
+                  Path #2: "resources\[gameplay]\superman"
+[2026-03-13 00:06:50] ERROR: Problem with resource: tdm; Failed to link to scoreboard
+[2026-03-13 00:06:50] ERROR: Problem with resource: tdma; Failed to link to scoreboard
+[2026-03-13 00:06:50] Resources: 311 loaded, 19 failed
+[2026-03-13 00:06:50] Compacting database 'registry.db' ...
+[2026-03-13 00:06:50] MODULE: Loaded "MySQL 5.0 database module" (0.50) by "Alberto Alonso <rydencillo@gmail.com>"
+[2026-03-13 00:06:50] MODULE: Loaded "bcrypt Module" (1.00) by "mabako"
+[2026-03-13 00:06:50] Starting resources...
+[2026-03-13 00:06:50] INFO: [MYSQL] createConnection / mta / OK
+[2026-03-13 00:06:50] WARNING: data/json.lua(Line 3) [Server] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-13 00:06:50] WARNING: data/json.lua(Line 8) [Server] base64Decode no longer works. Please manually change this to decodeString (different syntax). Refer to the wiki for details
+[2026-03-13 00:06:50] WARNING: data/json.lua(Line 3) [Client] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-13 00:06:50] WARNING: data/json.lua(Line 8) [Client] base64Decode no longer works. Please manually change this to decodeString (different syntax). Refer to the wiki for details
+[2026-03-13 00:06:50] Server minclientversion is now 1.6.0-9.23324.0
+[2026-03-13 00:06:51] INFO: [MYSQL] reconnectConnection / core / OK
+[2026-03-13 00:06:51] WARNING: account\s_main.lua:41: Attempt to restart a stopped resource
+[2026-03-13 00:06:51] ERROR: Couldn't find resource superman. Check it exists.
+[2026-03-13 00:06:51] INFO: Loaded 0 reports.
+[2026-03-13 00:06:51] ERROR: Couldn't find resource scoreboard. Check it exists.
+[2026-03-13 00:06:51] ERROR: Couldn't find resource freecam. Check it exists.
+[2026-03-13 00:06:51] ERROR: Couldn't find resource gps. Check it exists.
+[2026-03-13 00:06:52] INFO: Deleting all unprotected 30+ days old exterior items (mode 2)
+[2026-03-13 00:06:52] INFO: item-texture: Loading textures for 0 world items
+[2026-03-13 00:06:52] INFO: item-texture: 0 clients waiting on initial sync.
+[2026-03-13 00:06:52] INFO: item-texture: 0 textured elements were added for initial sync.
+[2026-03-13 00:06:52] INFO: Loaded 0 pilot licenses in 1ms.
+[2026-03-13 00:06:52] WARNING: mdc\mdc.lua:59: dbPoll failed; Table 'mta.mdc_anpr' doesn't exist
+[2026-03-13 00:06:52] ERROR: Couldn't find resource parachute. Check it exists.
+[2026-03-13 00:06:52] WARNING: realism/head_sync/head_sync_c.lua(Line 32) [Client] isPedOnFire is deprecated and may not work in future versions. Please replace with isElementOnFire before Tuesday.
+[2026-03-13 00:06:52] WARNING: realism/c_heli_rotors.lua(Line 5) [Client] getHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with getVehicleRotorSpeed before Tuesday.
+[2026-03-13 00:06:52] WARNING: realism/c_heli_rotors.lua(Line 6) [Client] getHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with getVehicleRotorSpeed before Tuesday.
+[2026-03-13 00:06:52] WARNING: realism/c_heli_rotors.lua(Line 7) [Client] setHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with setVehicleRotorSpeed before Tuesday.
+[2026-03-13 00:06:52] Some files in 'realism' use deprecated functions.
+[2026-03-13 00:06:52] Use the 'upgrade' command to perform a basic upgrade of resources.
+[2026-03-13 00:06:52] INFO: Server: Fetched 0 stations from db.
+[2026-03-13 00:06:53] WARNING: advertisements/utils/browser_manager_c.lua(Line 46) [Client] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-13 00:06:53] INFO: Loaded 0 texture records for all interiors in 0ms
+[2026-03-13 00:06:53] INFO: LeFire Script loaded ...
+[2026-03-13 00:06:53] INFO: PRISON-SYSTEM: Loaded 24 cell gates from s_gates.lua
+[2026-03-13 00:06:53] INFO: Loaded 0 animated texture records in 0ms
+[2026-03-13 00:06:53] Authorized serial account protection is DISABLED. See http://multitheftauto.com/authserial
+[2026-03-13 00:06:53] Server started and is ready to accept connections!
+[2026-03-13 00:06:53] To stop the server, type 'shutdown' or press Ctrl-C
+[2026-03-13 00:06:53] Type 'help' for a list of commands.
+[2026-03-13 00:06:53] INFO: [ELEVATOR] Spawning 1 elevators will be finished in approx. 1 seconds.
+[2026-03-13 00:06:53] INFO: [TRUCKER] Refreshed 0 orders.
+[2026-03-13 00:06:53] INFO: [CLOTHES] Server / Loaded 0 clothing items
+[2026-03-13 00:06:55] CONNECT: UncoveredRivulet87 connected (IP: 192.168.1.9  Serial: ADE8A256AA3967C4FB1E4ADA49976D12  Version: 1.6.0-9.23952.0)
+[2026-03-13 00:06:55] JOIN: UncoveredRivulet87 joined the game (IP: 192.168.1.9)
+[2026-03-13 00:06:55] NICK: UncoveredRivulet87 is now known as Owl.Player.9196
+[2026-03-13 00:07:29] NICK: Owl.Player.9196 is now known as Scripter_Sympathizee
+[2026-03-13 00:07:54] ACL: Denied 'Scripter_Sympathizee' access to command 'login'
+[2026-03-13 00:09:08] ERROR: admin-system\staff_manager\staff_manager_s.lua:146: attempt to concatenate field '?' (a nil value)
+[2026-03-13 00:09:31] QUIT: Scripter_Sympathizee left the game [Quit] 
+[2026-03-13 00:09:31] INFO: [Phone] Scripter_Sympathizee triggered cancelPhoneCall / Quit / 0
+[2026-03-13 00:09:32] CONNECT: UncoveredRivulet87 connected (IP: 192.168.1.9  Serial: ADE8A256AA3967C4FB1E4ADA49976D12  Version: 1.6.0-9.23952.0)
+[2026-03-13 00:09:32] JOIN: UncoveredRivulet87 joined the game (IP: 192.168.1.9)
+[2026-03-13 00:09:32] NICK: UncoveredRivulet87 is now known as Owl.Player.2567
+[2026-03-13 00:10:33] NICK: Owl.Player.2567 is now known as Scripter_Sympathizee
+[2026-03-13 00:11:21] ERROR: admin-system\staff_manager\staff_manager_s.lua:146: attempt to concatenate field '?' (a nil value)
+[2026-03-13 00:12:05] ACL: Denied 'Scripter_Sympathizee' access to command 'login'
+[2026-03-13 00:13:35] INFO: [Phone] Scripter_Sympathizee triggered cancelPhoneCall / Quit / 0
+[2026-03-13 00:13:35] Server stopped!
+[2026-03-13 00:13:35] Stopping resources...............................................
+[2026-03-13 00:13:35] ERROR: event-system\paintball\s_paintball.lua:445: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:13:35] ERROR: event-system\paintball\s_paintball.lua:446: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:13:35] INFO: [Factions] Saving duty allow changes...
+[2026-03-13 00:13:35] INFO: [Factions] Completed in 0 seconds.
+[2026-03-13 00:13:35] INFO: Saving insurance data.
+[2026-03-13 00:13:35] ERROR: [interior]\interior_system\safe_s.lua:75: exports: Call to non-running server resource (global) [string "?"]
+[2026-03-13 00:13:35] ERROR: mdc\apbbox\s_apb_box.lua:72: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:13:35] INFO: [SHOP] Saved 0 shops configs to SQL successfully.
+[2026-03-13 00:13:35] INFO: [SHOP] Faction Drop - Failed to Restock products
+[2026-03-13 00:13:35] ERROR: npc\faction_drop_s.lua:284: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:13:35] ERROR: pool\pool_s.lua:84: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:13:35] ERROR: pool\pool_s.lua:85: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:13:35] ERROR: prison-system\s_prison.lua:40: exports: Call to non-running server resource (pool) [string "?"]
+[2026-03-13 00:13:35] ERROR: prison-system\s_prison.lua:41: bad argument #1 to 'ipairs' (table expected, got nil)
+[2026-03-13 00:13:35] ERROR: report\s_reports.lua:87: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:13:35] MODULE: Unloaded "MySQL 5.0 database module" (0.50) by "Alberto Alonso <rydencillo@gmail.com>"
+[2026-03-13 00:13:35] MODULE: Unloaded "bcrypt Module" (1.00) by "mabako"
+[2026-03-13 00:13:35] Closing SQLite3 database
+==================================================================
+= Multi Theft Auto: San Andreas v1.6
+==================================================================
+= Server name      : OwlGaming Roleplay ♦ Your World. Your Imagination. ♦ owlgaming.net
+= Server IP address: auto
+= Server port      : 22003
+= 
+= Log file         : .. 1.6/server/mods/deathmatch/logs/server.log
+= Maximum players  : 1024
+= HTTP port        : 22005
+= Voice Chat       : Disabled
+= Bandwidth saving : None
+==================================================================
+[2026-03-13 00:14:07] Compacting accounts database 'internal.db' ...
+[2026-03-13 00:14:10] Resource 'mapmanager' requests some acl rights. Use the command 'aclrequest list mapmanager'
+[2026-03-13 00:14:11] ERROR: Problem with resource: assault; Failed to link to scoreboard
+[2026-03-13 00:14:11] ERROR: Problem with resource: briefcaserace; Failed to link to scoreboard
+[2026-03-13 00:14:11] ERROR: Problem with resource: ctf; Failed to link to scoreboard
+[2026-03-13 00:14:11] ERROR: Problem with resource: ctf-bombsite; Failed to link to scoreboard
+[2026-03-13 00:14:11] ERROR: Problem with resource: ctf-canals; Failed to link to scoreboard
+[2026-03-13 00:14:11] ERROR: Problem with resource: ctf-hydrastrike; 
+[2026-03-13 00:14:11] ERROR: Problem with resource: ctf-tbd; Failed to link to scoreboard
+[2026-03-13 00:14:11] ERROR: Problem with resource: ctv; Failed to link to scoreboard
+[2026-03-13 00:14:11] ERROR: Problem with resource: deathmatch; Failed to link to scoreboard
+[2026-03-13 00:14:11] ERROR: Problem with resource: editor; 
+[2026-03-13 00:14:11] ERROR: Problem with resource: editor_main; Failed to link to freecam
+[2026-03-13 00:14:11] ERROR: Problem with resource: fallout; Failed to link to freecam
+[2026-03-13 00:14:11] ERROR: Not processing resource 'freecam' as it has duplicates on different paths:
+                  Path #1: "resources\freecam"
+                  Path #2: "resources\[editor]\freecam"
+[2026-03-13 00:14:11] ERROR: Not processing resource 'gps' as it has duplicates on different paths:
+                  Path #1: "resources\gps"
+                  Path #2: "resources\[gameplay]\gps"
+[2026-03-13 00:14:11] ERROR: Problem with resource: hay; Failed to link to scoreboard
+[2026-03-13 00:14:11] ERROR: Not processing resource 'ipb' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\ipb"
+                  Path #2: "resources\[dev]\ipb"
+[2026-03-13 00:14:11] ERROR: Not processing resource 'parachute' as it has duplicates on different paths:
+                  Path #1: "resources\parachute"
+                  Path #2: "resources\[gameplay]\parachute"
+[2026-03-13 00:14:11] ERROR: Problem with resource: play; Failed to link to superman
+[2026-03-13 00:14:11] ERROR: Problem with resource: race; Failed to link to scoreboard
+[2026-03-13 00:14:11] ERROR: Not processing resource 'runcode' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\runcode"
+                  Path #2: "resources\[dev]\runcode"
+[2026-03-13 00:14:11] ERROR: Not processing resource 'scoreboard' as it has duplicates on different paths:
+                  Path #1: "resources\scoreboard"
+                  Path #2: "resources\[gameplay]\scoreboard"
+[2026-03-13 00:14:11] ERROR: Problem with resource: scores; Failed to link to scoreboard
+[2026-03-13 00:14:11] ERROR: Not processing resource 'sfxbrowser' as it has duplicates on different paths:
+                  Path #1: "resources\[dev]\sfxbrowser"
+                  Path #2: "resources\[gameplay]\sfxbrowser"
+[2026-03-13 00:14:11] ERROR: Problem with resource: stealth; Failed to link to scoreboard
+[2026-03-13 00:14:11] ERROR: Not processing resource 'superman' as it has duplicates on different paths:
+                  Path #1: "resources\superman"
+                  Path #2: "resources\[gameplay]\superman"
+[2026-03-13 00:14:11] ERROR: Problem with resource: tdm; Failed to link to scoreboard
+[2026-03-13 00:14:11] ERROR: Problem with resource: tdma; Failed to link to scoreboard
+[2026-03-13 00:14:11] Resources: 311 loaded, 19 failed
+[2026-03-13 00:14:11] Compacting database 'registry.db' ...
+[2026-03-13 00:14:11] MODULE: Loaded "MySQL 5.0 database module" (0.50) by "Alberto Alonso <rydencillo@gmail.com>"
+[2026-03-13 00:14:11] MODULE: Loaded "bcrypt Module" (1.00) by "mabako"
+[2026-03-13 00:14:11] Starting resources...
+[2026-03-13 00:14:11] INFO: [MYSQL] createConnection / mta / OK
+[2026-03-13 00:14:11] WARNING: data/json.lua(Line 3) [Server] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-13 00:14:11] WARNING: data/json.lua(Line 8) [Server] base64Decode no longer works. Please manually change this to decodeString (different syntax). Refer to the wiki for details
+[2026-03-13 00:14:11] WARNING: data/json.lua(Line 3) [Client] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-13 00:14:11] WARNING: data/json.lua(Line 8) [Client] base64Decode no longer works. Please manually change this to decodeString (different syntax). Refer to the wiki for details
+[2026-03-13 00:14:11] Server minclientversion is now 1.6.0-9.23324.0
+[2026-03-13 00:14:11] INFO: [MYSQL] reconnectConnection / core / OK
+[2026-03-13 00:14:11] WARNING: account\s_main.lua:41: Attempt to restart a stopped resource
+[2026-03-13 00:14:12] ERROR: Couldn't find resource superman. Check it exists.
+[2026-03-13 00:14:12] INFO: Loaded 0 reports.
+[2026-03-13 00:14:12] ERROR: Couldn't find resource scoreboard. Check it exists.
+[2026-03-13 00:14:12] ERROR: Couldn't find resource freecam. Check it exists.
+[2026-03-13 00:14:12] ERROR: Couldn't find resource gps. Check it exists.
+[2026-03-13 00:14:12] INFO: Deleting all unprotected 30+ days old exterior items (mode 2)
+[2026-03-13 00:14:12] INFO: item-texture: Loading textures for 0 world items
+[2026-03-13 00:14:12] INFO: item-texture: 0 clients waiting on initial sync.
+[2026-03-13 00:14:12] INFO: item-texture: 0 textured elements were added for initial sync.
+[2026-03-13 00:14:12] INFO: Loaded 0 pilot licenses in 1ms.
+[2026-03-13 00:14:12] WARNING: mdc\mdc.lua:59: dbPoll failed; Table 'mta.mdc_anpr' doesn't exist
+[2026-03-13 00:14:12] ERROR: Couldn't find resource parachute. Check it exists.
+[2026-03-13 00:14:13] WARNING: realism/head_sync/head_sync_c.lua(Line 32) [Client] isPedOnFire is deprecated and may not work in future versions. Please replace with isElementOnFire.
+[2026-03-13 00:14:13] WARNING: realism/c_heli_rotors.lua(Line 5) [Client] getHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with getVehicleRotorSpeed.
+[2026-03-13 00:14:13] WARNING: realism/c_heli_rotors.lua(Line 6) [Client] getHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with getVehicleRotorSpeed.
+[2026-03-13 00:14:13] WARNING: realism/c_heli_rotors.lua(Line 7) [Client] setHelicopterRotorSpeed is deprecated and may not work in future versions. Please replace with setVehicleRotorSpeed.
+[2026-03-13 00:14:13] Some files in 'realism' use deprecated functions.
+[2026-03-13 00:14:13] Use the 'upgrade' command to perform a basic upgrade of resources.
+[2026-03-13 00:14:13] INFO: Server: Fetched 0 stations from db.
+[2026-03-13 00:14:13] WARNING: advertisements/utils/browser_manager_c.lua(Line 46) [Client] base64Encode no longer works. Please manually change this to encodeString (different syntax). Refer to the wiki for details
+[2026-03-13 00:14:13] INFO: Loaded 0 texture records for all interiors in 0ms
+[2026-03-13 00:14:13] INFO: LeFire Script loaded ...
+[2026-03-13 00:14:13] INFO: PRISON-SYSTEM: Loaded 24 cell gates from s_gates.lua
+[2026-03-13 00:14:13] INFO: Loaded 0 animated texture records in 0ms
+[2026-03-13 00:14:14] Authorized serial account protection is DISABLED. See http://multitheftauto.com/authserial
+[2026-03-13 00:14:14] Server started and is ready to accept connections!
+[2026-03-13 00:14:14] To stop the server, type 'shutdown' or press Ctrl-C
+[2026-03-13 00:14:14] Type 'help' for a list of commands.
+[2026-03-13 00:14:14] INFO: [ELEVATOR] Spawning 1 elevators will be finished in approx. 1 seconds.
+[2026-03-13 00:14:14] INFO: [TRUCKER] Refreshed 0 orders.
+[2026-03-13 00:14:14] INFO: [CLOTHES] Server / Loaded 0 clothing items
+[2026-03-13 00:14:18] CONNECT: UncoveredRivulet87 connected (IP: 192.168.1.9  Serial: ADE8A256AA3967C4FB1E4ADA49976D12  Version: 1.6.0-9.23952.0)
+[2026-03-13 00:14:18] JOIN: UncoveredRivulet87 joined the game (IP: 192.168.1.9)
+[2026-03-13 00:14:18] NICK: UncoveredRivulet87 is now known as Owl.Player.9196
+[2026-03-13 00:15:32] NICK: Owl.Player.9196 is now known as Scripter_Sympathizee
+[2026-03-13 00:15:52] ACL: Denied 'Scripter_Sympathizee' access to command 'login'
+[2026-03-13 00:15:56] ACL: Denied 'Scripter_Sympathizee' access to command 'login'
+[2026-03-13 00:16:13] help [command]
+[2026-03-13 00:16:13] Available commands:
+
+start                    stop                     stopall                  
+restart                  refresh                  refreshall               
+list                     info                     upgrade                  
+check                    say                      teamsay                  
+msg                      me                       nick                     
+login                    logout                   chgmypass                
+addaccount               delaccount               chgpass                  
+shutdown                 aexec                    whois                    
+debugscript              help                     loadmodule               
+unloadmodule             reloadmodule             ver                      
+sver                     ase                      openports                
+debugdb                  reloadbans               aclrequest               
+authserial               reloadacl                debugjoinflood           
+debuguptime              sfakelag                 
+[2026-03-13 00:16:20] login: Syntax is 'login [<nick>] <password>'
+[2026-03-13 00:16:32] addaccount: Syntax is 'addaccount <nick> <password>'
+[2026-03-13 00:16:38] ACCOUNTS: Console added account 'admin'
+[2026-03-13 00:16:46] ACL: Denied 'Scripter_Sympathizee' access to command 'login'
+[2026-03-13 00:16:50] == Resource list ==
+[2026-03-13 00:16:50] LSFD                   RUNNING   (0 dependents)
+[2026-03-13 00:16:50] OwlGamingLogs          RUNNING   (0 dependents)
+[2026-03-13 00:16:50] account                RUNNING   (0 dependents)
+[2026-03-13 00:16:50] achievement            RUNNING   (0 dependents)
+[2026-03-13 00:16:50] acpanel                STOPPED   (14 files)
+[2026-03-13 00:16:50] activities             RUNNING   (0 dependents)
+[2026-03-13 00:16:50] admin                  STOPPED   (63 files)
+[2026-03-13 00:16:50] admin-system           RUNNING   (0 dependents)
+[2026-03-13 00:16:50] advertisements         RUNNING   (0 dependents)
+[2026-03-13 00:16:50] ajax                   STOPPED   (4 files)
+[2026-03-13 00:16:50] animation-system       RUNNING   (0 dependents)
+[2026-03-13 00:16:50] announcement           RUNNING   (0 dependents)
+[2026-03-13 00:16:50] anti-cmdspam           RUNNING   (0 dependents)
+[2026-03-13 00:16:50] anticheat              RUNNING   (0 dependents)
+[2026-03-13 00:16:50] apps                   RUNNING   (0 dependents)
+[2026-03-13 00:16:50] artifacts              RUNNING   (0 dependents)
+[2026-03-13 00:16:50] as-area51              STOPPED   (2 files)
+[2026-03-13 00:16:50] as-cliff               STOPPED   (2 files)
+[2026-03-13 00:16:50] as-dam                 STOPPED   (2 files)
+[2026-03-13 00:16:50] as-docks               STOPPED   (1 files)
+[2026-03-13 00:16:50] as-heist               STOPPED   (2 files)
+[2026-03-13 00:16:50] as-sharks              STOPPED   (4 files)
+[2026-03-13 00:16:50] as-ship                STOPPED   (2 files)
+[2026-03-13 00:16:50] as-supermarket         STOPPED   (3 files)
+[2026-03-13 00:16:50] assault                STOPPED   (4 files)
+[2026-03-13 00:16:50] bank                   RUNNING   (0 dependents)
+[2026-03-13 00:16:50] bans                   RUNNING   (0 dependents)
+[2026-03-13 00:16:50] bone_attach            RUNNING   (0 dependents)
+[2026-03-13 00:16:50] br-sf                  STOPPED   (2 files)
+[2026-03-13 00:16:50] br-sf-autoteams        STOPPED   (2 files)
+[2026-03-13 00:16:50] br-sf-teams            STOPPED   (2 files)
+[2026-03-13 00:16:50] briefcase              STOPPED   (1 files)
+[2026-03-13 00:16:50] briefcaserace          STOPPED   (27 files)
+[2026-03-13 00:16:50] business-system        RUNNING   (0 dependents)
+[2026-03-13 00:16:50] cache                  RUNNING   (0 dependents)
+[2026-03-13 00:16:50] camera-system          RUNNING   (0 dependents)
+[2026-03-13 00:16:50] cards                  RUNNING   (0 dependents)
+[2026-03-13 00:16:50] cargo                  RUNNING   (0 dependents)
+[2026-03-13 00:16:50] carradio               RUNNING   (0 dependents)
+[2026-03-13 00:16:50] carshop-system         RUNNING   (0 dependents)
+[2026-03-13 00:16:50] chance-system          RUNNING   (0 dependents)
+[2026-03-13 00:16:50] chat-system            RUNNING   (0 dependents)
+[2026-03-13 00:16:50] chatmanager            STOPPED   (3 files)
+[2026-03-13 00:16:50] clothes                RUNNING   (0 dependents)
+[2026-03-13 00:16:50] clubtec                RUNNING   (0 dependents)
+[2026-03-13 00:16:50] cockpit                RUNNING   (0 dependents)
+[2026-03-13 00:16:50] colorblender           RUNNING   (0 dependents)
+[2026-03-13 00:16:50] computers-system       RUNNING   (0 dependents)
+[2026-03-13 00:16:50] ctf                    STOPPED   (6 files)
+[2026-03-13 00:16:50] ctf-bombsite           STOPPED   (2 files)
+[2026-03-13 00:16:50] ctf-canals             STOPPED   (2 files)
+[2026-03-13 00:16:50] ctf-csitaly            STOPPED   (2 files)
+[2026-03-13 00:16:50] ctf-goldcove           STOPPED   (2 files)
+[2026-03-13 00:16:50] ctf-hideout_z          STOPPED   (2 files)
+[2026-03-13 00:16:50] ctf-hydrastrike        STOPPED   (3 files)
+[2026-03-13 00:16:50] ctf-sewer              STOPPED   (2 files)
+[2026-03-13 00:16:50] ctf-tbd                STOPPED   (2 files)
+[2026-03-13 00:16:50] ctv                    STOPPED   (6 files)
+[2026-03-13 00:16:50] ctv-ls                 STOPPED   (1 files)
+[2026-03-13 00:16:50] ctv-smalltownrumble    STOPPED   (1 files)
+[2026-03-13 00:16:50] customblips            RUNNING   (0 dependents)
+[2026-03-13 00:16:50] dancer-system          RUNNING   (0 dependents)
+[2026-03-13 00:16:50] data                   RUNNING   (0 dependents)
+[2026-03-13 00:16:50] datetime               RUNNING   (0 dependents)
+[2026-03-13 00:16:50] death                  RUNNING   (0 dependents)
+[2026-03-13 00:16:50] deathmatch             STOPPED   (12 files)
+[2026-03-13 00:16:50] deathmessages          STOPPED   (1 files)
+[2026-03-13 00:16:50] deathpickups           STOPPED   (1 files)
+[2026-03-13 00:16:50] defaultstats           STOPPED   (1 files)
+[2026-03-13 00:16:50] description            RUNNING   (0 dependents)
+[2026-03-13 00:16:50] dialogs                STOPPED   (7 files)
+[2026-03-13 00:16:50] dm-arena1              STOPPED   (1 files)
+[2026-03-13 00:16:50] dm-canals              STOPPED   (1 files)
+[2026-03-13 00:16:50] dm-port69              STOPPED   (2 files)
+[2026-03-13 00:16:50] dm-smallville          STOPPED   (1 files)
+[2026-03-13 00:16:50] donators               RUNNING   (0 dependents)
+[2026-03-13 00:16:50] driveby                RUNNING   (0 dependents)
+[2026-03-13 00:16:50] duty                   RUNNING   (0 dependents)
+[2026-03-13 00:16:50] dynamic_lighting       RUNNING   (0 dependents)
+[2026-03-13 00:16:50] dynamic_lighting_fla   RUNNING   (0 dependents)
+[2026-03-13 00:16:50] dynamic_lighting_veh   RUNNING   (0 dependents)
+[2026-03-13 00:16:50] easytext               STOPPED   (1 files)
+[2026-03-13 00:16:50] edf                    STOPPED   (16 files)
+[2026-03-13 00:16:50] editor                 STOPPED   (2 files)
+[2026-03-13 00:16:50] editor_gui             STOPPED   (123 files)
+[2026-03-13 00:16:50] editor_main            STOPPED   (57 files)
+[2026-03-13 00:16:50] elections              STOPPED   (2 files)
+[2026-03-13 00:16:50] elementbrowser         STOPPED   (8 files)
+[2026-03-13 00:16:50] elevator-system        RUNNING   (0 dependents)
+[2026-03-13 00:16:50] es-system              RUNNING   (0 dependents)
+[2026-03-13 00:16:50] event-system           RUNNING   (0 dependents)
+[2026-03-13 00:16:50] factions               RUNNING   (0 dependents)
+[2026-03-13 00:16:50] fakevideo              RUNNING   (0 dependents)
+[2026-03-13 00:16:50] fallout                STOPPED   (8 files)
+[2026-03-13 00:16:50] fastrope               STOPPED   (2 files)
+[2026-03-13 00:16:50] fonts                  RUNNING   (0 dependents)
+[2026-03-13 00:16:50] forums                 STOPPED   (7 files)
+[2026-03-13 00:16:50] freecam-tv             RUNNING   (0 dependents)
+[2026-03-13 00:16:50] freeroam               STOPPED   (21 files)
+[2026-03-13 00:16:50] gate-manager           RUNNING   (0 dependents)
+[2026-03-13 00:16:50] gatekeepers-system     RUNNING   (0 dependents)
+[2026-03-13 00:16:50] global                 RUNNING   (0 dependents)
+[2026-03-13 00:16:50] glue                   STOPPED   (14 files)
+[2026-03-13 00:16:50] glue-system            RUNNING   (0 dependents)
+[2026-03-13 00:16:50] grid                   RUNNING   (0 dependents)
+[2026-03-13 00:16:50] guied                  STOPPED   (73 files)
+[2026-03-13 00:16:50] hardwaresurvey         STOPPED   (2 files)
+[2026-03-13 00:16:50] hay                    STOPPED   (2 files)
+[2026-03-13 00:16:50] headshot               STOPPED   (3 files)
+[2026-03-13 00:16:50] health-addon           RUNNING   (0 dependents)
+[2026-03-13 00:16:50] hedit                  STOPPED   (45 files)
+[2026-03-13 00:16:50] heligrab               RUNNING   (0 dependents)
+[2026-03-13 00:16:50] help                   RUNNING   (0 dependents)
+[2026-03-13 00:16:50] helpmanager            STOPPED   (2 files)
+[2026-03-13 00:16:50] hud                    RUNNING   (0 dependents)
+[2026-03-13 00:16:50] id-system              RUNNING   (0 dependents)
+[2026-03-13 00:16:50] insurance              RUNNING   (0 dependents)
+[2026-03-13 00:16:50] integration            RUNNING   (0 dependents)
+[2026-03-13 00:16:50] interior-manager       RUNNING   (0 dependents)
+[2026-03-13 00:16:50] interior_keypad        RUNNING   (0 dependents)
+[2026-03-13 00:16:50] interior_load          RUNNING   (0 dependents)
+[2026-03-13 00:16:50] interior_system        RUNNING   (0 dependents)
+[2026-03-13 00:16:50] interiors              STOPPED   (4 files)
+[2026-03-13 00:16:50] internetradio          STOPPED   (11 files)
+[2026-03-13 00:16:50] item-move              RUNNING   (0 dependents)
+[2026-03-13 00:16:50] item-system            RUNNING   (0 dependents)
+[2026-03-13 00:16:50] item-texture           RUNNING   (0 dependents)
+[2026-03-13 00:16:50] item-world             RUNNING   (0 dependents)
+[2026-03-13 00:16:50] job-system             RUNNING   (0 dependents)
+[2026-03-13 00:16:50] job-system-trucker     RUNNING   (0 dependents)
+[2026-03-13 00:16:50] joinquit               STOPPED   (1 files)
+[2026-03-13 00:16:50] killmessages           STOPPED   (118 files)
+[2026-03-13 00:16:50] language-system        RUNNING   (0 dependents)
+[2026-03-13 00:16:50] license-system         RUNNING   (0 dependents)
+[2026-03-13 00:16:50] logs                   RUNNING   (0 dependents)
+[2026-03-13 00:16:50] lottery-system         RUNNING   (0 dependents)
+[2026-03-13 00:16:50] map_load               RUNNING   (0 dependents)
+[2026-03-13 00:16:50] map_manager            RUNNING   (0 dependents)
+[2026-03-13 00:16:50] mapcycler              STOPPED   (4 files)
+[2026-03-13 00:16:50] mapfixes               STOPPED   (4 files)
+[2026-03-13 00:16:50] maplimits              STOPPED   (1 files)
+[2026-03-13 00:16:50] mapmanager             STOPPED   (6 files)
+[2026-03-13 00:16:50] mapratings             STOPPED   (1 files)
+[2026-03-13 00:16:50] mdc                    RUNNING   (0 dependents)
+[2026-03-13 00:16:50] missiontimer           STOPPED   (5 files)
+[2026-03-13 00:16:50] model-system           RUNNING   (0 dependents)
+[2026-03-13 00:16:50] mods                   RUNNING   (0 dependents)
+[2026-03-13 00:16:50] move_cursor            STOPPED   (2 files)
+[2026-03-13 00:16:50] move_freecam           STOPPED   (2 files)
+[2026-03-13 00:16:50] move_keyboard          STOPPED   (2 files)
+[2026-03-13 00:16:50] msgbox                 STOPPED   (5 files)
+[2026-03-13 00:16:50] mysql                  RUNNING   (0 dependents)
+[2026-03-13 00:16:50] npc                    RUNNING   (0 dependents)
+[2026-03-13 00:16:50] object-browser         STOPPED   (2 files)
+[2026-03-13 00:16:50] object-interaction     RUNNING   (0 dependents)
+[2026-03-13 00:16:50] object-system          RUNNING   (0 dependents)
+[2026-03-13 00:16:50] official-interiors     RUNNING   (0 dependents)
+[2026-03-13 00:16:50] parachute2             STOPPED   (1 files)
+[2026-03-13 00:16:50] payday                 RUNNING   (0 dependents)
+[2026-03-13 00:16:50] paynspray-system       RUNNING   (0 dependents)
+[2026-03-13 00:16:50] pd-system              RUNNING   (0 dependents)
+[2026-03-13 00:16:50] ped-system             RUNNING   (0 dependents)
+[2026-03-13 00:16:50] performancebrowser     STOPPED   (11 files)
+[2026-03-13 00:16:50] phone                  RUNNING   (0 dependents)
+[2026-03-13 00:16:50] pickuphandler          STOPPED   (2 files)
+[2026-03-13 00:16:50] play                   STOPPED   (4 files)
+[2026-03-13 00:16:50] playerblips            STOPPED   (1 files)
+[2026-03-13 00:16:50] playercolors           STOPPED   (1 files)
+[2026-03-13 00:16:50] pool                   RUNNING   (0 dependents)
+[2026-03-13 00:16:50] prison-system          RUNNING   (0 dependents)
+[2026-03-13 00:16:50] race                   STOPPED   (61 files)
+[2026-03-13 00:16:50] race-10laphotring      STOPPED   (1 files)
+[2026-03-13 00:16:50] race-3lapdirtring      STOPPED   (1 files)
+[2026-03-13 00:16:50] race-5lap8track        STOPPED   (1 files)
+[2026-03-13 00:16:50] race-airportdogfight   STOPPED   (1 files)
+[2026-03-13 00:16:50] race-airportspeedway   STOPPED   (1 files)
+[2026-03-13 00:16:50] race-apacheassault     STOPPED   (1 files)
+[2026-03-13 00:16:50] race-awalkinthepark    STOPPED   (1 files)
+[2026-03-13 00:16:50] race-badlandsblastar   STOPPED   (1 files)
+[2026-03-13 00:16:50] race-bandito           STOPPED   (1 files)
+[2026-03-13 00:16:50] race-bayareacircuit    STOPPED   (1 files)
+[2026-03-13 00:16:50] race-bloodring         STOPPED   (1 files)
+[2026-03-13 00:16:50] race-blowthedam        STOPPED   (1 files)
+[2026-03-13 00:16:50] race-boatingblastaro   STOPPED   (1 files)
+[2026-03-13 00:16:50] race-bobcatblastarou   STOPPED   (1 files)
+[2026-03-13 00:16:50] race-break             STOPPED   (1 files)
+[2026-03-13 00:16:50] race-chiliadclimb      STOPPED   (1 files)
+[2026-03-13 00:16:50] race-chrmleasy         STOPPED   (1 files)
+[2026-03-13 00:16:50] race-chrmlhard         STOPPED   (1 files)
+[2026-03-13 00:16:50] race-degenerationofx   STOPPED   (1 files)
+[2026-03-13 00:16:50] race-desertdogfight    STOPPED   (1 files)
+[2026-03-13 00:16:50] race-destructionderb   STOPPED   (1 files)
+[2026-03-13 00:16:50] race-dockbikes         STOPPED   (1 files)
+[2026-03-13 00:16:50] race-docksideblastar   STOPPED   (1 files)
+[2026-03-13 00:16:50] race-drift             STOPPED   (1 files)
+[2026-03-13 00:16:50] race-driftcity         STOPPED   (1 files)
+[2026-03-13 00:16:50] race-dunebuggy         STOPPED   (1 files)
+[2026-03-13 00:16:50] race-errand            STOPPED   (1 files)
+[2026-03-13 00:16:50] race-farewellmylove    STOPPED   (1 files)
+[2026-03-13 00:16:50] race-farm2city         STOPPED   (1 files)
+[2026-03-13 00:16:50] race-findthecock       STOPPED   (1 files)
+[2026-03-13 00:16:50] race-freeroam          STOPPED   (1 files)
+[2026-03-13 00:16:50] race-highnoon          STOPPED   (1 files)
+[2026-03-13 00:16:50] race-homeinthehills    STOPPED   (1 files)
+[2026-03-13 00:16:50] race-hotroute          STOPPED   (1 files)
+[2026-03-13 00:16:50] race-hydrarace         STOPPED   (1 files)
+[2026-03-13 00:16:50] race-island            STOPPED   (1 files)
+[2026-03-13 00:16:50] race-justanotherbike   STOPPED   (1 files)
+[2026-03-13 00:16:50] race-longwayround      STOPPED   (1 files)
+[2026-03-13 00:16:50] race-lsairport         STOPPED   (1 files)
+[2026-03-13 00:16:50] race-lstrenches        STOPPED   (1 files)
+[2026-03-13 00:16:50] race-lvsprint          STOPPED   (1 files)
+[2026-03-13 00:16:50] race-midairmayhem      STOPPED   (1 files)
+[2026-03-13 00:16:50] race-miniputt          STOPPED   (1 files)
+[2026-03-13 00:16:50] race-monsterblastaro   STOPPED   (1 files)
+[2026-03-13 00:16:50] race-mx_sky            STOPPED   (1 files)
+[2026-03-13 00:16:50] race-offroadblastaro   STOPPED   (1 files)
+[2026-03-13 00:16:50] race-predatorzone      STOPPED   (1 files)
+[2026-03-13 00:16:50] race-quarryrun         STOPPED   (1 files)
+[2026-03-13 00:16:50] race-rcairwar          STOPPED   (1 files)
+[2026-03-13 00:16:50] race-rcwarz            STOPPED   (1 files)
+[2026-03-13 00:16:50] race-runway69          STOPPED   (1 files)
+[2026-03-13 00:16:50] race-rustlerrampage    STOPPED   (1 files)
+[2026-03-13 00:16:50] race-sandking          STOPPED   (1 files)
+[2026-03-13 00:16:50] race-santosdrive       STOPPED   (1 files)
+[2026-03-13 00:16:50] race-seadragon         STOPPED   (1 files)
+[2026-03-13 00:16:50] race-seahunter         STOPPED   (1 files)
+[2026-03-13 00:16:50] race-searustler        STOPPED   (1 files)
+[2026-03-13 00:16:50] race-sewers            STOPPED   (1 files)
+[2026-03-13 00:16:50] race-sfbynight         STOPPED   (1 files)
+[2026-03-13 00:16:50] race-smugglersrun      STOPPED   (1 files)
+[2026-03-13 00:16:50] race-sparrowstorm      STOPPED   (1 files)
+[2026-03-13 00:16:50] race-specialdelivery   STOPPED   (1 files)
+[2026-03-13 00:16:50] race-speedforweed      STOPPED   (1 files)
+[2026-03-13 00:16:50] race-squalorace        STOPPED   (1 files)
+[2026-03-13 00:16:50] race-stunt             STOPPED   (1 files)
+[2026-03-13 00:16:50] race-suburbanspeedwa   STOPPED   (1 files)
+[2026-03-13 00:16:50] race-superhydrarace    STOPPED   (1 files)
+[2026-03-13 00:16:50] race-technicalitch     STOPPED   (1 files)
+[2026-03-13 00:16:50] race-thepanopticon     STOPPED   (1 files)
+[2026-03-13 00:16:50] race-vinewoodblastar   STOPPED   (1 files)
+[2026-03-13 00:16:50] race-wuzimu            STOPPED   (1 files)
+[2026-03-13 00:16:50] race_carfade           STOPPED   (7 files)
+[2026-03-13 00:16:50] race_delay_indicator   STOPPED   (4 files)
+[2026-03-13 00:16:50] race_ghost             STOPPED   (9 files)
+[2026-03-13 00:16:50] race_nos               STOPPED   (5 files)
+[2026-03-13 00:16:50] race_racewar           STOPPED   (4 files)
+[2026-03-13 00:16:50] race_toptimes          STOPPED   (10 files)
+[2026-03-13 00:16:50] race_traffic_sensor    STOPPED   (4 files)
+[2026-03-13 00:16:50] race_voicepack         STOPPED   (8 files)
+[2026-03-13 00:16:50] ramp-system            RUNNING   (0 dependents)
+[2026-03-13 00:16:50] realdriveby            STOPPED   (7 files)
+[2026-03-13 00:16:50] realism                RUNNING   (0 dependents)
+[2026-03-13 00:16:50] realtime-system        RUNNING   (0 dependents)
+[2026-03-13 00:16:50] release-notes          RUNNING   (0 dependents)
+[2026-03-13 00:16:50] reload                 STOPPED   (2 files)
+[2026-03-13 00:16:50] report                 RUNNING   (0 dependents)
+[2026-03-13 00:16:50] resourcebrowser        STOPPED   (6 files)
+[2026-03-13 00:16:50] resourcemanager        STOPPED   (4 files)
+[2026-03-13 00:16:50] resources              RUNNING   (0 dependents)
+[2026-03-13 00:16:50] rightclick             RUNNING   (0 dependents)
+[2026-03-13 00:16:50] roadblock-system       RUNNING   (0 dependents)
+[2026-03-13 00:16:50] rustlerbombs           STOPPED   (1 files)
+[2026-03-13 00:16:50] san                    RUNNING   (0 dependents)
+[2026-03-13 00:16:50] sapt-system            RUNNING   (0 dependents)
+[2026-03-13 00:16:50] saveplayer-system      RUNNING   (0 dependents)
+[2026-03-13 00:16:50] scores                 STOPPED   (1 files)
+[2026-03-13 00:16:50] selfck-system          RUNNING   (0 dependents)
+[2026-03-13 00:16:50] serialwhitelist        RUNNING   (0 dependents)
+[2026-03-13 00:16:50] sfia                   RUNNING   (0 dependents)
+[2026-03-13 00:16:50] shader_car_paint       RUNNING   (0 dependents)
+[2026-03-13 00:16:50] shader_radar           RUNNING   (0 dependents)
+[2026-03-13 00:16:50] shader_snow_ground     STOPPED   (7 files)
+[2026-03-13 00:16:50] shader_water           RUNNING   (0 dependents)
+[2026-03-13 00:16:50] sirenEdit              STOPPED   (4 files)
+[2026-03-13 00:16:50] sittablechairs         RUNNING   (0 dependents)
+[2026-03-13 00:16:50] snow                   STOPPED   (9 files)
+[2026-03-13 00:16:50] social                 RUNNING   (0 dependents)
+[2026-03-13 00:16:50] spawnmanager           STOPPED   (2 files)
+[2026-03-13 00:16:50] speedometer            STOPPED   (3 files)
+[2026-03-13 00:16:50] spike-system           RUNNING   (0 dependents)
+[2026-03-13 00:16:50] stealth                STOPPED   (24 files)
+[2026-03-13 00:16:50] sth-carrier            STOPPED   (1 files)
+[2026-03-13 00:16:50] sth-chinatown          STOPPED   (1 files)
+[2026-03-13 00:16:50] sth-church             STOPPED   (1 files)
+[2026-03-13 00:16:50] sth-coookiepirates     STOPPED   (4 files)
+[2026-03-13 00:16:50] sth-dra-park           STOPPED   (1 files)
+[2026-03-13 00:16:50] sth-factory            STOPPED   (1 files)
+[2026-03-13 00:16:50] sth-junkyard           STOPPED   (1 files)
+[2026-03-13 00:16:50] sth-ritzy              STOPPED   (1 files)
+[2026-03-13 00:16:50] sth-sewers             STOPPED   (1 files)
+[2026-03-13 00:16:50] sth-shopping           STOPPED   (1 files)
+[2026-03-13 00:16:50] sth-terminal           STOPPED   (1 files)
+[2026-03-13 00:16:50] sth-thebunker          STOPPED   (1 files)
+[2026-03-13 00:16:50] tag-system             RUNNING   (0 dependents)
+[2026-03-13 00:16:50] tdm                    STOPPED   (11 files)
+[2026-03-13 00:16:50] tdma                   STOPPED   (11 files)
+[2026-03-13 00:16:50] tdma-damwars           STOPPED   (1 files)
+[2026-03-13 00:16:50] tdma-gridlock          STOPPED   (1 files)
+[2026-03-13 00:16:50] tdma-medieval          STOPPED   (1 files)
+[2026-03-13 00:16:50] tdma-nomansland        STOPPED   (1 files)
+[2026-03-13 00:16:50] tdma-tbd               STOPPED   (1 files)
+[2026-03-13 00:16:50] tdma-vinewood          STOPPED   (1 files)
+[2026-03-13 00:16:50] teammanager            STOPPED   (6 files)
+[2026-03-13 00:16:50] texture-system         RUNNING   (0 dependents)
+[2026-03-13 00:16:50] tintedwindows          RUNNING   (0 dependents)
+[2026-03-13 00:16:50] toll                   RUNNING   (0 dependents)
+[2026-03-13 00:16:50] tooltip                STOPPED   (1 files)
+[2026-03-13 00:16:50] tow-system             RUNNING   (0 dependents)
+[2026-03-13 00:16:50] trainhorn              STOPPED   (3 files)
+[2026-03-13 00:16:50] usercontrolpanel       RUNNING   (0 dependents)
+[2026-03-13 00:16:50] vehicle                RUNNING   (0 dependents)
+[2026-03-13 00:16:50] vehicle-interiors      RUNNING   (0 dependents)
+[2026-03-13 00:16:50] vehicle_fuel           RUNNING   (0 dependents)
+[2026-03-13 00:16:50] vehicle_load           RUNNING   (0 dependents)
+[2026-03-13 00:16:50] vehicle_manager        RUNNING   (0 dependents)
+[2026-03-13 00:16:50] vehicleplate           RUNNING   (0 dependents)
+[2026-03-13 00:16:50] visualiser             STOPPED   (4 files)
+[2026-03-13 00:16:50] voice                  STOPPED   (10 files)
+[2026-03-13 00:16:50] voice_local            STOPPED   (5 files)
+[2026-03-13 00:16:50] votemanager            STOPPED   (6 files)
+[2026-03-13 00:16:50] weapon                 RUNNING   (0 dependents)
+[2026-03-13 00:16:50] weaponcap              RUNNING   (0 dependents)
+[2026-03-13 00:16:50] weather                RUNNING   (0 dependents)
+[2026-03-13 00:16:50] weather-system         RUNNING   (0 dependents)
+[2026-03-13 00:16:50] webadmin               STOPPED   (11 files)
+[2026-03-13 00:16:50] webbrowser             STOPPED   (3 files)
+[2026-03-13 00:16:50] webmap                 STOPPED   (6 files)
+[2026-03-13 00:16:50] webstats               STOPPED   (5 files)
+[2026-03-13 00:16:50] xmas                   STOPPED   (5 files)
+[2026-03-13 00:16:50] Resources: 330 loaded, 0 failed, 128 running
+[2026-03-13 00:16:54] * Syntax: start <resource1> <resource2> ...
+[2026-03-13 00:16:58] start: Requested by Console
+[2026-03-13 00:16:58] start: Resource 'superman' could not be found
+[2026-03-13 00:17:19] help [command]
+[2026-03-13 00:17:19] Available commands:
+
+start                    stop                     stopall                  
+restart                  refresh                  refreshall               
+list                     info                     upgrade                  
+check                    say                      teamsay                  
+msg                      me                       nick                     
+login                    logout                   chgmypass                
+addaccount               delaccount               chgpass                  
+shutdown                 aexec                    whois                    
+debugscript              help                     loadmodule               
+unloadmodule             reloadmodule             ver                      
+sver                     ase                      openports                
+debugdb                  reloadbans               aclrequest               
+authserial               reloadacl                debugjoinflood           
+debuguptime              sfakelag                 
+[2026-03-13 00:17:22] msg: Player not found
+[2026-03-13 00:17:26] msg: Player not found
+[2026-03-13 00:17:31] CONSOLECHAT: a
+[2026-03-13 00:17:53] ERROR: Problem with resource: assault; Failed to link to scoreboard
+[2026-03-13 00:17:53] ERROR: Problem with resource: briefcaserace; Failed to link to scoreboard
+[2026-03-13 00:17:53] ERROR: Problem with resource: ctf; Failed to link to scoreboard
+[2026-03-13 00:17:53] ERROR: Problem with resource: ctf-bombsite; Failed to link to scoreboard
+[2026-03-13 00:17:53] ERROR: Problem with resource: ctf-canals; Failed to link to scoreboard
+[2026-03-13 00:17:53] ERROR: Problem with resource: ctf-hydrastrike; 
+[2026-03-13 00:17:53] ERROR: Problem with resource: ctf-tbd; Failed to link to scoreboard
+[2026-03-13 00:17:53] ERROR: Problem with resource: ctv; Failed to link to scoreboard
+[2026-03-13 00:17:53] ERROR: Problem with resource: deathmatch; Failed to link to scoreboard
+[2026-03-13 00:17:53] ERROR: Problem with resource: editor; 
+[2026-03-13 00:17:53] ERROR: Problem with resource: editor_main; Failed to link to freecam
+[2026-03-13 00:17:53] ERROR: Problem with resource: fallout; Failed to link to freecam
+[2026-03-13 00:17:53] ERROR: Not processing resource 'freecam' as it has duplicates on different paths:
+                  Path #1: "resources\freecam"
+                  Path #2: "resources\[editor]\freecam"
+[2026-03-13 00:17:53] ERROR: Not processing resource 'gps' as it has duplicates on different paths:
+                  Path #1: "resources\gps"
+                  Path #2: "resources\[gameplay]\gps"
+[2026-03-13 00:17:53] ERROR: Problem with resource: hay; Failed to link to scoreboard
+[2026-03-13 00:17:53] ERROR: Not processing resource 'ipb' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\ipb"
+                  Path #2: "resources\[dev]\ipb"
+[2026-03-13 00:17:53] ERROR: Not processing resource 'parachute' as it has duplicates on different paths:
+                  Path #1: "resources\parachute"
+                  Path #2: "resources\[gameplay]\parachute"
+[2026-03-13 00:17:53] ERROR: Problem with resource: play; Failed to link to superman
+[2026-03-13 00:17:53] ERROR: Problem with resource: race; Failed to link to scoreboard
+[2026-03-13 00:17:53] ERROR: Not processing resource 'runcode' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\runcode"
+                  Path #2: "resources\[dev]\runcode"
+[2026-03-13 00:17:53] ERROR: Not processing resource 'scoreboard' as it has duplicates on different paths:
+                  Path #1: "resources\scoreboard"
+                  Path #2: "resources\[gameplay]\scoreboard"
+[2026-03-13 00:17:53] ERROR: Problem with resource: scores; Failed to link to scoreboard
+[2026-03-13 00:17:53] ERROR: Not processing resource 'sfxbrowser' as it has duplicates on different paths:
+                  Path #1: "resources\[dev]\sfxbrowser"
+                  Path #2: "resources\[gameplay]\sfxbrowser"
+[2026-03-13 00:17:53] ERROR: Problem with resource: stealth; Failed to link to scoreboard
+[2026-03-13 00:17:53] ERROR: Not processing resource 'superman' as it has duplicates on different paths:
+                  Path #1: "resources\superman"
+                  Path #2: "resources\[gameplay]\superman"
+[2026-03-13 00:17:53] ERROR: Problem with resource: tdm; Failed to link to scoreboard
+[2026-03-13 00:17:53] ERROR: Problem with resource: tdma; Failed to link to scoreboard
+[2026-03-13 00:21:03] QUIT: Scripter_Sympathizee left the game [Quit] 
+[2026-03-13 00:21:03] INFO: [Phone] Scripter_Sympathizee triggered cancelPhoneCall / Quit / 0
+[2026-03-13 00:21:48] ERROR: Problem with resource: assault; Failed to link to scoreboard
+[2026-03-13 00:21:48] ERROR: Problem with resource: briefcaserace; Failed to link to scoreboard
+[2026-03-13 00:21:48] ERROR: Problem with resource: ctf; Failed to link to scoreboard
+[2026-03-13 00:21:48] ERROR: Problem with resource: ctf-bombsite; Failed to link to scoreboard
+[2026-03-13 00:21:48] ERROR: Problem with resource: ctf-canals; Failed to link to scoreboard
+[2026-03-13 00:21:48] ERROR: Problem with resource: ctf-hydrastrike; 
+[2026-03-13 00:21:48] ERROR: Problem with resource: ctf-tbd; Failed to link to scoreboard
+[2026-03-13 00:21:48] ERROR: Problem with resource: ctv; Failed to link to scoreboard
+[2026-03-13 00:21:48] ERROR: Problem with resource: deathmatch; Failed to link to scoreboard
+[2026-03-13 00:21:48] ERROR: Problem with resource: editor; 
+[2026-03-13 00:21:48] ERROR: Problem with resource: editor_main; Failed to link to freecam
+[2026-03-13 00:21:48] ERROR: Problem with resource: fallout; Failed to link to freecam
+[2026-03-13 00:21:48] ERROR: Not processing resource 'freecam' as it has duplicates on different paths:
+                  Path #1: "resources\freecam"
+                  Path #2: "resources\[editor]\freecam"
+[2026-03-13 00:21:48] ERROR: Not processing resource 'gps' as it has duplicates on different paths:
+                  Path #1: "resources\gps"
+                  Path #2: "resources\[gameplay]\gps"
+[2026-03-13 00:21:48] ERROR: Problem with resource: hay; Failed to link to scoreboard
+[2026-03-13 00:21:48] ERROR: Not processing resource 'ipb' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\ipb"
+                  Path #2: "resources\[dev]\ipb"
+[2026-03-13 00:21:48] ERROR: Not processing resource 'parachute' as it has duplicates on different paths:
+                  Path #1: "resources\parachute"
+                  Path #2: "resources\[gameplay]\parachute"
+[2026-03-13 00:21:48] ERROR: Problem with resource: play; Failed to link to superman
+[2026-03-13 00:21:48] ERROR: Problem with resource: race; Failed to link to scoreboard
+[2026-03-13 00:21:48] ERROR: Not processing resource 'runcode' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\runcode"
+                  Path #2: "resources\[dev]\runcode"
+[2026-03-13 00:21:48] ERROR: Not processing resource 'scoreboard' as it has duplicates on different paths:
+                  Path #1: "resources\scoreboard"
+                  Path #2: "resources\[gameplay]\scoreboard"
+[2026-03-13 00:21:48] ERROR: Problem with resource: scores; Failed to link to scoreboard
+[2026-03-13 00:21:48] ERROR: Not processing resource 'sfxbrowser' as it has duplicates on different paths:
+                  Path #1: "resources\[dev]\sfxbrowser"
+                  Path #2: "resources\[gameplay]\sfxbrowser"
+[2026-03-13 00:21:48] ERROR: Problem with resource: stealth; Failed to link to scoreboard
+[2026-03-13 00:21:48] ERROR: Not processing resource 'superman' as it has duplicates on different paths:
+                  Path #1: "resources\superman"
+                  Path #2: "resources\[gameplay]\superman"
+[2026-03-13 00:21:48] ERROR: Problem with resource: tdm; Failed to link to scoreboard
+[2026-03-13 00:21:48] ERROR: Problem with resource: tdma; Failed to link to scoreboard
+[2026-03-13 00:22:18] Resource 'deathmessages' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'deathpickups' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'defaultstats' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'dialogs' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'easytext' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'fastrope' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'freeroam' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'glue' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'headshot' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'hedit' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'interiors' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'internetradio' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'joinquit' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'killmessages' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'mapfixes' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'maplimits' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'mapratings' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'missiontimer' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'parachute2' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'pickuphandler' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'playerblips' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'playercolors' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'realdriveby' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'reload' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'rustlerbombs' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'scores' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'sirenEdit' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'speedometer' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'trainhorn' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'visualiser' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'voice' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'voice_local' has been removed, unloading
+[2026-03-13 00:22:18] Resource 'webbrowser' has been removed, unloading
+[2026-03-13 00:22:18] New resource 'gps' loaded
+[2026-03-13 00:22:18] New resource 'parachute' loaded
+[2026-03-13 00:22:18] New resource 'scoreboard' loaded
+[2026-03-13 00:22:18] New resource 'sfxbrowser' loaded
+[2026-03-13 00:22:18] New resource 'superman' loaded
+[2026-03-13 00:22:18] ERROR: Problem with resource: assault; Failed to link to scoreboard
+[2026-03-13 00:22:18] ERROR: Problem with resource: briefcaserace; Failed to link to scoreboard
+[2026-03-13 00:22:18] ERROR: Problem with resource: ctf; Failed to link to scoreboard
+[2026-03-13 00:22:18] ERROR: Problem with resource: ctf-goldcove; Failed to link to maplimits
+[2026-03-13 00:22:18] ERROR: Problem with resource: ctf-hydrastrike; Failed to link to headshot
+[2026-03-13 00:22:18] ERROR: Problem with resource: ctf-sewer; Failed to link to maplimits
+[2026-03-13 00:22:18] ERROR: Problem with resource: deathmatch; Failed to link to scoreboard
+[2026-03-13 00:22:18] ERROR: Problem with resource: dm-port69; Failed to link to playerblips
+[2026-03-13 00:22:18] ERROR: Problem with resource: editor; 
+[2026-03-13 00:22:18] ERROR: Problem with resource: editor_gui; Failed to link to dialogs
+[2026-03-13 00:22:18] ERROR: Problem with resource: editor_main; Failed to link to freecam
+[2026-03-13 00:22:18] ERROR: Problem with resource: fallout; Failed to link to freecam
+[2026-03-13 00:22:18] ERROR: Not processing resource 'freecam' as it has duplicates on different paths:
+                  Path #1: "resources\freecam"
+                  Path #2: "resources\[editor]\freecam"
+[2026-03-13 00:22:18] ERROR: Not processing resource 'ipb' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\ipb"
+                  Path #2: "resources\[dev]\ipb"
+[2026-03-13 00:22:18] ERROR: Problem with resource: play; Failed to link to superman
+[2026-03-13 00:22:18] ERROR: Problem with resource: race; Failed to link to scoreboard
+[2026-03-13 00:22:18] ERROR: Not processing resource 'runcode' as it has duplicates on different paths:
+                  Path #1: "resources\[admin]\runcode"
+                  Path #2: "resources\[dev]\runcode"
+[2026-03-13 00:22:18] ERROR: Problem with resource: stealth; Failed to link to scoreboard
+[2026-03-13 00:22:18] ERROR: Problem with resource: tdm; Failed to link to scoreboard
+[2026-03-13 00:22:18] ERROR: Problem with resource: tdma; Failed to link to scoreboard
+[2026-03-13 00:22:18] Resources: 285 loaded, 17 failed
+[2026-03-13 00:22:30] CONNECT: UncoveredRivulet87 connected (IP: 192.168.1.9  Serial: ADE8A256AA3967C4FB1E4ADA49976D12  Version: 1.6.0-9.23952.0)
+[2026-03-13 00:22:30] JOIN: UncoveredRivulet87 joined the game (IP: 192.168.1.9)
+[2026-03-13 00:22:30] NICK: UncoveredRivulet87 is now known as Owl.Player.2567
+[2026-03-13 00:23:00] NICK: Owl.Player.2567 is now known as Scripter_Sympathizee
+[2026-03-13 00:23:10] Starting superman
+[2026-03-13 00:23:10] startResource: Resource 'superman' started
+[2026-03-13 00:29:13] INFO: Server: Fetched 0 stations from db.
+[2026-03-13 00:29:19] INFO: [Phone] Scripter_Sympathizee triggered cancelPhoneCall / Quit / 0
+[2026-03-13 00:29:19] Server stopped!
+[2026-03-13 00:29:19] Stopping resources...............................................
+[2026-03-13 00:29:19] ERROR: event-system\paintball\s_paintball.lua:445: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:29:19] ERROR: event-system\paintball\s_paintball.lua:446: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:29:19] INFO: [Factions] Saving duty allow changes...
+[2026-03-13 00:29:19] INFO: [Factions] Completed in 0 seconds.
+[2026-03-13 00:29:19] INFO: Saving insurance data.
+[2026-03-13 00:29:19] ERROR: [interior]\interior_system\safe_s.lua:75: exports: Call to non-running server resource (global) [string "?"]
+[2026-03-13 00:29:19] ERROR: mdc\apbbox\s_apb_box.lua:72: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:29:19] INFO: [SHOP] Saved 0 shops configs to SQL successfully.
+[2026-03-13 00:29:19] INFO: [SHOP] Faction Drop - Failed to Restock products
+[2026-03-13 00:29:19] ERROR: npc\faction_drop_s.lua:284: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:29:19] ERROR: pool\pool_s.lua:84: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:29:19] ERROR: pool\pool_s.lua:85: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:29:19] ERROR: prison-system\s_prison.lua:40: exports: Call to non-running server resource (pool) [string "?"]
+[2026-03-13 00:29:19] ERROR: prison-system\s_prison.lua:41: bad argument #1 to 'ipairs' (table expected, got nil)
+[2026-03-13 00:29:19] ERROR: report\s_reports.lua:87: exports: Call to non-running server resource (data) [string "?"]
+[2026-03-13 00:29:19] MODULE: Unloaded "MySQL 5.0 database module" (0.50) by "Alberto Alonso <rydencillo@gmail.com>"
+[2026-03-13 00:29:19] MODULE: Unloaded "bcrypt Module" (1.00) by "mabako"
+[2026-03-13 00:29:19] Closing SQLite3 database
