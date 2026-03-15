@@ -5,7 +5,7 @@ local items = exports['item-system']
 
 -- Fishing Constants
 local HOTSPOT_RADIUS = 50
-local EVENT_HOTSPOT_RADIUS = 100
+local EVENT_HOTSPOT_RADIUS = 75
 
 local FISHING_TIMES = {
     ["Good"] = {min = 30000, max = 90000},

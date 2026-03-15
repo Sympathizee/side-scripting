@@ -4,11 +4,10 @@ local showAllHotspots = false
 
 -- Hotspot Constants
 local HOTSPOT_BLIP_SIZE = 3
-local EVENT_HOTSPOT_BLIP_SIZE = 5
-local HOTSPOT_MARKER_SIZE = 25
-local EVENT_HOTSPOT_MARKER_SIZE = 100
+local EVENT_HOTSPOT_BLIP_SIZE = 6
 local HOTSPOT_RADIUS = 50
-local EVENT_HOTSPOT_RADIUS = 100
+local EVENT_HOTSPOT_RADIUS = 75
+local BLIP_DISTANCE_LIMIT = 200
 
 isFishingActive = false
 currentFishingLevel = 0
@@ -36,12 +35,19 @@ local activeHotspots = {}
 local isEventActiveClient = false
 
 function updateHotspotVisibility()
-    local canSeeBlip = onBoat() or showAllHotspots
+    local px, py, pz = getElementPosition(localPlayer)
+    local isNearBoat = onBoat()
     local canSeeMarker = showAllHotspots
     
     for id, spot in pairs(activeHotspots) do
+        local dist = getDistanceBetweenPoints3D(px, py, pz, spot.x, spot.y, spot.z)
         -- Check if event requirement is met
         local eventAllows = not spot.is_event or isEventActiveClient
+        
+        -- Blip visibility: show if (showAllHotspots) OR (onBoat AND within distance)
+        -- Note: We allow event blips to always show if event is active to help players find them
+        local withinDistance = dist < BLIP_DISTANCE_LIMIT
+        local canSeeBlip = showAllHotspots or (isNearBoat and (withinDistance or spot.is_event))
         
         -- Blip Handling
         if eventAllows and canSeeBlip then
@@ -72,11 +78,11 @@ function updateHotspotVisibility()
         if eventAllows and canSeeMarker then
             if not isElement(hotspotMarkers[id]) then
                 local r, g, b = 255, 255, 255
-                local size = HOTSPOT_MARKER_SIZE
+                local size = HOTSPOT_RADIUS
                 
                 if spot.is_event then
                     r, g, b = 0, 255, 255
-                    size = EVENT_HOTSPOT_MARKER_SIZE
+                    size = EVENT_HOTSPOT_RADIUS
                 elseif spot.state == "Good" then
                     r, g, b = 0, 255, 0
                 elseif spot.state == "Medium" then
