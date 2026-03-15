@@ -431,6 +431,34 @@ function clickPed(button, state, absX, absY, wx, wy, wz, element)
 						triggerEvent("cargo:shippingOrderGUI", getLocalPlayer(), element)
 					end, true)
 
+				--Fishing: Fisherman Herb
+				elseif(interact == "fishing.herb") then
+					rcMenu = exports.rightclick:create(name)
+					row.sell = exports.rightclick:addrow("Sell Fish")
+					addEventHandler("onClientGUIClick", row.sell,  function (button, state)
+						triggerServerEvent("fishing:sellFish", localPlayer, localPlayer)
+					end, true)
+					row.upgrade = exports.rightclick:addrow("Upgrade Fishing Rod")
+					addEventHandler("onClientGUIClick", row.upgrade,  function (button, state)
+						triggerServerEvent("fishing:upgradeRod", localPlayer, localPlayer)
+					end, true)
+
+				--Fishing: License Issuer
+				elseif(interact == "fishing.license") then
+					rcMenu = exports.rightclick:create(name)
+					row.apply = exports.rightclick:addrow("Apply For/Renew License")
+					addEventHandler("onClientGUIClick", row.apply,  function (button, state)
+						triggerServerEvent("fishing:applyLicense", localPlayer, localPlayer)
+					end, true)
+
+				--Fishing: Scrap Dealer Rusty
+				elseif(interact == "fishing.scrap") then
+					rcMenu = exports.rightclick:create(name)
+					row.buy = exports.rightclick:addrow("Buy 1x Metal ($2,500)")
+					addEventHandler("onClientGUIClick", row.buy,  function (button, state)
+						triggerServerEvent("fishing:buyScrap", localPlayer, localPlayer, 1)
+					end, true)
+
 				end --all elseif's for interact types goes overneath this line
 
 				--STRETCHER SYSTEM

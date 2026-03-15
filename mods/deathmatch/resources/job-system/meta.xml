@@ -14,7 +14,11 @@
 	-->
 
 	<script src="fishing/s_fishing.lua" type="server"/>
+	<script src="fishing/s_fishing_events.lua" type="server"/>
 	<script src="fishing/c_fishing.lua" type="client"/>
+	<script src="fishing/c_fishing_minigame.lua" type="client"/>
+	<file src="fishing/ikan-1.png" />
+
 	
 	<script src="photographer/s_photographer_job.lua" type="server"/>
 	<script src="photographer/c_photographer_job.lua" type="client"/>
