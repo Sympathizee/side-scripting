@@ -1,5 +1,5 @@
 -- ========================================================
--- feat/npc-module
+-- NPC-system
 -- s_npc_manager.lua
 -- Reusable server-side NPC spawning and lifecycle manager.
 --

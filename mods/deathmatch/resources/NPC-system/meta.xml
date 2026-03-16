@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<meta>
+	<info author="Tama" type="script" name="NPC system" description="Unified NPC Manager and Dialogue System" version="1.0" />
+
+	<!-- NPC Manager Module (Server) -->
+	<script src="npc-module/s_npc_manager.lua" type="server" />
+	
+	<!-- NPC Dialogue Module (Client) -->
+	<script src="npc-dialogue/c_dialogue.lua" type="client" />
+
+	<!-- Manager Exports -->
+	<export function="spawnNPC"       type="server" />
+	<export function="despawnNPC"     type="server" />
+	<export function="forceNPCState"  type="server" />
+	<export function="getNPCEntity"   type="server" />
+	<export function="updateNPCSchedule" type="server" />
+
+	<!-- Dialogue Exports -->
+	<export function="startCinematicDialogue" type="client" />
+	<export function="stopCinematicDialogue"  type="client" />
+	<export function="isDialogueActive"       type="client" />
+</meta>

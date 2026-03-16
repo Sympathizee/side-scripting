@@ -1,5 +1,5 @@
 -- ========================================================
--- feat/npc-dialogue
+-- NPC-system
 -- c_dialogue.lua
 -- Reusable client-side cinematic NPC dialogue engine.
 --
