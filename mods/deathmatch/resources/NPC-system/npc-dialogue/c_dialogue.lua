@@ -133,7 +133,14 @@ local function handleAnswer()
     setPlayerAnim("GANGS", "prtial_gngtlkB")
     setNPCAnim("ped", "idle_chat")
 
-    if selectedOption == stageData.correct then
+    -- Check for client-side callback
+    if stageData.callbacks and stageData.callbacks[selectedOption] then
+        stageData.callbacks[selectedOption](npcEl)
+        doStop(true)
+        return
+    end
+
+    if stageData.correct then
         setTimer(function()
             if not active or isClosing then return end
 
