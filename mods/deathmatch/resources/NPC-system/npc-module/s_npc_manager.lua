@@ -1,5 +1,5 @@
 -- ========================================================
--- feat/npc-module
+-- NPC-system
 -- s_npc_manager.lua
 -- Reusable server-side NPC spawning and lifecycle manager.
 --
@@ -17,6 +17,7 @@
 --   name              (string)   Display name (set as element data "name")
 --   dimension         (number)   Default 0
 --   interior          (number)   Default 0
+--   type              (string)   NPC type/role (set as element data "npc-module:type")
 --   useSchedule       (bool)     Enable time-based spawning
 --   startHour         (number)
 --   startMinute       (number)
@@ -72,8 +73,10 @@ local function createPedFromConfig(cfg)
     setElementInterior(ped,  cfg.interior  or 0)
     setElementFrozen(ped, true)
     setElementData(ped, "name", cfg.name or "NPC")
+    setElementData(ped, "nametag", true)
     setElementData(ped, "npc-module:managed", true)
     setElementData(ped, "npc-module:id", cfg._id or "unknown")
+    setElementData(ped, "npc-module:type", cfg.type or "generic")
 
     -- Block all damage
     addEventHandler("onElementDamage", ped, function() cancelEvent() end)
@@ -214,3 +217,32 @@ function updateNPCSchedule(id, newConfig)
     end
     evaluateNPC(id)
 end
+
+--- Updates the name of a managed NPC.
+--- @param id   string
+--- @param name string
+--- @return boolean
+function setNPCName(id, name)
+    local entry = managedNPCs[id]
+    if not entry then return false end
+
+    entry.config.name = name
+    if isElement(entry.entity) then
+        setElementData(entry.entity, "name", name)
+    end
+    return true
+end
+
+addCommandHandler("setnpcname", function(player, cmd, id, ...)
+    if not id or not ... then
+        outputChatBox("Syntax: /" .. cmd .. " [npc_id] [new_name]", player, 255, 194, 14)
+        return
+    end
+    
+    local newName = table.concat({...}, " ")
+    if setNPCName(id, newName) then
+        outputChatBox("NPC '" .. id .. "' name set to '" .. newName .. "'.", player, 0, 255, 0)
+    else
+        outputChatBox("NPC with ID '" .. id .. "' not found.", player, 255, 0, 0)
+    end
+end)
