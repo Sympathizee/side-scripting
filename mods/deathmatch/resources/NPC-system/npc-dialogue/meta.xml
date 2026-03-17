@@ -4,6 +4,13 @@
 
 	<!-- Client Scripts -->
 	<script src="c_dialogue.lua" type="client" />
+	<script src="c_crafting_ui.lua" type="client" />
+	<script src="c_test.lua" type="client" />
+	<export function="openCraftingUI" type="client" />
+
+	<!-- Server Scripts -->
+	<script src="s_crafting_ui.lua" type="server" />
+	<script src="s_test.lua" type="server" />
 
 	<!-- Exports -->
 	<export function="startCinematicDialogue" type="client" />
