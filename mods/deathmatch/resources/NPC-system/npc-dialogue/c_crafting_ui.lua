@@ -1,3 +1,4 @@
+local localPlayer = getLocalPlayer()
 -- ========================================================
 -- c_crafting_ui.lua
 -- Premium DX-based Crafting UI interaction hook.
@@ -31,6 +32,55 @@ local colorFail = tocolor(231, 76, 60, 255)
 
 local function drawText(text, tx, ty, tw, th, color, scale, font, alignX, alignY, clip, wordBreak)
     dxDrawText(text, tx, ty, tx+tw, ty+th, color, scale, font, alignX or "left", alignY or "top", clip, wordBreak)
+end
+
+local function getLocalItemCount(itemID)
+    if not itemID then return 0 end
+    if itemID == -1 or itemID == 134 then -- Money check
+        return getPlayerMoney(localPlayer)
+    end
+    
+    -- Try getItems first as it's often more reliable/available
+    local success, allItems = pcall(function() 
+        local res = getResourceFromName("item-system")
+        if res and getResourceState(res) == "running" then
+            return exports["item-system"]:getItems(localPlayer)
+        end
+        return nil
+    end)
+    
+    if success and type(allItems) == "table" then
+        local count = 0
+        for _, it in pairs(allItems) do
+            if it[1] == itemID then
+                count = count + 1
+            end
+        end
+        return count
+    end
+
+    -- Last ditch: try countItems explicitly if getItems failed
+    local success2, count = pcall(function() 
+        local res = getResourceFromName("item-system")
+        if res and getResourceState(res) == "running" then
+            return exports["item-system"]:countItems(localPlayer, itemID) 
+        end
+        return 0
+    end)
+    
+    if success2 and type(count) == "number" then
+        return count
+    end
+    
+    return 0
+end
+
+local function getIcon(idOrPath, value)
+    if not idOrPath then return nil end
+    if type(idOrPath) == "string" and (idOrPath:find(":") or idOrPath:find("%.png")) then
+        return idOrPath
+    end
+    return exports["item-system"]:getImage(idOrPath, value or "")
 end
 
 function renderCraftingUI()
@@ -106,7 +156,7 @@ function renderCraftingUI()
 
                 -- Item Icon
                 local iconSize = 40
-                local icon = exports["item-system"]:getImage(recipe.image or recipe.resultID, recipe.resultValue or "")
+                local icon = getIcon(recipe.image or recipe.resultID, recipe.resultValue or "")
                 if icon then
                     dxDrawImage(rx + 10, ry + (itemH - iconSize)/2, iconSize, iconSize, icon, 0, 0, 0, tocolor(255, 255, 255, 255 * alphaMult))
                 end
@@ -123,7 +173,7 @@ function renderCraftingUI()
         
         -- Large Image Preview
         local previewSize = 120
-        local icon = exports["item-system"]:getImage(selected.image or selected.resultID, selected.resultValue or "")
+        local icon = getIcon(selected.image or selected.resultID, selected.resultValue or "")
         if icon then
             dxDrawImage(dx + (rightPanelW - previewSize)/2, dy + 20, previewSize, previewSize, icon, 0, 0, 0, tocolor(255, 255, 255, 255 * alphaMult))
         end
@@ -144,8 +194,7 @@ function renderCraftingUI()
             if cachedAvailability[selectedIdx] and cachedAvailability[selectedIdx][i] then
                 hasAmount = cachedAvailability[selectedIdx][i]
             else
-                -- Fallback to client-side countItems (might not work for money)
-                hasAmount = exports["item-system"]:countItems(localPlayer, ing.id) or 0
+                hasAmount = getLocalItemCount(ing.id)
             end
 
             local isMet = (hasAmount >= ing.amount)
@@ -178,8 +227,15 @@ function renderCraftingUI()
 end
 
 function openCraftingUI(newRecipes, npc)
-    if active then return end
-    if not newRecipes or #newRecipes == 0 then return end
+    outputDebugString("[CRAFTING-UI] openCraftingUI called for NPC " .. tostring(npc))
+    if active then 
+        outputDebugString("[CRAFTING-UI] UI already active, returning")
+        return 
+    end
+    if not newRecipes or #newRecipes == 0 then 
+        outputDebugString("[CRAFTING-UI] recipes empty, returning")
+        return 
+    end
     
     recipes = newRecipes
     activeNPC = npc

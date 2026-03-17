@@ -23,6 +23,7 @@
 --   onFailEvent(npcElement, reason)   -- when wrong answer given, reason = rejection text
 -- ========================================================
 
+local localPlayer = getLocalPlayer()
 local screenW, screenH = guiGetScreenSize()
 
 -- --------------------------------------------------------
@@ -40,6 +41,7 @@ local fadeAlpha      = 0
 local textIndex      = 0
 local lastTick       = 0
 local isClosing      = false
+local noCinematicFlag = false
 
 local currentText    = ""
 local currentChoices = {}
@@ -93,20 +95,23 @@ end
 -- --------------------------------------------------------
 -- Core Stop
 -- --------------------------------------------------------
-local function doStop(success)
+local function doStop(success, skipDelay)
     if not active then return end
+    if isClosing and not skipDelay then return end
     isClosing = true
 
     showCursor(false)
     guiSetInputMode("allow_binds")
-    setCameraTarget(localPlayer)
+    if not noCinematicFlag then
+        setCameraTarget(localPlayer)
+    end
     setElementFrozen(localPlayer, false)
     setPlayerAnim(nil)
     setNPCAnim(nil)
 
     local capturedNPC = npcEl
 
-    setTimer(function()
+    local function finalize()
         active = false
         isClosing = false
         removeEventHandler("onClientRender", root, renderDialogueUI)
@@ -115,10 +120,14 @@ local function doStop(success)
             if successEvent then
                 triggerEvent(successEvent, localPlayer, capturedNPC)
             end
-        else
-            -- failEvent is fired immediately before this timer in handleAnswer
         end
-    end, 500, 1)
+    end
+
+    if skipDelay then
+        finalize()
+    else
+        setTimer(finalize, 500, 1)
+    end
 end
 
 -- --------------------------------------------------------
@@ -135,9 +144,20 @@ local function handleAnswer()
 
     -- Check for client-side callback
     if stageData.callbacks and stageData.callbacks[selectedOption] then
-        stageData.callbacks[selectedOption](npcEl)
-        doStop(true)
+        local cb = stageData.callbacks[selectedOption]
+        outputDebugString("[NPC-DIALOGUE] Executing callback for option " .. tostring(selectedOption) .. " on NPC " .. tostring(npcEl) .. " (Type: " .. type(cb) .. ")")
+        doStop(true, true) -- Stop dialogue IMMEDIATELY before running callback
+        
+        if type(cb) == "function" then
+            cb(npcEl)
+        elseif type(cb) == "string" then
+            triggerEvent(cb, localPlayer, npcEl)
+        else
+            outputDebugString("[NPC-DIALOGUE] Error: Callback for option " .. tostring(selectedOption) .. " is invalid type: " .. type(cb), 1)
+        end
         return
+    else
+        outputDebugString("[NPC-DIALOGUE] No callback found for option " .. tostring(selectedOption))
     end
 
     if stageData.correct then
@@ -268,7 +288,7 @@ end
 --- @param dialogueData  table    Staged dialogue table (see header)
 --- @param onSuccess     string   Event name triggered on localPlayer on success
 --- @param onFail        string   Event name triggered on localPlayer on failure
-function startCinematicDialogue(npcElement, dialogueData, onSuccess, onFail)
+function startCinematicDialogue(npcElement, dialogueData, onSuccess, onFail, noCinematic)
     if active then return end
     if not isElement(npcElement) then
         outputDebugString("[NPC-DIALOGUE] startCinematicDialogue: invalid npcElement", 1)
@@ -288,19 +308,22 @@ function startCinematicDialogue(npcElement, dialogueData, onSuccess, onFail)
     selectedOption = 1
     fadeAlpha      = 0
     isClosing      = false
+    noCinematicFlag = noCinematic or false
     currentNPCAnim    = ""
     currentPlayerAnim = ""
 
     showCursor(true)
     guiSetInputMode("no_binds")
 
-    -- Cinematic camera between player and NPC
-    local nx, ny, nz = getElementPosition(npcEl)
-    local px, py, pz = getElementPosition(localPlayer)
-    local camX = nx + (px - nx) * 0.5
-    local camY = ny + (py - ny) * 0.5
-    local camZ = nz + 1.2
-    setCameraMatrix(camX + 1.5, camY + 1.5, camZ + 0.5, nx, ny, nz + 0.6)
+    if not noCinematic then
+        -- Cinematic camera between player and NPC
+        local nx, ny, nz = getElementPosition(npcEl)
+        local px, py, pz = getElementPosition(localPlayer)
+        local camX = nx + (px - nx) * 0.5
+        local camY = ny + (py - ny) * 0.5
+        local camZ = nz + 1.2
+        setCameraMatrix(camX + 1.5, camY + 1.5, camZ + 0.5, nx, ny, nz + 0.6)
+    end
 
     addEventHandler("onClientRender", root, renderDialogueUI)
     updateStage()

@@ -8,19 +8,59 @@ local function isMoneyItem(id)
     return id == 134
 end
 
+-- ID 154 is Fishing License
+local function isLicenseItem(id)
+    return id == 154
+end
+
+local function getLicenseLevel(value)
+    if not value or type(value) ~= "string" then return 0 end
+    local level = value:match("%(Level (%d+)%)")
+    return tonumber(level) or 0
+end
+
 local function getIngredientCount(player, id, value)
+    local count = 0
     if isMoneyItem(id) then
-        return exports.global:getMoney(player)
+        count = exports.global:getMoney(player)
+    elseif isLicenseItem(id) then
+        -- Hierarchical check: If player has ANY license with Level >= required Level, count as 1
+        local requiredLevel = getLicenseLevel(value)
+        local playerItems = exports["item-system"]:getItems(player) or {}
+        for _, item in ipairs(playerItems) do
+            if item[1] == id then -- ID matches
+                local playerLevel = getLicenseLevel(item[2])
+                if playerLevel >= requiredLevel then
+                    count = 1 -- Satisfied
+                    break
+                end
+            end
+        end
     else
-        return exports["item-system"]:countItems(player, id, value) or 0
+        count = exports["item-system"]:countItems(player, id, value) or 0
     end
+    outputDebugString(string.format("[CRAFTING-DEBUG] Player %s: Count for ID %s (val: %s) = %s", getPlayerName(player), tostring(id), tostring(value), tostring(count)))
+    return count
 end
 
 local function takeIngredient(player, id, amount, value)
     if isMoneyItem(id) then
         return exports.global:takeMoney(player, amount)
+    elseif isLicenseItem(id) then
+        -- Licenses are NOT consumed as ingredients
+        return true
     else
-        return exports["item-system"]:takeItem(player, id, amount, value)
+        -- Loop to take items one by one if amount > 1
+        -- (Most item systems take 1 per call unless they support stackable amount argument)
+        local successCount = 0
+        for i = 1, amount do
+            if exports["item-system"]:takeItem(player, id, value) then
+                successCount = successCount + 1
+            else
+                break
+            end
+        end
+        return successCount == amount
     end
 end
 
@@ -74,17 +114,15 @@ addEventHandler("crafting:tryCraft", root, function(recipe, npc)
     end
 
     -- 3. Consume Ingredients
-    local consumedAll = true
     for _, ing in ipairs(recipe.ingredients or {}) do
+        outputDebugString("[CRAFTING-SERVER] Attempting to take " .. tostring(ing.name) .. " (ID: " .. tostring(ing.id) .. ") x" .. tostring(ing.amount) .. " val: " .. tostring(ing.value))
         if not takeIngredient(player, ing.id, ing.amount, ing.value) then
-            consumedAll = false
+            outputDebugString("[CRAFTING-SERVER] FAILED to take " .. tostring(ing.name), 1)
+            local itemName = ing.name or "Item #"..ing.id
+            exports.global:sendLocalText(npc or player, "[Inggris] " .. npcName .. " says: Maaf, ada masalah saat mengambil " .. itemName .. ". Coba cek inventarismu.", 255, 255, 255, 10)
+            triggerClientEvent(player, "crafting:feedback", player, false, "")
+            return
         end
-    end
-
-    if not consumedAll then
-        exports.global:sendLocalText(npc or player, "[Inggris] " .. npcName .. " says: Ada masalah teknis, coba lagi nanti.", 255, 255, 255, 10)
-        triggerClientEvent(player, "crafting:feedback", player, false, "")
-        return
     end
 
     -- 4. Give Result
