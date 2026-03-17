@@ -8,19 +8,19 @@ local function isMoneyItem(id)
     return id == 134
 end
 
-local function getIngredientCount(player, id)
+local function getIngredientCount(player, id, value)
     if isMoneyItem(id) then
         return exports.global:getMoney(player)
     else
-        return exports["item-system"]:countItems(player, id) or 0
+        return exports["item-system"]:countItems(player, id, value) or 0
     end
 end
 
-local function takeIngredient(player, id, amount)
+local function takeIngredient(player, id, amount, value)
     if isMoneyItem(id) then
         return exports.global:takeMoney(player, amount)
     else
-        return exports["item-system"]:takeItem(player, id, amount)
+        return exports["item-system"]:takeItem(player, id, amount, value)
     end
 end
 
@@ -33,7 +33,7 @@ addEventHandler("crafting:getAvailability", root, function(recipeList)
     for i, recipe in ipairs(recipeList) do
         availability[i] = {}
         for j, ing in ipairs(recipe.ingredients or {}) do
-            availability[i][j] = getIngredientCount(player, ing.id)
+            availability[i][j] = getIngredientCount(player, ing.id, ing.value)
         end
     end
     
@@ -53,7 +53,7 @@ addEventHandler("crafting:tryCraft", root, function(recipe, npc)
     -- 1. Validate Ingredients
     local missing = {}
     for _, ing in ipairs(recipe.ingredients or {}) do
-        local hasAmount = getIngredientCount(player, ing.id)
+        local hasAmount = getIngredientCount(player, ing.id, ing.value)
         if hasAmount < ing.amount then
             table.insert(missing, (ing.name or "Item #"..ing.id))
         end
@@ -76,7 +76,7 @@ addEventHandler("crafting:tryCraft", root, function(recipe, npc)
     -- 3. Consume Ingredients
     local consumedAll = true
     for _, ing in ipairs(recipe.ingredients or {}) do
-        if not takeIngredient(player, ing.id, ing.amount) then
+        if not takeIngredient(player, ing.id, ing.amount, ing.value) then
             consumedAll = false
         end
     end
