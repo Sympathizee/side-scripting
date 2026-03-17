@@ -96,9 +96,27 @@ fishHotspots = {}
 -- =======================================================
 
 -- Create tables if they don't exist (SQLite Syntax)
-dbExec(db, "CREATE TABLE IF NOT EXISTS `fish_level` (`name` TEXT PRIMARY KEY, `level` INTEGER, `amount` INTEGER, `sell_amount` INTEGER DEFAULT 0, `cooldown_expiry` INTEGER DEFAULT 0)")
+dbExec(db, "CREATE TABLE IF NOT EXISTS `fish_level` (`name` TEXT PRIMARY KEY, `level` INTEGER, `amount` INTEGER, `sell_amount` INTEGER DEFAULT 0, `cooldown_expiry` INTEGER DEFAULT 0, `total_sold` INTEGER DEFAULT 0)")
 dbExec(db, "CREATE TABLE IF NOT EXISTS `fish_settings` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `npc_type` TEXT, `name` TEXT, `x` REAL, `y` REAL, `z` REAL, `rot` REAL, `int` INTEGER, `dim` INTEGER, `skin` INTEGER)")
 dbExec(db, "CREATE TABLE IF NOT EXISTS `fish_hotspots` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `region` TEXT, `x` REAL, `y` REAL, `z` REAL, `is_event` INTEGER DEFAULT 0)")
+
+-- Migration: Add total_sold if it doesn't exist
+dbQuery(function(qh)
+    local res = dbPoll(qh, 0)
+    if res then
+        local hasTotalSold = false
+        for _, col in ipairs(res) do
+            if col.name == "total_sold" then
+                hasTotalSold = true
+                break
+            end
+        end
+        if not hasTotalSold then
+            dbExec(db, "ALTER TABLE `fish_level` ADD COLUMN `total_sold` INTEGER DEFAULT 0")
+            outputDebugString("[FISHING] Migration: Added total_sold column to fish_level table.")
+        end
+    end
+end, db, "PRAGMA table_info(`fish_level`)")
 
 -- Helper to randomly shuffle a table
 local function shuffleTable(t)
@@ -258,6 +276,7 @@ addEventHandler("fishing:requestInitialData", root, function()
                         amount = tonumber(res[1]["sell_amount"] or 0), 
                         expiry = tonumber(res[1]["cooldown_expiry"] or 0), 
                         current = tonumber(res[1]["amount"]), 
+                        total_sold = tonumber(res[1]["total_sold"] or 0),
                         level = level
                     }
                 end
@@ -415,8 +434,8 @@ addEventHandler("onPlayerQuit", root, function()
     end
 
     if tblCooldown[name] then
-        dbExec(db, "UPDATE `fish_level` SET `level`=?, `amount`=?, `sell_amount`=?, `cooldown_expiry`=? WHERE `name`=?", 
-            tblCooldown[name].level, tblCooldown[name].current, tblCooldown[name].amount, tblCooldown[name].expiry, name)
+        dbExec(db, "UPDATE `fish_level` SET `level`=?, `amount`=?, `sell_amount`=?, `cooldown_expiry`=?, `total_sold`=? WHERE `name`=?", 
+            tblCooldown[name].level, tblCooldown[name].current, tblCooldown[name].amount, tblCooldown[name].expiry, (tblCooldown[name].total_sold or 0), name)
         tblCooldown[name] = nil
     end
 end)
@@ -424,8 +443,8 @@ end)
 -- Mass save on server shutdown
 addEventHandler("onResourceStop", resourceRoot, function()
     for name, data in pairs(tblCooldown) do
-        dbExec(db, "UPDATE `fish_level` SET `level`=?, `amount`=?, `sell_amount`=?, `cooldown_expiry`=? WHERE `name`=?", 
-            data.level, data.current, data.amount, data.expiry, name)
+        dbExec(db, "UPDATE `fish_level` SET `level`=?, `amount`=?, `sell_amount`=?, `cooldown_expiry`=?, `total_sold`=? WHERE `name`=?", 
+            data.level, data.current, data.amount, data.expiry, (data.total_sold or 0), name)
     end
 end)
 
@@ -660,17 +679,18 @@ function sellFish(thePlayer, ped)
             current = tonumber(result[1]["amount"])
             local sellAmount = tonumber(result[1]["sell_amount"] or 0)
             local expiry = tonumber(result[1]["cooldown_expiry"] or 0)
+            local totalSold = tonumber(result[1]["total_sold"] or 0)
             
             -- Check persistent expiry
             if expiry > now then
                 local remainingSec = expiry - now
                 local minutes = math.floor(remainingSec / 60)
                 exports.global:sendLocalText(thePlayer, "[English] " .. npcName .. " says: Kamu masih dalam masa cooldown. Kembali lagi dalam " .. minutes .. " menit!", 255, 255, 255, 10)
-                tblCooldown[name] = {amount = sellAmount, expiry = expiry, current = current, level = level}
+                tblCooldown[name] = {amount = sellAmount, expiry = expiry, current = current, total_sold = totalSold, level = level}
                 return
             end
             
-            tblCooldown[name] = {amount = 0, expiry = 0, current = current, level = level}
+            tblCooldown[name] = {amount = 0, expiry = 0, current = current, total_sold = totalSold, level = level}
             triggerClientEvent(thePlayer, "fishing:updateLevel", thePlayer, level)
         else
             exports.global:sendLocalText(thePlayer, "[English] " .. npcName .. " says: Kamu belum punya Fishing License, silahkan apply dulu ke License Issuer!", 255, 255, 255, 10)
@@ -744,10 +764,11 @@ function sellFish(thePlayer, ped)
 
         tblCooldown[name].amount = countFish
         tblCooldown[name].expiry = expiry
+        tblCooldown[name].total_sold = (tblCooldown[name].total_sold or 0) + countFish
 
         -- Update DB immediately for stability
-        dbExec(db, "UPDATE `fish_level` SET `level`=?, `amount`=?, `sell_amount`=?, `cooldown_expiry`=? WHERE `name`=?", 
-            tblCooldown[name].level, tblCooldown[name].current, countFish, expiry, name)
+        dbExec(db, "UPDATE `fish_level` SET `level`=?, `amount`=?, `sell_amount`=?, `cooldown_expiry`=?, `total_sold`=? WHERE `name`=?", 
+            tblCooldown[name].level, tblCooldown[name].current, countFish, expiry, tblCooldown[name].total_sold, name)
 
         exports.global:giveMoney(thePlayer, totalPayment)
         exports.global:sendLocalText(thePlayer, "[English] " .. npcName .. " says: Ini uang hasil penjualan ikanmu, kembali lagi nanti!", 255, 255, 255, 10)
@@ -786,12 +807,13 @@ function giveFishLic(thePlayer, levelUp, ped)
                 amount = tonumber(result[1]["sell_amount"] or 0), 
                 expiry = tonumber(result[1]["cooldown_expiry"] or 0), 
                 current = tonumber(result[1]["amount"]), 
+                total_sold = tonumber(result[1]["total_sold"] or 0),
                 level = level
             }
             triggerClientEvent(thePlayer, "fishing:updateLevel", thePlayer, level)
         else
-            dbExec(db, "INSERT INTO `fish_level` (`name`, `level`, `amount`, `sell_amount`, `cooldown_expiry`) VALUES (?, 1, 0, 0, 0)", name)
-            tblCooldown[name] = {amount = 0, expiry = 0, current = 0, level = 1}
+            dbExec(db, "INSERT INTO `fish_level` (`name`, `level`, `amount`, `sell_amount`, `cooldown_expiry`, `total_sold`) VALUES (?, 1, 0, 0, 0, 0)", name)
+            tblCooldown[name] = {amount = 0, expiry = 0, current = 0, total_sold = 0, level = 1}
             triggerClientEvent(thePlayer, "fishing:updateLevel", thePlayer, 1)
         end
     end
@@ -980,7 +1002,7 @@ addCommandHandler("setfishlevel", function(thePlayer, commandName, tPlayerName, 
     local newLvl = tonumber(level)
     local name = getPlayerName(targetPlayer)
     if not tblCooldown[name] then
-        tblCooldown[name] = {amount = 0, cooldown = false, current = 0, level = newLvl}
+        tblCooldown[name] = {amount = 0, cooldown = false, current = 0, total_sold = 0, level = newLvl}
     else
         tblCooldown[name].level = newLvl
     end

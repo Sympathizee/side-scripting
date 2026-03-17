@@ -17,15 +17,6 @@ JACKPOT_ITEM_ID = 294   -- Bluefin Tuna (Level 5, Variant 2)
 JACKPOT_WEIGHT = "50.0" -- Max weight
 JACKPOT_NAME = "Legendary Bluefin Tuna"
 
--- =======================================================
--- CORE REWARD DISPATCHER
--- =======================================================
-
--- Mapping of Event Names to their reward functions
-local eventHandlers = {
-    ["Deep Sea Debris"] = handleDebrisReward,
-    ["Exotic Swarm"] = handleExoticSwarmReward,
-}
 
 -- =======================================================
 -- EVENT HANDLERS
@@ -86,6 +77,16 @@ local function handleExoticSwarmReward(thePlayer)
     end
     return false -- Jackpot missed
 end
+
+-- =======================================================
+-- CORE REWARD DISPATCHER
+-- =======================================================
+
+-- Mapping of Event Names to their reward functions
+local eventHandlers = {
+    ["Deep Sea Debris"] = handleDebrisReward,
+    ["Exotic Swarm"] = handleExoticSwarmReward,
+}
 
 function handleEventRewards(thePlayer, activeEvent)
     local handler = eventHandlers[activeEvent]
