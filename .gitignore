@@ -1,0 +1,6 @@
+mods/deathmatch/resource-cache
+mods/deathmatch/resource-cache/*
+
+mods/deathmatch/resource-cache/http-client-files/ped-system/c_peds_rightclick.lua
+mods/deathmatch/resource-cache/http-client-files/item-system/g_items.lua
+mods/deathmatch/resource-cache/http-client-files/item-system/g_item_functions.lua
