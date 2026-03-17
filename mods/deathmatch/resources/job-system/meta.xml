@@ -14,7 +14,21 @@
 	-->
 
 	<script src="fishing/s_fishing.lua" type="server"/>
+	<script src="fishing/s_fishing_events.lua" type="server"/>
+	<script src="fishing/s_fishing_rewards.lua" type="server"/>
 	<script src="fishing/c_fishing.lua" type="client"/>
+	<script src="fishing/c_fishing_minigame.lua" type="client"/>
+	<script src="fishing/c_fishing_npc.lua" type="client"/>
+	<file src="fishing/ikan-1.png" />
+	<file src="fishing/ikan-2.png" />
+	<file src="fishing/ikan-3.png" />
+	<file src="fishing/ikan-4.png" />
+	<file src="fishing/ikan-5.png" />
+	<file src="fishing/pancingan-2.png" />
+	<file src="fishing/pancingan-3.png" />
+	<file src="fishing/pancingan-4.png" />
+	<file src="fishing/pancingan-5.png" />
+
 	
 	<script src="photographer/s_photographer_job.lua" type="server"/>
 	<script src="photographer/c_photographer_job.lua" type="client"/>

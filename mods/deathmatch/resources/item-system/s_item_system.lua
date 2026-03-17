@@ -379,7 +379,7 @@ function useItem(itemSlot, additional)
 			triggerEvent('sendAme', source, "swallows some PCP pills")
 		elseif itemID == 48 then -- Briefcase
 			triggerEvent("artifacts:toggle", source, source, "backpack")
-		elseif (itemID==49) then
+		elseif (itemID==49) or (itemID==285) or (itemID==286) or (itemID==287) or (itemID==288) or (itemID==289) then
 			triggerEvent("artifacts:toggle", source, source, "rod")
 			triggerEvent( "fish", source )
 		elseif (itemID==50) then -- highway code book
