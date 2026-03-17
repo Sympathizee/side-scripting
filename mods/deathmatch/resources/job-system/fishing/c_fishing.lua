@@ -1,16 +1,38 @@
-local rodId = {285,286,287,288,289}
+-- =======================================================
+-- CONFIGURATION & CONSTANTS
+-- =======================================================
+
+-- Resource Dependencies
 local items = exports['item-system']
-local showAllHotspots = false
+
+-- Rod & Catch Constants
+local rodId = {49, 286, 287, 288, 289} -- Item IDs for fishing rods
+local snappedCaught = 0.02              -- 2% chance rod breaks when catching fish
+local snappedEscaped = 0.05             -- 5% chance rod breaks when fish escapes
 
 -- Hotspot Constants
-local HOTSPOT_BLIP_SIZE = 3
-local EVENT_HOTSPOT_BLIP_SIZE = 6
-local HOTSPOT_RADIUS = 50
-local EVENT_HOTSPOT_RADIUS = 75
-local BLIP_DISTANCE_LIMIT = 200
+local HOTSPOT_RADIUS = 50           -- Standard hotspot radius
+local EVENT_HOTSPOT_RADIUS = 75      -- Special event hotspot radius
+local HOTSPOT_BLIP_SIZE = 3          -- Blip size for normal hotspots
+local EVENT_HOTSPOT_BLIP_SIZE = 6    -- Blip size for event hotspots
+local BLIP_DISTANCE_LIMIT = 200      -- Radius within which blips are visible to boats
 
-isFishingActive = false
-currentFishingLevel = 0
+-- Location Constants
+-- SMB Area (Bianglala SMB)
+local smbCol = createColRectangle(349.0771484375, -2089.2978515625, 61.0, 2.0)
+
+-- Runtime State (Client-Side)
+isFishingActive = false              -- Global status for minigame/fishing state
+currentFishingLevel = 0              -- Synced level from server
+local showAllHotspots = false        -- Debug mode status
+local hotspotMarkers = {}            -- Active markers for visual debugging
+local hotspotBlips = {}              -- Active blips on map
+local activeHotspots = {}            -- Table of hotspots synced from server
+local isEventActiveClient = false    -- Sync status for global fishing events
+
+-- =======================================================
+-- EVENTS & NETWORK SYNC
+-- =======================================================
 
 addEvent("fishing:updateLevel", true)
 addEventHandler("fishing:updateLevel", root, function(level)
@@ -19,20 +41,11 @@ end)
 
 addEvent("fishing:receiveHotspots", true)
 addEvent("fishing:minigameResult", true)
--- Initial data loading
 
--- Pancingan dibuat bisa patah supaya bisa beli terus juga
-local snappedCaught = 0.02 -- 2% chance patah jika dapet ikan
-local snappedEscaped = 0.05 -- 5% chance pancingan patah jika ikan lepas
+-- =======================================================
+-- HOTSPOT RENDERING & VISIBILITY
+-- =======================================================
 
-addEventHandler("onClientResourceStart", resourceRoot, function()
-    triggerServerEvent("fishing:requestInitialData", localPlayer)
-end)
-
-local hotspotMarkers = {}
-local hotspotBlips = {}
-local activeHotspots = {}
-local isEventActiveClient = false
 
 function updateHotspotVisibility()
     local px, py, pz = getElementPosition(localPlayer)
@@ -124,10 +137,6 @@ addEventHandler("fishing:receiveHotspots", root, function(hotspots, isEventActiv
     updateHotspotVisibility()
 end)
 
--- Col untuk mancing di ujung SMB saja
---   0 0 349.0771484375 -2089.2978515625 7.8300905227661 Koordinat yang saya pakai
--- Di paling ujung tempat bianglala SMB
-local smbCol = createColRectangle(349.0771484375, -2089.2978515625, 61.0, 2.0)
 -- ============== Helping Function(s) ==============
 
 function has_value(tab, val)
@@ -296,67 +305,20 @@ addEventHandler("fishing:minigameResult", root, function(success, rodLevel)
     end
 end)
 
-function npcRightClick(button, state, absX, absY, wx, wy, wz, element)
-    if (element) and (getElementType(element)=="ped") and (button=="right") and (state=="down") then
-		local npc_type = getElementData(element, "fishnpc.type")
-        local pedName = (getElementData(element, "rpp.npc.name") or "Fisherman"):gsub("_", " ")
+-- =======================================================
+-- INITIALIZATION & COMMANDS
+-- =======================================================
 
-        if(npc_type == "fisher") then 
-            local rcMenu = exports.rightclick:create(pedName)
-            local sell = exports.rightclick:addRow("Jual Ikan")
-            local upgradeRod = exports.rightclick:addRow("Perbaharui Pancingan")
-            addEventHandler("onClientGUIClick", sell,  function (button, state)
-                triggerServerEvent("fishing:sellFish", localPlayer, element)
-            end, false)
-            addEventHandler("onClientGUIClick", upgradeRod,  function (button, state)
-                triggerServerEvent("fishing:upgradeRod", localPlayer, element)
-            end, false)
-            local close = exports.rightclick:addRow("Close")
-            addEventHandler("onClientGUIClick", close,  function (button, state)
-                exports.rightclick:destroy(rcMenu)
-            end, false)
-        elseif(npc_type == "license") then
-            local rcMenu = exports.rightclick:create(pedName)
-            local apply = exports.rightclick:addRow("Perbaharui Izin Memancing")
-            local close = exports.rightclick:addRow("Close")
-            
-            addEventHandler("onClientGUIClick", apply,  function (button, state)
-                triggerServerEvent("fishing:applyLicense", localPlayer, element)
-            end, false)
-            addEventHandler("onClientGUIClick", close,  function (button, state)
-                exports.rightclick:destroy(rcMenu)
-            end, false)
-        elseif(npc_type == "scrapper") then
-            local rcMenu = exports.rightclick:create(pedName)
-            local buyMetal = exports.rightclick:addRow("Buy 1x Metal ($2,500)")
-            local close = exports.rightclick:addRow("Close")
-            
-            addEventHandler("onClientGUIClick", buyMetal,  function (button, state)
-                triggerServerEvent("fishing:buyScrap", localPlayer, 1, element)
-            end, false)
-            addEventHandler("onClientGUIClick", close,  function (button, state)
-                exports.rightclick:destroy(rcMenu)
-            end, false)
-        end
-    end
-end
+addEventHandler("onClientResourceStart", resourceRoot, function()
+    triggerServerEvent("fishing:requestInitialData", localPlayer)
+end)
 
-function DestroySellingGUI()
-    if isElement(sellfishGUI) then
-        destroyElement(sellfishGUI)
-        showCursor(false)
-    end
-end
+addEventHandler("onClientChangeChar", root, endFishing)
 
--- Commands
 addCommandHandler("fishnew", startFishing)
 addCommandHandler("stopfishing", endFishing)
-addEventHandler("onClientChangeChar", root, endFishing)
-addEventHandler("onClientRender", root, renderFishingMinigame)
-
 addCommandHandler("debugfishing", function()
     showAllHotspots = not showAllHotspots
     outputChatBox("[FISHING] Hotspot debug mode is now " .. (showAllHotspots and "#00FF00Enabled" or "#FF0000Disabled") .. ".", 255, 255, 255, true)
     updateHotspotVisibility()
 end)
-addEventHandler("onClientClick", root, npcRightClick)

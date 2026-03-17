@@ -1,38 +1,104 @@
--- Get db connection
-local db = exports.mysql:getConn('mta')
--- Get item system
+-- =======================================================
+-- CONFIGURATION & CONSTANTS
+-- =======================================================
+
+-- Database and Resource Dependencies
+local db = dbConnect("sqlite", "fishing.db")
 local items = exports['item-system']
 
--- Fishing Constants
-local HOTSPOT_RADIUS = 50
-local EVENT_HOTSPOT_RADIUS = 75
+-- Gameplay Constants
+local HOTSPOT_RADIUS = 50       -- Radius for detecting if a player is in a hotspot
+local EVENT_HOTSPOT_RADIUS = 75 -- Larger radius for special event hotspots
 
+-- Fishing Timer Settings (Determines how long until a fish bites based on hotspot state)
 local FISHING_TIMES = {
-    ["Good"] = {min = 30000, max = 90000},
-    ["Medium"] = {min = 90000, max = 180000},
-    ["Bad"] = {min = 300000, max = 900000},
-    ["Default"] = {min = 200000, max = 600000}
+    ["Good"] = {min = 30000, max = 90000},    -- 30s to 1.5m
+    ["Medium"] = {min = 90000, max = 180000},  -- 1.5m to 3m
+    ["Bad"] = {min = 300000, max = 900000},   -- 5m to 15m
+    ["Default"] = {min = 200000, max = 600000} -- 3.3m to 10m
 }
-local activeFishingTimers = {}
 
--- Initialize Tables
-dbExec(db, "CREATE TABLE IF NOT EXISTS `fish_level` (`name` VARCHAR(50) PRIMARY KEY, `level` INT, `amount` INT)")
-dbExec(db, "CREATE TABLE IF NOT EXISTS `fish_settings` (`id` INT AUTO_INCREMENT PRIMARY KEY, `npc_type` VARCHAR(20), `name` VARCHAR(50), `x` FLOAT, `y` FLOAT, `z` FLOAT, `rot` FLOAT, `int` INT, `dim` INT, `skin` INT)")
-dbExec(db, "CREATE TABLE IF NOT EXISTS `fish_hotspots` (`id` INT AUTO_INCREMENT PRIMARY KEY, `region` VARCHAR(50), `x` FLOAT, `y` FLOAT, `z` FLOAT, `is_event` TINYINT(1) DEFAULT 0)")
+-- Item IDs for Fishing Rods (Level 1 to 5)
+local rodId = {49, 286, 287, 288, 289}
 
-local rustyBaseLocation = nil -- Stores one of the scrapper NPC locations for the random arrival logic
-local oldFishingRodId = 49
+-- Item IDs for Fish (Level 1 to 5)
+local fishId = {290, 291, 292, 293, 294}
 
--- Active fish NPCs indexed by their database ID
-fishHotspots = {} -- Managed hotspots (Global to this resource)
-local activeEventHotspotID = nil
-local activeFishNPCs = {}
+-- Fish Selling Settings
+local basePrice = 50 -- Base price for fish, modified by fishDetail multipliers
+local maxFishLevelCap = {5, 7, 7, 9, 11} -- Max fish allowed to sell before cooldown (per Level 1-5)
 
--- tblCooldown memiliki value ["Nama_Player"] = { amount = jumlah yang dijual sebelum cooldown, cooldown = status cooldown, current = jumlah ikan exp yang sudah dijual saat ini, level = level mancing player}
-local tblCooldown = {}
+-- Cooldown Settings
 local cooldownMin = 15
 local cooldownSec = 0
-local cooldownTime = (cooldownMin * 60000) + (cooldownSec * 1000) -- 15 menit cooldown, bisa diganti
+local cooldownTime = (cooldownMin * 60000) + (cooldownSec * 1000) -- Total cooldown duration (default 15 mins)
+
+-- Leveling System (Experience required to reach Levels 2, 3, 4, and 5)
+local expList = {150, 350, 700, 1000}
+
+-- Detailed Fish Data (Name, Weight Range, RP Multiplier)
+local fishDetail = {
+    { -- Level 1
+        {name="Sardine", lRPWeight=1.0, hRPWeight=1.5, lWeight=0.5, multiplier=0.9},
+        {name="Anchovy", lRPWeight=1.2, hRPWeight=1.8, lWeight=0.5, multiplier=1.0}
+    },
+    { -- Level 2
+        {name="Herring", lRPWeight=1.8, hRPWeight=2.5, lWeight=0.5, multiplier=0.85},
+        {name="Mackerel", lRPWeight=2.2, hRPWeight=3.0, lWeight=0.5, multiplier=0.9}
+    },
+    { -- Level 3
+        {name="Red Snapper", lRPWeight=3.0, hRPWeight=5.0, lWeight=0.5, multiplier=0.75},
+        {name="Mahi-Mahi", lRPWeight=4.5, hRPWeight=7.0, lWeight=0.5, multiplier=0.8}
+    },
+    { -- Level 4
+        {name="Barracuda", lRPWeight=5.0, hRPWeight=7.0, lWeight=0.5, multiplier=0.5},
+        {name="Halibut", lRPWeight=7.0, hRPWeight=10.0, lWeight=0.5, multiplier=0.55}
+    },
+    { -- Level 5
+        {name="Swordfish", lRPWeight=10.0, hRPWeight=15.0, lWeight=0.5, multiplier=0.2},
+        {name="Bluefin Tuna", lRPWeight=15.0, hRPWeight=25.0, lWeight=0.5, multiplier=0.25}
+    },
+}
+
+-- Fishing License Settings
+local fishLicense = 154 -- Item ID for the license
+local licenseDetail = {
+    "Resident Fisher License (Level 1)",
+    "Recreational Fishing Permit (Level 2)",
+    "Sport Fisher License (Level 3)",
+    "Professional Fishing License (Level 4)",
+    "Charter Fishing License (Level 5)"
+}
+
+-- Catch Probability Settings
+local tierChance = 0.7       -- Base chance to catch fish of current rod level
+local multiplierTier = 0      -- Admin modifier for tier chance
+local variantChance = 0.7    -- Base chance to catch variant 1 vs variant 2
+local multiplierVariant = 0   -- Admin modifier for variant chance
+
+-- Crafting/Upgrade Requirements
+local metalId = 91            -- Item ID for Metal
+local murId = 143             -- Item ID for Mur dan Baut
+local murNeed = {10,20,30,40} -- Mur needed for each upgrade step
+local metalNeed = {2,3,4,5}   -- Metal needed for each upgrade step
+local moneyNeed = {3000,5000,7000,9000} -- Money needed for each upgrade step
+
+-- State Tracking (Runtime Only)
+local activeFishingTimers = {}
+local rustyBaseLocation = nil
+local activeEventHotspotID = nil
+local activeFishNPCs = {}
+local tblCooldown = {}
+fishHotspots = {}
+
+-- =======================================================
+-- DATABASE INITIALIZATION
+-- =======================================================
+
+-- Create tables if they don't exist (SQLite Syntax)
+dbExec(db, "CREATE TABLE IF NOT EXISTS `fish_level` (`name` TEXT PRIMARY KEY, `level` INTEGER, `amount` INTEGER, `sell_amount` INTEGER DEFAULT 0, `cooldown_expiry` INTEGER DEFAULT 0)")
+dbExec(db, "CREATE TABLE IF NOT EXISTS `fish_settings` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `npc_type` TEXT, `name` TEXT, `x` REAL, `y` REAL, `z` REAL, `rot` REAL, `int` INTEGER, `dim` INTEGER, `skin` INTEGER)")
+dbExec(db, "CREATE TABLE IF NOT EXISTS `fish_hotspots` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `region` TEXT, `x` REAL, `y` REAL, `z` REAL, `is_event` INTEGER DEFAULT 0)")
 
 -- Helper to randomly shuffle a table
 local function shuffleTable(t)
@@ -97,40 +163,42 @@ end
 
 
 local function spawnFishingNpc(row)
-    if not row or not row.id then return end
-    
-    local id = tonumber(row.id)
+    local id = tonumber(row.id or 0)
+    local skin = tonumber(row.skin or 209)
+    local x, y, z = tonumber(row.x or 0), tonumber(row.y or 0), tonumber(row.z or 0)
+    local name = tostring(row.name or "Unknown NPC")
+    local npc_type = tostring(row.npc_type or "generic")
+
     if activeFishNPCs[id] and isElement(activeFishNPCs[id]) then
         destroyElement(activeFishNPCs[id])
     end
 
-    local ped = createPed(row.skin or 209, row.x, row.y, row.z)
+    local ped = createPed(skin, x, y, z)
     if not ped then
-        outputDebugString("[FISHING] Failed to create ped ID " .. id .. ": " .. tostring(row.name))
+        outputDebugString(string.format("[FISHING] Failed to create ped ID %s: %s", tostring(id), name))
         return
     end
 
-    setElementRotation(ped, 0, 0, row.rot or 0)
-    setElementInterior(ped, row.int or 0)
-    setElementDimension(ped, row.dim or 0)
+    setElementRotation(ped, 0, 0, tonumber(row.rot or 0))
+    setElementInterior(ped, tonumber(row.int or 0))
+    setElementDimension(ped, tonumber(row.dim or 0))
     setElementFrozen(ped, true)
     
-    -- Interaction type mapped from npc_type
+    -- Interaction type mapping
     local interactionType = "fishing.generic"
-    if row.npc_type == "fisher" then interactionType = "fishing.herb"
-    elseif row.npc_type == "license" then interactionType = "fishing.license"
-    elseif row.npc_type == "scrapper" then interactionType = "fishing.scrap"
+    if npc_type == "fisher" then interactionType = "fishing.herb"
+    elseif npc_type == "license" then interactionType = "fishing.license"
+    elseif npc_type == "scrapper" then interactionType = "fishing.scrap"
     end
 
     setElementData(ped, "fishnpc.id", id)
-    setElementData(ped, "fishnpc.type", row.npc_type)
-    setElementData(ped, "rpp.npc.type", interactionType)
-    setElementData(ped, "rpp.npc.name", row.name)
+    setElementData(ped, "fishnpc.type", npc_type)
+    setElementData(ped, "fishnpc.name", name)
     setElementData(ped, "nametag", true)
-    setElementData(ped, "name", (row.name:gsub(" ", "_")))
+    setElementData(ped, "name", (name:gsub(" ", "_")))
     
     activeFishNPCs[id] = ped
-    outputDebugString("[FISHING] Spawned NPC [" .. id .. "] (" .. row.npc_type .. "): " .. row.name)
+    outputDebugString(string.format("[FISHING] Spawned NPC [%s] (%s): %s", tostring(id), npc_type, name))
 end
 
 addEventHandler("onResourceStart", resourceRoot, function()
@@ -138,7 +206,9 @@ addEventHandler("onResourceStart", resourceRoot, function()
     dbQuery(function(qh)
         local res = dbPoll(qh, 0)
         if res then
+            outputDebugString("[FISHING] Loading " .. #res .. " NPCs from fish_settings table.")
             for _, row in ipairs(res) do
+                outputDebugString("[FISHING] Entry: ID=" .. tostring(row.id) .. " Name=" .. tostring(row.name) .. " Type=" .. tostring(row.npc_type))
                 if row.npc_type == "scrapper" then
                     -- Use the first scrapper found as the base for the random arrival logic
                     if not rustyBaseLocation then
@@ -184,7 +254,12 @@ addEventHandler("fishing:requestInitialData", root, function()
                 local level = 0
                 if res and #res > 0 then
                     level = tonumber(res[1]["level"])
-                    tblCooldown[playerName] = {amount = 0, cooldown = false, current = tonumber(res[1]["amount"]), level = level}
+                    tblCooldown[playerName] = {
+                        amount = tonumber(res[1]["sell_amount"] or 0), 
+                        expiry = tonumber(res[1]["cooldown_expiry"] or 0), 
+                        current = tonumber(res[1]["amount"]), 
+                        level = level
+                    }
                 end
                 triggerClientEvent(clientElement, "fishing:updateLevel", clientElement, level)
             end
@@ -220,7 +295,7 @@ addCommandHandler("createfishnpc", function(thePlayer, command, npc_type, ...)
             spawnFishingNpc(res[1])
             outputChatBox("Created " .. npc_type .. " NPC: " .. name .. " with ID " .. res[1].id, thePlayer, 0, 255, 0)
         end
-    end, db, "SELECT * FROM `fish_settings` WHERE `id` = LAST_INSERT_ID()")
+    end, db, "SELECT * FROM `fish_settings` WHERE `id` = last_insert_rowid()")
 end)
 
 addCommandHandler("deletefishnpc", function(thePlayer, command, id)
@@ -251,7 +326,7 @@ addCommandHandler("nearbyfishnpc", function(thePlayer, command)
         local id = getElementData(ped, "fishnpc.id")
         if id then
             local npc_type = getElementData(ped, "fishnpc.type")
-            local name = (getElementData(ped, "rpp.npc.name") or "Unknown"):gsub("_", " ")
+            local name = (getElementData(ped, "fishnpc.name") or "Unknown"):gsub("_", " ")
             outputChatBox("  ID: " .. id .. " | Type: " .. npc_type .. " | Name: " .. name, thePlayer, 255, 255, 0)
             found = true
         end
@@ -330,83 +405,6 @@ addCommandHandler("forcehotspotrotation", function(thePlayer, command)
     outputChatBox("Forced fishing hotspots rotation.", thePlayer, 0, 255, 0)
 end)
 
--- Pancingan List item ids
---[[
-Nama dan deskripsi item untuk 5 level pancingan (Nama - Deskripsi - Weight) pada g_items
-Level 1
-Beginner's Rod - Lightweight and easy to handle for novice fisher. - 1.5kg
-Level 2
-Riverbend Rod - Flexible and designed for precision casting. - 1.5kg
-Level 3
-Oakstream Rod - Sturdy and reliable, perfect for medium size fishes. - 1.5kg
-Level 4
-Mariner's Rod - Durable and versatile, ideal for large fishes. - 1.5kg
-Level 5
-Thunderstrike Rod - Powerful and robust, built to handle huge fishes. - 1.5kg
-]]--
-local rodId = {285,286,287,288,289}
-
--- Ikan List item ids, ada 5 objek ikan, dan setiap objek ikan ada 2 variasi
---[[
- Nama dan deskripsi item untuk 5 level ikan (Nama - Deskripsi - Weight) pada g_items
- Level 1
- Small Fish - A common fish, usually found on shallow waters. - 1kg
- Level 2
- Regular Fish - A common fish, usually found on deep oceans. - 1.6kg
- Level 3
- Medium Fish - An uncommon fish, usually found on deep oceans. - 2kg
- Level 4
- Large Fish - A rare fish, usually found on deep oceans. - 3.2kg
- Level 5
- Huge Fish - The rarest fish, can only be found on the deepest oceans. - 3.6kg
-]]--
-local fishId = {290,291,292,293,294}
--- Base fish price, will be multiplied by the multiplier in fishDetail
-local basePrice = 50
--- Jumlah ikan yang harus dijual untuk naik level
-local expList = {150, 350, 700, 1000}
--- Nama dan Weight IC ikan yang ditangkap, diperhitungkan berdasarkan weight pada g_items
--- Variasi ikan penting secara IC karena variasi ikan ke 2 lebih rare, dan bisa dijadikan sarana RP lomba mancing SAN
-local fishDetail = {
-    {
-        {name="Sardine", lRPWeight=1.0, hRPWeight=1.5, lWeight=0.5, multiplier=0.9},
-        {name="Anchovy", lRPWeight=1.2, hRPWeight=1.8, lWeight=0.5, multiplier=1.0}
-    },
-    {
-        {name="Herring", lRPWeight=1.8, hRPWeight=2.5, lWeight=0.5, multiplier=0.85},
-        {name="Mackerel", lRPWeight=2.2, hRPWeight=3.0, lWeight=0.5, multiplier=0.9}
-    },
-    {
-        {name="Red Snapper", lRPWeight=3.0, hRPWeight=5.0, lWeight=0.5, multiplier=0.75},
-        {name="Mahi-Mahi", lRPWeight=4.5, hRPWeight=7.0, lWeight=0.5, multiplier=0.8}
-    },
-    {
-        {name="Barracuda", lRPWeight=5.0, hRPWeight=7.0, lWeight=0.5, multiplier=0.5},
-        {name="Halibut", lRPWeight=7.0, hRPWeight=10.0, lWeight=0.5, multiplier=0.55}
-    },
-    {
-        {name="Swordfish", lRPWeight=10.0, hRPWeight=15.0, lWeight=0.5, multiplier=0.2},
-        {name="Bluefin Tuna", lRPWeight=15.0, hRPWeight=25.0, lWeight=0.5, multiplier=0.25}
-    },
-}
-
--- Fishing License item id
-local fishLicense = 154
-
-local licenseDetail = {
-    "Resident Fisher License (Level 1)",
-    "Recreational Fishing Permit (Level 2)",
-    "Sport Fisher License (Level 3)",
-    "Professional Fishing License (Level 4)",
-    "Charter Fishing License (Level 5)"
-}
-
--- Chance dapet ikan setiap tier dan variasinya
-local tierChance = 0.7
-local multiplierTier = 0
-local variantChance = 0.7
-local multiplierVariant = 0
-
 
 -- Save when logging out
 addEventHandler("onPlayerQuit", root, function()
@@ -417,7 +415,8 @@ addEventHandler("onPlayerQuit", root, function()
     end
 
     if tblCooldown[name] then
-        dbExec(db, "UPDATE `fish_level` SET `level`=?, `amount`=? WHERE `name`=?", tblCooldown[name].level, tblCooldown[name].current, name)
+        dbExec(db, "UPDATE `fish_level` SET `level`=?, `amount`=?, `sell_amount`=?, `cooldown_expiry`=? WHERE `name`=?", 
+            tblCooldown[name].level, tblCooldown[name].current, tblCooldown[name].amount, tblCooldown[name].expiry, name)
         tblCooldown[name] = nil
     end
 end)
@@ -425,21 +424,11 @@ end)
 -- Mass save on server shutdown
 addEventHandler("onResourceStop", resourceRoot, function()
     for name, data in pairs(tblCooldown) do
-        dbExec(db, "UPDATE `fish_level` SET `level`=?, `amount`=? WHERE `name`=?", data.level, data.current, name)
+        dbExec(db, "UPDATE `fish_level` SET `level`=?, `amount`=?, `sell_amount`=?, `cooldown_expiry`=? WHERE `name`=?", 
+            data.level, data.current, data.amount, data.expiry, name)
     end
 end)
 
--- Jumlah ikan yang bisa dijual sebelum cooldown berdasasarkan level 1-5
-local maxFishLevelCap = {5, 7, 7, 9, 11}
-
--- NPC Name logic is now dynamic based on the ped being interacted with
-
--- Item ID metal, mur dan baut. Jumlah mur dan metal yang dibutuhkan
-local metalId = 91
-local murId = 143
-local murNeed = {10,20,30,40}
-local metalNeed = {2,3,4,5}
-local moneyNeed = {3000,5000,7000,9000}
 
 
 --[[
@@ -565,45 +554,12 @@ function giveCatch(thePlayer, clientInHotspot, rodLevel)
     end
     
     -- =======================================================
-    -- EVENT: Deep Sea Debris (Replaces Loot Pool Entirely)
+    -- Handle Event Rewards (Debris & Exotic Swarm Jackpot)
     -- =======================================================
-    if activeEvent == "Deep Sea Debris" then
-        -- Weighted Loot Table configuration
-        local debrisLootTable = {
-            {item = 91, name = "Metal", weight = 40},       -- 40% chance
-            {item = 143, name = "Mur dan Baut", weight = 40}, -- 40% chance
-            {item = 122, name = "Toll Pass", weight = 10},  -- 10% chance
-            {item = 168, name = "Headlights", weight = 9},  -- 9% chance
-            {item = 111, name = "Rusty Safe", weight = 1}   -- 1% chance (Rare)
-        }
-
-        -- Weighted Randomizer Function
-        local totalWeight = 0
-        for _, drop in ipairs(debrisLootTable) do
-            totalWeight = totalWeight + drop.weight
+    if activeEvent and handleEventRewards then
+        if handleEventRewards(thePlayer, activeEvent) then
+            return -- Skip standard fish logic if event reward was handled
         end
-
-        local rng = math.random(1, totalWeight)
-        local currentWeight = 0
-        local droppedItem = nil
-        
-        for _, drop in ipairs(debrisLootTable) do
-            currentWeight = currentWeight + drop.weight
-            if rng <= currentWeight then
-                droppedItem = drop
-                break
-            end
-        end
-
-        if droppedItem then
-            if items:hasSpaceForItem(thePlayer, droppedItem.item, 1) then
-                items:giveItem(thePlayer, droppedItem.item, 1)
-                outputChatBox("You snagged something from the deep: a " .. droppedItem.name .. "!", thePlayer, 255, 150, 0)
-            else
-                outputChatBox("You snagged something, but your inventory is full!", thePlayer, 255, 0, 0)
-            end
-        end
-        return -- Bypass standard fish logic
     end
     -- =======================================================
 
@@ -626,29 +582,6 @@ function giveCatch(thePlayer, clientInHotspot, rodLevel)
     if(math.random() > variantChance - (variantChance * multiplierVariant))then
         variant = 2
     end
-    
-    -- =======================================================
-    -- EVENT: Exotic Swarm (The Jackpot Roll)
-    -- =======================================================
-    if activeEvent == "Exotic Swarm" then
-        local jackpotRoll = math.random(1, 100000)
-        if jackpotRoll == 1 then -- 0.001% chance
-            local jackpotItem = 294 -- Huge Fish (Highest Tier)
-            local jackpotWeight = "25.0"
-            local jackpotName = "Legendary Golden Swordfish"
-            
-            if items:hasSpaceForItem(thePlayer, jackpotItem, 1) then
-                -- Format: Name (RPWeightkg):GameplayWeight:vVariant:RPWeightValue
-                local itemString = jackpotName .. " (" .. jackpotWeight .. "kg):0.5:v2:" .. jackpotWeight
-                items:giveItem(thePlayer, jackpotItem, itemString)
-                
-                -- Server-wide Broadcast
-                outputChatBox("[FISHING] WOW! " .. name:gsub("_", " ") .. " just hit the Jackpot and caught a " .. jackpotName .. "!", root, 255, 194, 14)
-                return -- Stop normal fish generation
-            end
-        end
-    end
-    -- =======================================================
 
     local fishItem = fishId[caughtFish] -- the item for the caught fish type
     local fishDesc = fishDetail[caughtFish][variant] -- the description for the fish item
@@ -685,9 +618,10 @@ end
 
 -- Function to sell fish
 function sellFish(thePlayer, ped)
-    local npcName = ped and (getElementData(ped, "rpp.npc.name") or "Fisherman"):gsub("_", " ") or "Fisherman"
-    -- Init level = 1 jika dia pertama kali, get player name yang jual
+    local npcName = ped and (getElementData(ped, "fishnpc.name") or "Fisherman"):gsub("_", " ") or "Fisherman"
     local name = getPlayerName(thePlayer)
+    outputDebugString("[FISHING-SERVER] sellFish called for " .. tostring(name) .. " by NPC " .. tostring(ped))
+    
     local level = 1
     local current = 0
     local countFish = 0
@@ -697,32 +631,52 @@ function sellFish(thePlayer, ped)
     local cooldown = false -- Status cooldown
 
     -- Cek apa dia ada di table cooldown, kalo ga ada berarti ini pertama kali dia jual setelah cooldown
+    local now = getRealTime().timestamp
     if(tblCooldown[name])then
-        countFish = tblCooldown[name].amount --Update jumlah ikan yang sudah dijual
-        level = tblCooldown[name].level
-        current = tblCooldown[name].current
-        -- If on cooldown, stop disini and return false
-        if(tblCooldown[name].cooldown)then
-            exports.global:sendLocalText(thePlayer, "[English] " .. npcName .. " says: Kebanyakan ikan yang tadi dijual, nanti lagi ya!", 255, 255, 255, 10)
+        -- Check if cooldown is still active based on expiry timestamp
+        if tblCooldown[name].expiry > now then
+            local remainingSec = tblCooldown[name].expiry - now
+            local minutes = math.floor(remainingSec / 60)
+            exports.global:sendLocalText(thePlayer, "[English] " .. npcName .. " says: Kebanyakan ikan yang tadi dijual. Kembali lagi dalam " .. minutes .. " menit ya!", 255, 255, 255, 10)
             return
         end
+        
+        -- Reset amount if cooldown expired
+        if tblCooldown[name].expiry > 0 and now >= tblCooldown[name].expiry then
+            tblCooldown[name].amount = 0
+            tblCooldown[name].expiry = 0
+        end
+
+        countFish = tblCooldown[name].amount
+        level = tblCooldown[name].level
+        current = tblCooldown[name].current
     else
         -- Run query select yang diatas jika belum ada di tblCooldown memori, initial load per session
         local qh = dbQuery(db, query, name)
         local result = dbPoll(qh, -1)
         
         if(result and #result > 0)then
-            -- Update level jika dia ada di database
             level = tonumber(result[1]["level"])
             current = tonumber(result[1]["amount"])
-            tblCooldown[name] = {amount = 0, cooldown = false, current = current, level = level}
+            local sellAmount = tonumber(result[1]["sell_amount"] or 0)
+            local expiry = tonumber(result[1]["cooldown_expiry"] or 0)
+            
+            -- Check persistent expiry
+            if expiry > now then
+                local remainingSec = expiry - now
+                local minutes = math.floor(remainingSec / 60)
+                exports.global:sendLocalText(thePlayer, "[English] " .. npcName .. " says: Kamu masih dalam masa cooldown. Kembali lagi dalam " .. minutes .. " menit!", 255, 255, 255, 10)
+                tblCooldown[name] = {amount = sellAmount, expiry = expiry, current = current, level = level}
+                return
+            end
+            
+            tblCooldown[name] = {amount = 0, expiry = 0, current = current, level = level}
             triggerClientEvent(thePlayer, "fishing:updateLevel", thePlayer, level)
         else
             exports.global:sendLocalText(thePlayer, "[English] " .. npcName .. " says: Kamu belum punya Fishing License, silahkan apply dulu ke License Issuer!", 255, 255, 255, 10)
             return
         end
     end
-    
     
     -- Loop inven player, cari item yang ikan exp, dan jumlah ikan yang dijual
     for i, val in ipairs(items:getItems(thePlayer)) do
@@ -770,40 +724,33 @@ function sellFish(thePlayer, ped)
 
             -- If ikan yang dijual udah maksimal untuk level dia, stop loop.
             if(countFish >= maxFishLevelCap[level])then
-                cooldown = true
                 break
             end
 
         end
 
     end
-    -- If ada yang kejual, maka total payment akan lebih dari 0
-    if(totalPayment > 0)then
 
-        -- Add the exp to the database, level 5 tidak bisa nambah exp lagi
+    -- After loop and payment:
+    if(totalPayment > 0)then
         if(level < 5)then
             addExp(thePlayer, name, level, current, levelFish)
         end
 
-        -- Cooldown added to table value can be true or false
-        tblCooldown[name].amount = countFish;
-        tblCooldown[name].cooldown = cooldown;
+        local expiry = 0
+        if(countFish >= maxFishLevelCap[level])then
+            expiry = now + math.floor(cooldownTime / 1000)
+        end
 
-        -- Give money and send message
+        tblCooldown[name].amount = countFish
+        tblCooldown[name].expiry = expiry
+
+        -- Update DB immediately for stability
+        dbExec(db, "UPDATE `fish_level` SET `level`=?, `amount`=?, `sell_amount`=?, `cooldown_expiry`=? WHERE `name`=?", 
+            tblCooldown[name].level, tblCooldown[name].current, countFish, expiry, name)
+
         exports.global:giveMoney(thePlayer, totalPayment)
         exports.global:sendLocalText(thePlayer, "[English] " .. npcName .. " says: Ini uang hasil penjualan ikanmu, kembali lagi nanti!", 255, 255, 255, 10)
-
-        -- Disable Cooldown after 10 second, jadiin 15 menit nanti  
-        if(cooldown)then
-            setTimer(function() 
-                
-                -- Remove the player from the table after the cooldown is done
-                tblCooldown[name].cooldown = false;
-                tblCooldown[name].amount = 0;
-                outputChatBox("You can sell some fish again!", thePlayer, 0, 255, 0)
-            
-            end, cooldownTime, 1)
-        end
     else
         exports.global:sendLocalText(thePlayer, "[English] " .. npcName .. " says: Mau jual angin? Dateng kalau ada ikan buat dijual!", 255, 255, 255, 10)
     end
@@ -821,7 +768,7 @@ end
 
 -- Memberikan fishing license, cek ke tabel, baru ngecek ke database 
 function giveFishLic(thePlayer, levelUp, ped)
-    local npcName = ped and (getElementData(ped, "rpp.npc.name") or "License Issuer"):gsub("_", " ") or "License Issuer"
+    local npcName = ped and (getElementData(ped, "fishnpc.name") or "License Issuer"):gsub("_", " ") or "License Issuer"
 
     local name = getPlayerName(thePlayer)
     local query = "SELECT * FROM `fish_level` WHERE `name` = ?"
@@ -835,11 +782,16 @@ function giveFishLic(thePlayer, levelUp, ped)
         
         if(result and #result > 0)then
             level = tonumber(result[1]["level"])
-            tblCooldown[name] = {amount = 0, cooldown = false, current = tonumber(result[1]["amount"]), level = level}
+            tblCooldown[name] = {
+                amount = tonumber(result[1]["sell_amount"] or 0), 
+                expiry = tonumber(result[1]["cooldown_expiry"] or 0), 
+                current = tonumber(result[1]["amount"]), 
+                level = level
+            }
             triggerClientEvent(thePlayer, "fishing:updateLevel", thePlayer, level)
         else
-            dbExec(db, "INSERT INTO `fish_level` (`name`, `level`, `amount`) VALUES (?, 1, 0)", name)
-            tblCooldown[name] = {amount = 0, cooldown = false, current = 0, level = 1}
+            dbExec(db, "INSERT INTO `fish_level` (`name`, `level`, `amount`, `sell_amount`, `cooldown_expiry`) VALUES (?, 1, 0, 0, 0)", name)
+            tblCooldown[name] = {amount = 0, expiry = 0, current = 0, level = 1}
             triggerClientEvent(thePlayer, "fishing:updateLevel", thePlayer, 1)
         end
     end
@@ -871,15 +823,8 @@ function hasFishingLicense(thePlayer, level)
 end
 
 function upgradeRod(thePlayer, ped)
-    local npcName = ped and (getElementData(ped, "rpp.npc.name") or "Fisherman"):gsub("_", " ") or "Fisherman"
-    -- Check for old fishing rod (Item ID 49) to exchange for Level 1 Rod
-    if items:hasItem(thePlayer, oldFishingRodId) then
-        items:takeItem(thePlayer, oldFishingRodId)
-        items:giveItem(thePlayer, 285, 1)
-        exports.global:sendLocalText(thePlayer, "[English] " .. npcName .. " says: Saya ganti pancingan lamamu dengan yang baru untuk pemula, kamu bisa mulai memancing di ujung dermaga Santa Maria Beach.", 255, 255, 255, 10)
-        return
-    end
-
+    local npcName = ped and (getElementData(ped, "fishnpc.name") or "Fisherman"):gsub("_", " ") or "Fisherman"
+    
     for i, rod in ipairs(rodId) do
         local haveRod = items:hasItem(thePlayer, rod)
         -- If orangnya cuman punya pancingan level 5
@@ -937,24 +882,39 @@ end
 
 -- ============== Debug Functions ==============
 function giveLicense(thePlayer, command, level) -- Debug only
+    level = tonumber(level)
+    if not level or not licenseDetail[level] then
+        outputChatBox("Syntax: /" .. command .. " [1-5]", thePlayer, 255, 194, 14)
+        return
+    end
     outputChatBox("Granted fishing license level "..level.. "!", thePlayer, 0, 255, 0)
-    items:giveItem(thePlayer, fishLicense, licenseDetail[tonumber(level)])
+    items:giveItem(thePlayer, fishLicense, licenseDetail[level])
 end
 
 function giveRod(thePlayer, command, level) -- Debug only
+    level = tonumber(level)
+    if not level or not rodId[level] then
+        outputChatBox("Syntax: /" .. command .. " [1-5]", thePlayer, 255, 194, 14)
+        return
+    end
     outputChatBox("Granted fishing rod level "..level.."!", thePlayer, 0, 255, 0)
-    items:giveItem(thePlayer, rodId[tonumber(level)], 1)
+    items:giveItem(thePlayer, rodId[level], 1)
 end
 
 function giveStuff(thePlayer, command, level) -- Debug only
-    outputChatBox("Granted items to craft rod level "..level.."!", thePlayer, 0, 255, 0)
-    for i = 1, murNeed[tonumber(level)], 1 do
+    level = tonumber(level)
+    if not level or not murNeed[level] then
+        outputChatBox("Syntax: /" .. command .. " [1-4]", thePlayer, 255, 194, 14)
+        return
+    end
+    outputChatBox("Granted items to craft rod level ".. (level+1) .."!", thePlayer, 0, 255, 0)
+    for i = 1, murNeed[level] do
         items:giveItem(thePlayer, murId, 1)
     end
-    for i = 1, metalNeed[tonumber(level)], 1 do
+    for i = 1, metalNeed[level] do
         items:giveItem(thePlayer, metalId, 1)
     end
-    exports.global:giveMoney(thePlayer, moneyNeed[tonumber(level)])
+    exports.global:giveMoney(thePlayer, moneyNeed[level])
 end
 
 function giveFish(thePlayer, command, level) -- Debug only
@@ -1060,6 +1020,7 @@ addEventHandler("fishing:upgradeRod", root, function(ped)
 end)
 
 addEventHandler("fishing:applyLicense", root, function(ped)
+    outputDebugString("[FISHING-SERVER] applyLicense triggered by " .. getPlayerName(source))
     giveFishLic(source, false, ped)
 end)
 
@@ -1071,7 +1032,12 @@ addEventHandler("onCharacterLogin", root, function()
             local res = dbPoll(qh, 0)
             if res and #res > 0 then
                 local level = tonumber(res[1]["level"])
-                tblCooldown[name] = {amount = 0, cooldown = false, current = tonumber(res[1]["amount"]), level = level}
+                tblCooldown[name] = {
+                    amount = tonumber(res[1]["sell_amount"] or 0), 
+                    expiry = tonumber(res[1]["cooldown_expiry"] or 0), 
+                    current = tonumber(res[1]["amount"]), 
+                    level = level
+                }
                 triggerClientEvent(client, "fishing:updateLevel", client, level)
             else
                 triggerClientEvent(client, "fishing:updateLevel", client, 0)
@@ -1081,17 +1047,6 @@ addEventHandler("onCharacterLogin", root, function()
 end)
 
 -- Commands and Events
---[[
-
-    addEvent("fishing:giveCatch", true)
-    addEvent("fishing:takeRod", true)
-    addEvent("fishing:GeneratePayment", true)
-    addEvent("fishing:sellFish", true)
-    addEventHandler("fishing:giveCatch", root, giveCatch)
-    addEventHandler("fishing:takeRod", root, takeRod)
-    addEventHandler("fishing:GeneratePayment", root, GenerateFishPayment)
-    addEventHandler("fishing:sellFish", root, sellFish)
-]]
 
 -- ==========================================
 -- Scrap Dealer Rusty (Metal Supply)
@@ -1146,8 +1101,7 @@ function spawnRusty()
     -- Tag for the ped-system right-click handler
     setElementData(rustyPed, "fishnpc.id", loc.id)
     setElementData(rustyPed, "fishnpc.type", "scrapper")
-    setElementData(rustyPed, "rpp.npc.type", "fishing.scrap")
-    setElementData(rustyPed, "rpp.npc.name", name)
+    setElementData(rustyPed, "fishnpc.name", name)
     setElementData(rustyPed, "nametag", true)
     setElementData(rustyPed, "name", (name:gsub(" ", "_")))
     
@@ -1214,7 +1168,8 @@ end)
 addEvent("fishing:buyScrap", true)
 addEventHandler("fishing:buyScrap", root, function(amount, ped)
     local thePlayer = source
-    local npcName = ped and (getElementData(ped, "rpp.npc.name") or "Scrap Dealer"):gsub("_", " ") or "Scrap Dealer"
+    outputDebugString("[FISHING-SERVER] buyScrap triggered by " .. getPlayerName(thePlayer) .. " amount: " .. tostring(amount))
+    local npcName = ped and (getElementData(ped, "fishnpc.name") or "Scrap Dealer"):gsub("_", " ") or "Scrap Dealer"
     amount = tonumber(amount)
     if not amount or amount <= 0 or amount ~= math.floor(amount) then
         exports.global:sendLocalText(thePlayer, "[English] " .. npcName .. " says: How many pieces of scrap do you want? Don't waste my time.", 255, 255, 255, 10)

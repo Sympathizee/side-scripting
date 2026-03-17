@@ -1,15 +1,29 @@
--- Fishing Event System
--- Triggers a 1-hour fishing event once per 3-hour block (0-3, 3-6, 6-9, 9-12, 12-15, 15-18, 18-21, 21-24)
+-- =======================================================
+-- CONFIGURATION & TIMING
+-- =======================================================
 
+-- List of Available Events
 local fishingEvents = {
     "Exotic Swarm",
     "Deep Sea Debris"
 }
 
-local currentFishingEvent = nil
-local activeEventTimer = nil
-local nextEventTimer = nil
-local checkTimer = nil
+-- Timing Configuration
+local BLOCK_DURATION_HOURS = 3      -- Groups of hours used for scheduling (e.g., 0-3, 3-6)
+local EVENT_DURATION_HOURS = 1      -- How long an event lasts
+local EVENT_DURATION_MS = EVENT_DURATION_HOURS * 60 * 60 * 1000
+
+-- Runtime State (Event Tracking)
+local currentFishingEvent = nil     -- Name of the active event
+local activeEventTimer = nil        -- Timer for current event duration
+local nextEventTimer = nil          -- Timer until next scheduled event
+local checkTimer = nil              -- Recurring 60s block check timer
+local currentBlockStartHour = -1    -- Tracks the last processed block
+local eventScheduledForCurrentBlock = false -- Ensures only one event per block
+
+-- =======================================================
+-- HELPER FUNCTIONS
+-- =======================================================
 
 local function broadcastToFishers(message)
     for _, p in ipairs(getElementsByType("player")) do
@@ -19,15 +33,6 @@ local function broadcastToFishers(message)
         end
     end
 end
-
--- The block duration is 3 hours
-local BLOCK_DURATION_HOURS = 3
--- The event duration is 1 hour
-local EVENT_DURATION_MS = 60 * 60 * 1000
-
--- Variables to keep track of the current block so we only schedule one event per block
-local currentBlockStartHour = -1
-local eventScheduledForCurrentBlock = false
 
 -- Function to stop the active event
 function stopFishingEvent()

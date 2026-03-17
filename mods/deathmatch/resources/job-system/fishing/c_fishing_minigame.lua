@@ -3,35 +3,24 @@
     Rendered via DX functions.
 ]]
 
--- ==========================================================
--- DIFFICULTY & TWEAKING VARIABLES
--- Change these values to make the minigame harder or easier.
--- ==========================================================
+-- =======================================================
+-- CONFIGURATION & DIFFICULTY
+-- =======================================================
 
--- The speed at which the catch progress fills up. Higher = faster catch.
-local PROGRESS_FILL_RATE = 0.0025
+-- Progress Rates (Higher = faster change)
+local PROGRESS_FILL_RATE = 0.0025      -- Speed at which the catch progress fills up
+local PROGRESS_DEPLETE_RATE = 0.0035   -- Speed at which the catch progress depletes
 
--- The speed at which the catch progress depletes. Higher = faster escape.
-local PROGRESS_DEPLETE_RATE = 0.0035
+-- Fish Movement (Higher = more erratic movement)
+local MIN_FISH_SPEED = 0.003           -- Minimum travel speed
+local MAX_FISH_SPEED = 0.010           -- Maximum travel speed
+local FISH_CHANGE_INTERVAL = 800       -- Target change interval in ms
 
--- The speed range the fish can move. Higher = more erratic fish.
-local MIN_FISH_SPEED = 0.003
-local MAX_FISH_SPEED = 0.010
-
--- Base size of the catch bar (0 to 1). 0.2 means 20% of the bar's height.
-local BASE_BAR_HEIGHT = 0.3
-
--- How much extra bar height is added per rod level.
-local BONUS_BAR_PER_LEVEL = 0.033
-
--- Gravity pulling the catch bar down. Higher = falls faster.
-local BAR_GRAVITY = 0.001
-
--- The upward velocity applied to the catch bar when the key is held. Higher = rises faster.
-local BAR_THRUST = 0.0015
-
--- How often the fish changes its target position (in milliseconds)
-local FISH_CHANGE_INTERVAL = 800
+-- Catch Bar Physics
+local BASE_BAR_HEIGHT = 0.3            -- Default starting height (0.0 - 1.0)
+local BONUS_BAR_PER_LEVEL = 0.033      -- Height increase per rod level
+local BAR_GRAVITY = 0.001              -- Constant downward pull
+local BAR_THRUST = 0.0015              -- Upward force when holding key
 
 
 -- ==========================================================
