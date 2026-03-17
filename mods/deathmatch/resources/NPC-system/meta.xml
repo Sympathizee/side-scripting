@@ -4,9 +4,13 @@
 
 	<!-- NPC Manager Module (Server) -->
 	<script src="npc-module/s_npc_manager.lua" type="server" />
+	<script src="npc-dialogue/s_crafting_ui.lua" type="server" />
+	<script src="npc-dialogue/s_test.lua" type="server" />
 	
 	<!-- NPC Dialogue Module (Client) -->
 	<script src="npc-dialogue/c_dialogue.lua" type="client" />
+	<script src="npc-dialogue/c_crafting_ui.lua" type="client" />
+	<script src="npc-dialogue/c_test.lua" type="client" />
 
 	<!-- Manager Exports -->
 	<export function="spawnNPC"       type="server" />
@@ -14,9 +18,11 @@
 	<export function="forceNPCState"  type="server" />
 	<export function="getNPCEntity"   type="server" />
 	<export function="updateNPCSchedule" type="server" />
+	<export function="setNPCName"     type="server" />
 
 	<!-- Dialogue Exports -->
 	<export function="startCinematicDialogue" type="client" />
 	<export function="stopCinematicDialogue"  type="client" />
 	<export function="isDialogueActive"       type="client" />
+	<export function="openCraftingUI"         type="client" />
 </meta>
